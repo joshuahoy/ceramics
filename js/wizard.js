@@ -106,6 +106,7 @@ function collectStep(n) {
 
 function step0() {
   const div = makePanel('Identify Sherd', '1 of 8');
+  const material = currentRecord.material || 'Refined Earthenware';
   div.innerHTML += `
     <div class="field-group">
       <div class="field">
@@ -118,13 +119,13 @@ function step0() {
       </div>
       <div class="field">
         <label>Material</label>
-        ${sel('material', MATERIALS, currentRecord.material || 'Refined Earthenware')}
+        ${sel('material', MATERIALS, material)}
       </div>
       <div class="field full">
         <label>Ware</label>
         <select data-field="ware" id="ware-select">
           <option value="">— Select ware type —</option>
-          ${wareOptions()}
+          ${wareOptions(material)}
         </select>
       </div>
     </div>
@@ -138,21 +139,28 @@ function step0() {
       applyWarePreset(e.target.value);
       renderWareTip(e.target.value);
     });
-    // Sync material → filter wares (visual only; don't restrict)
-    document.querySelector('[data-field="material"]').value = currentRecord.material || 'Refined Earthenware';
+    const materialEl = div.querySelector('[data-field="material"]');
+    materialEl.addEventListener('change', event => {
+      const selectedMaterial = event.target.value;
+      currentRecord.material = selectedMaterial;
+      wareEl.innerHTML = `<option value="">— Select ware type —</option>${wareOptions(selectedMaterial)}`;
+      currentRecord.ware = '';
+      renderWareTip('');
+    });
   }, 0);
   return div;
 }
 
-function wareOptions() {
-  const priority1 = WARES.filter(w => w.priority === 1);
-  const priority2 = WARES.filter(w => w.priority === 2);
-  const priority3 = WARES.filter(w => w.priority === 3);
+function wareOptions(material) {
+  const matchingWares = WARES.filter(w => w.material === material);
+  const priority1 = matchingWares.filter(w => w.priority === 1);
+  const priority2 = matchingWares.filter(w => w.priority === 2);
+  const priority3 = matchingWares.filter(w => w.priority === 3);
   const makeGroup = (label, wares) =>
     `<optgroup label="${label}">${wares.map(w => `<option value="${escHtml(w.label)}">${escHtml(w.label)}</option>`).join('')}</optgroup>`;
-  return makeGroup('Most Common — Southern Ontario', priority1) +
-         makeGroup('Common', priority2) +
-         makeGroup('Less Common', priority3);
+  return (priority1.length ? makeGroup('Most Common — Southern Ontario', priority1) : '') +
+         (priority2.length ? makeGroup('Common', priority2) : '') +
+         (priority3.length ? makeGroup('Less Common', priority3) : '');
 }
 
 function applyWarePreset(ware) {

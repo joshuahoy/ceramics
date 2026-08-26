@@ -6,7 +6,7 @@ let currentRecord = newRecord();
 
 function newRecord() {
   return {
-    id: '', count: '', material: '', ware: '', manuTech: '', vesselCat: '', form: '',
+    id: '', count: '1', material: '', ware: '', manuTech: '', vesselCat: '', form: '',
     completeness: '', extSurface: '', extColor: '', intSurface: '', intColor: '',
     pasteColor: '', oxidized: 'Not Reduced', burning: 'Unburned',
     wearLocation: '', wearPattern: '', postMfgMod: 'No',
