@@ -227,7 +227,7 @@ function renderManuTechTip(technique) {
   if (!tip) { panel.innerHTML = ''; return; }
   panel.innerHTML = `
     <div class="ware-tip">
-      <h4>${escHtml(technique)} <a href="https://www.daacs.org/wp-content/uploads/2021/04/CeramicsCatalogingManual.pdf#page=13" target="_blank" rel="noopener">DAACS manual ↗</a></h4>
+      <h4>${escHtml(technique)} <a href="https://www.daacs.org/wp-content/uploads/2018/10/DAACSCeramicManual.pdf" target="_blank" rel="noopener">DAACS Ceramic Manual, §1.4 (pp. 13–14) ↗</a></h4>
       <div class="tip-rows">
         <div class="tip-row"><strong>Diagnostic evidence</strong>${escHtml(tip.evidence)}</div>
         <div class="tip-row"><strong>Reference guidance</strong>${escHtml(tip.typical)}</div>
@@ -274,7 +274,14 @@ function step2() {
         <p class="field-hint">Determine by examining the paste cross-section. <em>Reduced</em> = very dark grey or black core. Not recorded for coarse earthenware types — use the Colonoware tab fields instead.</p>
       </div>
     </div>`;
-  setTimeout(() => wireSurfaceColourFields(div), 0);
+  setTimeout(() => {
+    wireSurfaceColourFields(div);
+    const exteriorSurface = div.querySelector('[data-field="extSurface"]');
+    const interiorSurface = div.querySelector('[data-field="intSurface"]');
+    exteriorSurface?.addEventListener('change', event => {
+      if (interiorSurface) interiorSurface.value = event.target.value;
+    });
+  }, 0);
   return div;
 }
 
