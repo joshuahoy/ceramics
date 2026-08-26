@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAACS Ceramic Recorder</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <span class="app-title">DAACS Ceramic Recorder</span>
+    <span class="app-subtitle">Southern Ontario · Late 19th – Mid 20th Century</span>
+    <div class="header-actions">
+      <button id="export-btn" class="btn btn-secondary" disabled>Export CSV</button>
+      <span id="log-count" class="log-badge hidden">0</span>
+    </div>
+  </header>
+
+  <main>
+    <div id="wizard">
+
+      <!-- Step indicator -->
+      <div class="step-bar">
+        <div class="step-item active" data-step="0"><span class="step-num">1</span><span class="step-label">Identify</span></div>
+        <div class="step-item" data-step="1"><span class="step-num">2</span><span class="step-label">Form</span></div>
+        <div class="step-item" data-step="2"><span class="step-num">3</span><span class="step-label">Surfaces</span></div>
+        <div class="step-item" data-step="3"><span class="step-num">4</span><span class="step-label">Condition</span></div>
+        <div class="step-item" data-step="4"><span class="step-num">5</span><span class="step-label">Decoration</span></div>
+        <div class="step-item" data-step="5"><span class="step-num">6</span><span class="step-label">Base Mark</span></div>
+        <div class="step-item" data-step="6"><span class="step-num">7</span><span class="step-label">Measures</span></div>
+        <div class="step-item" data-step="7"><span class="step-num">8</span><span class="step-label">Save</span></div>
+      </div>
+
+      <!-- Step content panels -->
+      <div id="step-content"></div>
+
+      <!-- Navigation -->
+      <div class="wizard-nav">
+        <button id="prev-btn" class="btn btn-secondary" disabled>← Back</button>
+        <div class="nav-center">
+          <button id="skip-btn" class="btn btn-ghost hidden">Skip</button>
+        </div>
+        <button id="next-btn" class="btn btn-primary">Next →</button>
+      </div>
+    </div>
+
+    <!-- Session log -->
+    <section id="log-section">
+      <div class="log-header">
+        <h2>Session Log <span id="log-count-inline">0 records</span></h2>
+      </div>
+      <div id="log-wrap">
+        <p id="log-empty">No records yet.</p>
+        <div id="log-table-wrap" class="hidden">
+          <table id="log-table">
+            <thead>
+              <tr>
+                <th>ID</th><th>Ware</th><th>Form</th><th>Ext Surface</th>
+                <th>Ext Color</th><th>Int Color</th><th>Paste Color</th>
+                <th>Burning</th><th>Decorated</th><th>Notes</th>
+              </tr>
+            </thead>
+            <tbody id="log-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Colour picker modal -->
+  <div id="colour-modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <div class="modal-header">
+        <span id="colour-modal-title">Select Colour</span>
+        <button id="colour-modal-close" class="btn-icon" aria-label="Close">✕</button>
+      </div>
+      <div class="family-bar" id="colour-family-bar"></div>
+      <div class="colour-grid" id="colour-grid"></div>
+      <div class="modal-footer">
+        <span id="colour-preview-dot" class="preview-dot"></span>
+        <span id="colour-preview-label">No colour selected</span>
+        <button id="colour-confirm" class="btn btn-primary" disabled>Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- esm.sh builds the CJS-only munsell package as browser ESM; DOMContentLoaded waits for module scripts -->
+  <script type="module">
+    import * as m from 'https://esm.sh/munsell@1.1.6';
+    window.munsell = m;
+  </script>
+  <script src="js/data.js"></script>
+  <script src="js/record.js"></script>
+  <script src="js/wizard.js"></script>
+</body>
+</html>

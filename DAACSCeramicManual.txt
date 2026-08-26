@@ -1,0 +1,3224 @@
+=== PAGE 1 ===
+DAACS Cataloging Manual: Ceramics 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+OCTOBER 2018
+
+=== PAGE 2 ===
+2 
+DAACS Cataloging Manuals document how artifacts, contexts, features, objects 
+and images are cataloged into the DAACS database.  They provide information not 
+only about artifact identification but also about how each database field is used 
+and how data should be entered into that field. 
+ 
+The DAACS database was developed by Jillian Galle and Fraser Neiman, in 
+collaboration with members of the DAACS Steering Committee . Jillian Galle and 
+DAACS Staff, Leslie Cooper, Lynsey Bates, Lindsay Bloch, Elizabeth Bollwerk, Jesse 
+Sawyer, and Beatrix Arendt, led the development of cataloging protocols.  In 
+addition to DAACS staff and steering committee members, Monticello current and 
+former Archaeology Department staff, Fraser Neiman, Jennifer Aultman, Sara 
+Bon-Harper, Derek Wheeler, Donald Gaylord, Karen Smith, and Nick Bon-Harper 
+also contributed to the development of cataloging protocols.  Jennifer Aultman 
+and Kate Grillo produced the initial versions of these DAACS manuals in 2003. They 
+have been substantially revised by Cooper, Galle, and Bloch in the intervening 
+years.  
+ 
+This manual was last updated: October 10, 2018
+
+=== PAGE 3 ===
+3 
+INTRODUCTION ..................................................................................... 9 
+1. CERAMIC ARTIFACT ENTRY ........................................................... 10 
+1.1 COUNT ............................................................................................................. 10 
+1.2 WARE .............................................................................................................. 11 
+1.3 MATERIAL ......................................................................................................... 12 
+1.4 MANUFACTURING TECHNIQUE .............................................................................. 13 
+1.5 VESSEL CATEGORY .............................................................................................. 14 
+1.6 FORM .............................................................................................................. 14 
+1.6.1 Teaware .................................................................................................. 14 
+1.6.2 Tableware ............................................................................................... 15 
+1.6.3 Utilitarian ................................................................................................ 15 
+1.6.4 Other Forms ............................................................................................ 16 
+1.6.5 Gastroliths ............................................................................................... 16 
+1.6.5 Gaming pieces ......................................................................................... 16 
+1.7 COMPLETENESS .................................................................................................. 17 
+1.8 DECORATION? ................................................................................................... 17 
+1.9 MENDED? ........................................................................................................ 17 
+1.10 EXTERIOR SURFACE ........................................................................................... 17 
+1.11 EXTERIOR COLOR .............................................................................................. 17 
+1.12 EXTERIOR GLAZE OPACITY .................................................................................. 19 
+1.13 INTERIOR SURFACE............................................................................................ 19 
+1.14 INTERIOR COLOR .............................................................................................. 19 
+1.15 INTERIOR GLAZE OPACITY ................................................................................... 19 
+1.16 CERAMIC TABLE SPECIAL CASE: DETACHED AND MISSING GLAZE ................................... 20 
+1.16.1 Detached Glaze ..................................................................................... 20 
+1.16.2 Missing Glaze ........................................................................................ 20 
+2. MEASUREMENTS ............................................................................ 20 
+2.1 SHERD THICKNESS ............................................................................................... 20 
+2.2 MAXIMUM SHERD MEASUREMENT ........................................................................ 21 
+2.3 SHERD WEIGHT .................................................................................................. 21
+
+=== PAGE 4 ===
+4 
+2.4 MENDED SHERD WEIGHT ..................................................................................... 21 
+2.5 RIM LENGTH ..................................................................................................... 21 
+2.6 RIM DIAMETER .................................................................................................. 21 
+2.7 MENDED RIM DIAMETER ..................................................................................... 21 
+2.8 BASE LENGTH .................................................................................................... 21 
+2.9 BASE DIAMETER ................................................................................................. 21 
+2.10 MENDED BASE DIAMETER .................................................................................. 22 
+3. DECORATION ................................................................................... 22 
+3.1  GENERAL ......................................................................................................... 22 
+3.1.1 Genre ...................................................................................................... 22 
+3.1.2 Pattern Name .......................................................................................... 22 
+3.1.3 Pattern Notes .......................................................................................... 22 
+3.2 DECORATIVE ATTRIBUTES ..................................................................................... 22 
+3.2.1 Interior/exterior ...................................................................................... 22 
+3.2.2 Location .................................................................................................. 23 
+3.2.3 Decorative Technique ............................................................................. 23 
+3.2.4 Decoration Color ..................................................................................... 23 
+3.2.5 Stylistic Element...................................................................................... 24 
+3.2.6 Motif ....................................................................................................... 25 
+3.2.7  Recording Transfer-Printed Decoration ................................................. 28 
+4. WEAR/CONDITION ......................................................................... 29 
+4.1  EVIDENCE OF BURNING ....................................................................................... 29 
+4.2  POST-MANUFACTURING MODIFICATION ................................................................. 29 
+4.3  WEAR LOCATION ............................................................................................... 29 
+4.4  CERAMIC COMPLETENESS .................................................................................... 29 
+4.5  WEAR PATTERN ................................................................................................ 29 
+5.  BASE MARK ..................................................................................... 30 
+5.1  BASE MARK ...................................................................................................... 30 
+5.2  BASE MARK COLOR ............................................................................................ 30
+
+=== PAGE 5 ===
+5 
+5.3  BASE MARK REFERENCE ...................................................................................... 30 
+6.  COARSE EARTHENWARE PROTOCOLS ........................................ 31 
+6.1 NON-BATCHED “AMBIGUOUS IMPORTED” AND “LOCALLY-MADE” COARSE EARTHENWARES . 31 
+6.1.1  Earthenware Type .................................................................................. 31 
+6.1.2  Paste Color ............................................................................................. 32 
+6.1.3  Oxidized vs. Reduced Fabric ................................................................... 32 
+6.1.4 Total Paste Inclusion Density .................................................................. 32 
+6.1.5 Coarse earthenware Inclusions ............................................................... 32 
+6.2 “LOCALLY-MADE” COARSE EARTHENWARE .............................................................. 35 
+6.2.1 Locally-made and ambiguous imported Coarse Earthenware Batching 
+protocols .......................................................................................................... 36 
+6.2.2   Non-batched locally-made coarse earthenware protocols ................... 37 
+6.2.3 Earthenware Type ................................................................................... 39 
+6.2.4  Decoration Mode ................................................................................... 39 
+Vessel Shape Descriptor Fields ......................................................................... 39 
+6.2.5  Vessel Shape .......................................................................................... 39 
+6.2.6  Orifice Type ............................................................................................ 40 
+6.2.7 Base Shape .............................................................................................. 41 
+6.2.8  Rim Shape .............................................................................................. 42 
+6.2.9  Rim Angle ............................................................................................... 43 
+6.2.10  Maximum Rim Width ........................................................................... 43 
+6.2.11 Handle Shape ........................................................................................ 43 
+Total Paste Inclusion Density ........................................................................... 45 
+Coarse Earthenware Inclusions ........................................................................ 45 
+6.2.12  Multiple Sherd Thickness ...................................................................... 45 
+6.2.13  Decoration Protocols for Locally-made and Ambiguous Imported 
+Coarse Earthenware ........................................................................................ 46 
+6.2.14  Use Wear Protocols for Locally-made Coarse Earthenware ................. 47 
+7. IMAGE ................................................................................................. 48 
+8. OBJECT ................................................................................................ 48
+
+=== PAGE 6 ===
+6 
+9. MENDS ................................................................................................ 48 
+9.1 MENDS TO ARTIFACT ........................................................................................... 49 
+9.2 MENDED FORM ................................................................................................. 49 
+10. DESCRIPTIONS AND CATALOGING PROTOCOLS FOR SPECIFIC WARES 49 
+10.1 COARSE EARTHENWARES .................................................................................. 49 
+10.1.1 Albisola ................................................................................................. 49 
+10.1.2 Biot ........................................................................................................ 49 
+10.1.3 Buckley-Type ......................................................................................... 50 
+10.1.4  Caribbean Coarse Earthenware ........................................................... 50 
+10.1.5 Colonoware ........................................................................................... 51 
+10.1.6 de l’Huveaune ....................................................................................... 51 
+10.1.7 French Coarse Earthenware .................................................................. 52 
+10.1.8 Iberian Ware ......................................................................................... 52 
+10.1.9 Native American Ceramics .................................................................... 53 
+10.1.10 North Devon Plain and Gravel-Tempered ........................................... 53 
+10.1.11 Post-Medieval London-Area Redware ................................................. 53 
+10.1.12 Red Agate, Coarse ............................................................................... 54 
+10.1.13 Redware .............................................................................................. 54 
+10.1.14 Saintonge ............................................................................................ 55 
+10.1.15 Slipware, North Italian ........................................................................ 56 
+10.1.16 Slipware, North Midlands/Staffordshire ............................................. 56 
+10.1.17 Staffordshire Mottled (or Manganese Mottled) ................................. 59 
+10.1.18 Surrey-Hampshire Border Ware .......................................................... 59 
+10.1.19 Vallauris .............................................................................................. 59 
+10.2  REFINED EARTHENWARES .................................................................................. 60 
+10.2.1  Agate Ware, Refined ............................................................................ 60 
+10.2.2  Astbury ................................................................................................. 60 
+10.2.3  Bennington/Rockingham ..................................................................... 61 
+10.2.4  Canary Ware ........................................................................................ 61 
+10.2.5  Cauliflower ware .................................................................................. 61
+
+=== PAGE 7 ===
+7 
+10.2.6  Creamware ........................................................................................... 61 
+10.2.7 Creamware, Carolina ............................................................................ 62 
+10.2.8  Delftware, Dutch/British ...................................................................... 62 
+10.2.9  Faience ................................................................................................. 63 
+10.2.9  Ironstone/White Granite ...................................................................... 63 
+10.2.10  Jackfield ............................................................................................. 64 
+10.2.11 Majolica .............................................................................................. 64 
+10.2.12  Pearlware ........................................................................................... 65 
+10.2.13  Red Agate, Refined ............................................................................. 65 
+10.2.14  Refined Earthenware, Modern ........................................................... 66 
+10.2.15  Refined Earthenware, Unidentifiable ................................................. 66 
+10.2.16 Redware, Refined ................................................................................ 67 
+10.2.17  Wedgwood Green .............................................................................. 68 
+10.2.18  Whieldon Ware .................................................................................. 68 
+10.2.19  Whiteware ......................................................................................... 69 
+10.2.20  Yellow Ware ....................................................................................... 69 
+10.3  PORCELAINS ................................................................................................... 69 
+10.3.1  Porcelain, Chinese ................................................................................ 70 
+10.3.2  Porcelain, English Bone China .............................................................. 70 
+10.3.3  Porcelain, English Soft Paste ................................................................ 70 
+10.3.4  Porcellaneous/English Hard Paste ....................................................... 71 
+10.3.5  Porcelain, Japanese .............................................................................. 71 
+10.4  STONEWARES .................................................................................................. 71 
+10.4.1  American Stoneware ............................................................................ 72 
+10.4.2  British Stoneware ................................................................................. 73 
+10.4.3  Bristol Glaze ......................................................................................... 73 
+10.4.4  Fulham-type ......................................................................................... 74 
+10.4.5  Shaw Stoneware .................................................................................. 74 
+10.4.6  Turner’s Type........................................................................................ 75 
+10.4.7  White Salt Glaze Stoneware ................................................................. 75 
+10.4.8  “Slip Dip,” Dipped, or Slipped White Salt Glazed .................................. 76
+
+=== PAGE 8 ===
+8 
+10.4.9  Black Basalt .......................................................................................... 77 
+10.4.10  Rosso Antico ....................................................................................... 77 
+10.4.11  Jasper Ware Type ............................................................................... 77 
+10.4.12  Nottingham ........................................................................................ 78 
+10.4.13  Staffordshire Brown ........................................................................... 78 
+10.4.14  German Stoneware ............................................................................ 79 
+10.4.15  Westerwald/Rhenish .......................................................................... 79
+
+=== PAGE 9 ===
+9 
+INTRODUCTION  
+The ceramic tables in DAACS were designed to facilitate analysis of ceramic sherds and the 
+range of vessel forms, manufacturing techniques, and decorations these sherds represent.  
+Extensive, detailed information ranging from the condition and size of ceramic sherds to 
+information on locally-produced coarse earthenwares are collected.   
+ 
+Please note that DAACS Ceramic Analysis focuses on the sherd, not the complete object.  Please 
+use the Object Module to record Object Level data.  Instead, sherd-level analysis requires a 
+cataloger to focus on the attributes specific only to that sherd.  For example, the Decorative 
+Technique table and tables related to it are structured to permit the recording of decoration on 
+small ceramic sherds rather than on complete or nearly complete vessels.   
+ 
+The following discussion of the ceramic cataloging is divided into 8 sections: 
+ Sections 1 through 6 beginning with the Main Ceramic Table relate to the  Ceramics 
+Entry Form and related subtables:
+
+=== PAGE 10 ===
+10 
+Ceramic Entry Module of the DAACS Database: 
+ 
+Sections 7,8, and 9 discusses how to enter Image, Object, and Mends data for ceramic 
+artifacts. 
+Section 10 gives detailed guidance on how to catalog not only the most common 
+ceramic ware types but also those that are the hardest for multiple catalogers to agree 
+on.  We provide specifics on how to catalog both the easy and hard into DAACS, 
+including specific information on how to approach the various decorative techniques 
+found on those wares. 
+ 
+ 
+1.  CERAMIC ARTIFACT ENTRY  
+Below are descriptions and cataloging rules for the various fields in the main ceramics table.   
+ 
+1.1  COUNT  
+This field records the number of sherds that are being cataloged together into one record.  The 
+following rules determine when sherds can be batched into groups for cataloging, and indicate 
+special protocols for cataloging batched sherds: 
+ 
+Batching Rules: 
+1. Batch all non-diagnostic body sherds that are 15mm or less in maximum sherd diameter.   
+a. The one exception is for “locally-produced” coarse earthenwares (“Colonoware,” 
+“Caribbean Ware”, “Coarse Earthenware, Unidentified”, and “Native American”). 
+Non-diagnostic sherds of these ware types are batched at 30 mm. See Section 7 
+for more details about cataloging “Locally-produced” coarse earthenwares. 
+ 
+2. Do not batch sherds with decoration, with the exception of transfer-printed ceramics. 
+See Point 6 below, or diagnostic completeness and form elements.  In other words, do 
+not batch sherds that have identifiable form (bowl, plate, etc.) or completeness,( rim, 
+base, etc.).  
+ 
+3. Do not record the glaze color on batched sherds. Enter “Not Recorded” into the Glaze 
+Color fields. 
+ 
+4. Sherds can be batched together even if some in the group are burned or missing glaze 
+and others are not.  If some sherds of the group are burned, enter “Not Recorded” in 
+the Evidence of Burning field.  If some sherds are missing glaze, Glaze Type and Glaze 
+Color should both be listed as “Not Recorded.” If sherd is missing glaze from all surfaces, 
+record as the appropriate ware type and identify surfaces as “Missing.”
+
+=== PAGE 11 ===
+11 
+5. Batch all unidentifiable modern refined earthenwares, regardless of form, sherd size, 
+and color. Batch by Ware (which will be “Refined earthenware, modern”) and record 
+count and weight. List other fields as “Not Recorded.” 
+ 
+6. Non-diagnostic, transfer-printed under sherds can be batched if they are 15 mm or 
+smaller.  However, the Genre must be the same for all sherds in the batch (for example, 
+each sherd in the batch is "Transfer Print Under, Green"), and the Pattern, Form, and 
+Completeness must be unidentifiable. Stylistic Elements do not need to be recorded for 
+batched sherds. 
+If the pattern is identifiable, then those sherds should be cataloged individually.  Any 
+sherds with overglaze transfer print should be cataloged individually. 
+a.  If sherds are printed on one side: they should be batched together, with 
+Category, Form, Completeness, and Pattern as “Unidentifiable.” 
+i. If sherds are printed and the surface of one side is missing: then 
+they should be batched with the printed-on-one-side sherds. 
+b.  If sherds are printed on both sides: they should be batched together, with 
+Category as “Hollow,” and Form, Completeness, and Pattern as 
+“Unidentifiable.” 
+7. Caribbean Coarse Earthenware whose form is either “Sugarware, unid” or “Sugar Mold”: 
+We have increased the batching size to 100 mm or less. For specific protocols for these 
+forms, see Section 10.1.2.  
+ 
+1.2  WAR E 
+The Ware field provides a list of approximately 70 commonly recognized ware-types. DAACS 
+also requires that each ware type have mutually exclusive definable attributes.  These 
+attributes of each ware type are described in detail in Section 10.   
+ 
+Notes:  
+ 
+“Redware”/”Redware, refined”:  
+ 
+Please pay specific attention to how DAACS defines “Redware” and “Redware, refined”.  
+Ceramic sherds identified as either “Redware” or “Redware, refined” must have a paste 
+color that matches one of the following four color chip categories: Pantone 718, 722, 7412 
+or 7592.  To identify whether a sherd is what DAACS classifies as a “Redware”, match the 
+paste color of the sherd, as observed in the sherd’s cross-section, with one of the color 
+chips.  Please see Section 10.1.5 for additional “Redware” cataloging protocols. 
+ 
+Difficult to identify sherds:  
+ 
+Occasionally you will only be able to identify the material of the sherd (i.e. Coarse 
+Earthenware, Stoneware, etc.), but not the specific ware-type.  For these sherds, the ware 
+types would be, for example, “Coarse Earthenware, unidentified” or “Stoneware, 
+unidentified.”
+
+=== PAGE 12 ===
+12 
+ 
+Only use “Unidentifiable” when you cannot tell either the basic material (coarse or refined 
+earthenware, stoneware, or porcelain) or the ware-type of the sherd. 
+ 
+Coarse Earthenwares:  
+Finally, DAACS makes the distinction between “known imported” coarse earthenware 
+ceramic-types, whose ware types are easily described and whose attributes are most 
+generally agreed upon, “ambiguous imported” coarse earthenwares whose diagnostic 
+attributes are not agreed upon or are more difficult to identify, and “locally-made” coarse 
+earthenwares. 
+“Known imported” coarse earthenwares are cataloged using the same attribute fields and 
+protocols as refined earthenware, porcelains, and stonewares.  “Known imported” coarse 
+earthenware types are: “Albisola”, “Biot”, “Buckley”, “Derbyshire”,  “Iberian Ware”, “North 
+Devon Plain”, “North Devon Gravel Tempered”, “Post-Medieval London-area Redware”, 
+“Red Agate, coarse”, “Saintonge”, “Slipware, North Midlands/Staffordshire, “Slipware, 
+North Italian”, “Staffordshire Mottled Glaze”, “Surrey-Hampshire Border ware”,  and 
+“Vallauris”  
+ 
+“Ambiguous imported” and “Locally-made” coarse earthenwares have additional attributes 
+and cataloging protocols that are described in Section 6.  
+“Ambiguous imported” coarse earthenware types are: “French Coarse Earthenware”, 
+“Redware”, “Spanish Coarse Earthenware”, and “Coarse Earthenware, unidentified”. 
+“Locally-made” coarse earthenware types are: “Caribbean Coarse Earthenware, hand 
+built”, “Caribbean Coarse Earthenware, unid.”, “Caribbean Coarse Earthenware, wheel 
+thrown”, Colonoware”, and “Native American, prehistoric”.  
+ 
+1.3  MATERIAL  
+This field indicates whether a sherd is “Refined earthenware”, “Coarse earthenware”, 
+“Porcelain”, Stoneware” or “Unidentifiable.”  Descriptions and cataloging protocols for some of 
+the more common specific wares that fall into each of these Material categories are found in 
+Section 10, below.  General definitions of Material types are as follows: 
+ 
+“Refined 
+Earthenware” 
+Developed mid-eighteenth century by English potters.  Harder and 
+denser than coarse earthenwares, most refined earthenwares have 
+few inclusions in their paste. The body is generally cream-colored to 
+white and lead-glazed.  In DAACS, tin-enameled wares are cataloged 
+as “Refined Earthenwares”, even though some archaeologists would 
+consider them as a separate material type. Note that tin-enameled 
+wares generally predate other refined earthenwares.
+
+=== PAGE 13 ===
+13 
+“Coarse 
+Earthenware” 
+Porous clay bodies with visible inclusions usually characterize coarse 
+earthenwares.  Most are gray-to-red-to-brown in color, with some 
+exceptions noted in Section 6.1 below.  This material is usually used 
+for utilitarian vessels, and some tablewares. 
+“Porcelain” Impervious to liquids, nearly vitrified, and generally translucent.  
+See exceptions (soft paste, “Turner Type”) in Section 10, below. 
+“Stoneware” 
+Impervious to liquids, most, with the exception of some finely-
+turned tea vessels, are salt-glazed. Salt glazing creates a pitted 
+“orange-peel” effect on the vessel surface.  Most stonewares were 
+made in England and Germany, although later American stonewares 
+(after c.1750) are also common. 
+“Unidentifiable” Sherd is too fragmentary, burned, etc. for material type to be 
+recognized. 
+ 
+1.4  MANUFACTURING TECHNIQUE  
+Ceramic vessels encountered at historic archaeological sites are generally produced in one of 
+four ways:  
+ 
+ “Wheel thrown”: Look for horizontal rilling or “throw lines” to determine   
+ whether a vessel is wheel thrown.  Stonewares, many coarse types of  
+ earthenware, some porcelains, and some refined earthenwares (early   
+ wares such as delft, and heavy forms such as chamber pots) are generally  
+ wheel thrown.   
+ 
+ “Press molding”: Generally creates thin-bodied vessels.  Press molding also   
+ permits the production of complex molded shapes, such as creamware   
+ baskets.  Thin-bodied  refined earthenwares (such as teawares and most   
+ tablewares) are generally press molded, and some porcelain is press   
+ molded.   
+ 
+“Handbuild, coil”:  Coiled vessels are built by joining together a continuous spiral or 
+series of coils.  Adjacent coils are smoothed together using fingertips, a paddle and 
+anvil, or a similar tool.  Handbuilt, coil should only be used when there is diagnostic 
+evidence of coil manufacture such as a coil break is present; otherwise, record 
+manufacturing technique for handbuilt pottery as “Handbuild, unid.” 
+ 
+“Handbuild, unid”:  Some handbuilt pottery was slab built wherein vessels were formed 
+by joining slabs of clay at right angles; however, identification of this technique at the 
+sherd level is very difficult.  Based on the possibility that manufacturing technique for 
+handbuilt pottery could be either slab, coiled, or a combination of the two, if there is no
+
+=== PAGE 14 ===
+14 
+diagnostic evidence of coil manufacture, record Manufacturing Technique as 
+“Handbuild, unid.”   
+ 
+ “Slip Cast”: Fine stonewares, such as Black Basalt and White Salt Glaze, are  
+ sometimes slip cast.  With slip casting, a watery slip is poured into a mold  
+ and allowed to harden to produce a vessel.  Slip casting can often be   
+ recognized when the indentation from decoration on the outside of a   
+ vessel can be felt in “negative” on the inside.  
+ 
+1.5  VESSEL CATEGORY  
+Vessel Category refers to whether the general shape of the original vessel was “Hollow” or 
+“Flat”.  Hollow forms include, for example, bowls, cups, storage jars, etc.  Examples of flat 
+vessels are plates, platters, etc.  Note that so-called “dish plates,” which look much like modern 
+soup bowls, are considered flat forms in DAACS.  Specify a Vessel Category whenever possible, 
+especially since we remain conservative when identifying vessel form. When it is not possible to 
+deduce the Vessel Category, select “Unidentifiable.” 
+ 
+1.6  FORM  
+Form refers to the specific form of the original vessel, such as “plate” or “milk pan.”   
+Since most archaeological ceramic assemblages are quite fragmentary, it is often impossible to 
+determine the exact form of the vessel from which the majority of sherds derive.  Therefore,  
+ 
+DAACS provides several choices for cataloging ambiguous sherds:   
+ 
+ “Unidentifiable”:  completely unidentifiable from 
+ 
+ “Unid: Teaware”:  (see following discussion of this form) 
+ 
+ “Unid: Tableware”:  (see following discussion of this form) 
+ 
+ “Unid: Utilitarian”:  (see following discussion of this form) 
+ 
+These are the most common entries for ceramic forms in DAACS.  They are used when you 
+cannot identify an exact vessel form, but you can identify the vessel’s function—i.e. you might 
+not be able to specify a thick stoneware sherd as a jar or crock but you can identify it as “Unid: 
+Utilitarian.”  Note that “tavernwares,” or mugs and tankards, should be cataloged as 
+Tablewares. 
+ 
+1.6.1  T E AW AR E 
+Teawares include anything related to the ritual of drinking.  Teawares include tea pots, tea 
+bowls, saucers, slop bowls, sugars, and cream jugs; there are also demitasse cups, coffee pots 
+and chocolate pots.  Mugs and tankards are not included in this category (these are instead 
+defined as Tablewares).  Teawares were made in porcelain, delftware, refined earthenwares,
+
+=== PAGE 15 ===
+15 
+white salt-glazed stoneware, and other finely-turned stonewares. Below is a sample of possible 
+teaware form descriptions: 
+ 
+ “Teapot”: Most often globular in shape; lids have a hole to let steam escape and  
+  usually have a seating ring.  
+ 
+ “Teabowl”: Handleless cups with low foot rings, used almost exclusively  
+  throughout the seventeenth and eighteenth centuries for imbibing tea.  
+ 
+ “Saucer”: During the seventeenth and most of the eighteenth century, these  
+  tend to be deep, often resembling shallow bowls; they do not have cup   
+ rings (circular indentation where the cup rests). 
+ 
+ “Bowl, Slop”: Used to rinse the tea bowl free of tea fragments between    
+ servings, and are simple, small to medium-sized bowl forms.   
+ 
+ “Teacup”: Handled tea cups began to appear during the third quarter of the   
+ eighteenth century. 
+ 
+ “Creamer”: Small pitchers, usually pear-shaped.  Creamers, teapots and other  
+  serving teawares were sold in sets by the mid-eighteenth century (before  
+  the advent of matched dinner services in the last quarter of the  
+  eighteenth century). 
+ 
+ “Coffee pot”: Tend to be tall, and straight-sided or pear-shaped. Spouts are  
+  longer than those for teapots. 
+ 
+1.6.2  T AB LE W AR E 
+Tablewares include vessels used for food service and consumption.  They include plates, soup 
+bowls, and serving vessels (anything from fish and meat platters to pitchers and lidded 
+tureens).  This category also includes “tavernwares” such as mugs and tankards.  Tablewares 
+range from coarsewares and stonewares to refined earthenwares and porcelain.  Matched 
+dinner services do not appear until the last quarter of the eighteenth century.  
+ 
+Note on Platters and Plates: We define platters as either oval or sub-rectilinear in form.  Plates 
+are circular.  Be very conservative when identifying plate vs. platter.  If the sherd is large but 
+you are still uncertain, simply indicate that the sherd is a flat, unidentifiable tableware. Platter 
+diameter estimates are taken the same way as specified in the Measurements section but it is 
+understood that the diameter represents a point between the major and minor axis of a platter. 
+ 
+1.6.3  U T ILI T AR I AN 
+Utilitarian vessels are used for food production and, to a lesser extent, food storage.   
+Below is a sample of specific form descriptions:
+
+=== PAGE 16 ===
+16 
+ “Milk Pan”: Wide, shallow bowl forms with flat bases, sloping walls and wide,  
+  thick rims; the latter have pouring spouts that often are simple thumb   
+  impressions. The bases sometimes have a simple rounded heel.  These   
+  pans were used to separate cream from milk.  
+ 
+ “Storage Jar”: Tall, wide-mouthed vessels with flat bases. Eighteenth-century  
+  jars usually expand below the mouth into a rounded shoulder before   
+  tapering to a slightly smaller base; straight-sided (cylindrical) shapes are   
+  most common during the nineteenth century.   
+ 
+ “Bottle”: Storage. Short, constricted neck, a narrow mouth with thick lip or rim,  
+  and shoulders that taper to a flat base. There is sometimes a single loop   
+  handle at the neck and shoulder.   
+ 
+ “Pipkin”: Relatively small, wide-mouthed cooking vessels that stand on three  
+legs and have a single cylindrical, usually hollow handle projecting at right angles 
+from the body or rim.  Think of a deep bowl with three legs and a handle. 
+ 
+Milk pans are most often seen in coarse earthenwares; storage bottles and jars usually are 
+stoneware. Pipkins are most often made of coarse earthenware, but stoneware examples are 
+not uncommon. 
+ 
+1.6.4  O T HE R  FO R M S 
+Remember that there are trinket trays, chamber pots, small salve pots, gaming pieces and other 
+miscellaneous forms. Ceramic dolls, figurines and toys should be cataloged in the General 
+Artifacts table.    
+ 
+1.6.5  GASTR O L I T HS 
+Some small, heavily eroded ceramic sherds are gastroliths, also called stomach stones or gizzard 
+stones. These are cataloged in the Ceramic table with the form as “Gastrolith.” The ware type 
+and all other fields should be cataloged as the sherd would be cataloged normally. Most 
+ceramic gastroliths are “Refined earthenware, unid” or “Porcelain, unid” with missing interior 
+and exterior glaze. However, please identify the specific glaze type, if present, and surface 
+color, if possible (otherwise “Unidentifiable”).   
+ 
+All measurements should be taken and a brief description should be noted. 
+ 
+1.6.5  GAM IN G P I EC E S 
+Occasionally, ceramic sherds are deliberately reworked and reshaped into a rounded or multi-
+sided object. These are cataloged in the Ceramic table with the form as “Gaming Piece.” Other 
+fields should be cataloged as one would normally catalog a sherd in terms of ware type, 
+decoration, etc.  Completeness is most often “Unidentified.” In addition, Post Manufacturing 
+Modification should be entered as “Yes.” Always image gaming pieces.
+
+=== PAGE 17 ===
+17 
+1.7  COMPLETENESS  
+This field describes what part of the vessel a sherd represents, for example “Body” or “Base.”  A 
+footring should be cataloged as “Base”.  “Foot” should only be used when you have the foot 
+portion of an actual footed vessel form, such as a pipkin or creamer. 
+ 
+1.8  DECORATION ? 
+The default for this field is “No.”  If you have decoration that will be entered in the Decoration 
+Tab, enter “Yes;” if you do not have decoration that will be entered in the Decoration Tab, 
+enter “No.” Remember to fill in the appropriate Decoration fields in the Decoration tab as well. 
+ 
+1.9  MENDED ? 
+The default for this field is “No.”  If the mended sherd is actually glued to another sherd, enter 
+“Yes, Physically Mended.” If sherds mend together, but are not physically glued enter “Yes, 
+Mends But Not Physically” in this field.  
+ 
+Sherds that are mended with other sherds must be cataloged individually. Measure individual 
+sherd thickness (if possible), size, and estimate average sherd weight. Remember to fill out 
+Mended Sherd Weight (Measurements Tab; see 2.4 below), Mended Rim Length (if applicable), 
+Mended Base Length (if applicable), the Artifact IDs of the sherds that mend directly to the 
+sherd being cataloged (section 9.1) and Mended Form (section 9.2) on the Mends Tab (see 
+section 9 below). 
+ 
+1.1 0 EXTERIOR SURFACE  
+Enter the type of exterior surface (i.e. glaze type or unglazed/bisque).  The following sections on 
+how to catalog individual ware types have instructions as to what should be entered into this 
+field. 
+ 
+1.1 1 EXTERIOR COLOR  
+This field is used for recording the color of a sherd’s exterior surface. Record the surface color 
+for both glazed and unglazed sherds. However, only record color if you have the original surface 
+– do not identify the exterior color of a sherd whose exterior surface has been completely 
+broken off.  This applies to both glazed and unglazed sherds. 
+ 
+If the exterior surface is not intact, the Exterior Glaze field  should be listed as “Missing” and 
+Exterior Color should be listed as “Not Applicable.” If a sherd is burned, stained, or damaged so 
+that you cannot tell the original color of the vessel’s surface, list the Exterior Color as 
+“Unidentifiable.” Do not use “No Applied Color.” 
+ 
+Exterior and Interior Surface color is recorded differently based on ware type.  Below are the 
+protocols for each type. 
+ 
+In general, record the surface color for both glazed and unglazed sherds. However, only record 
+color if you have the original surface – do not identify the exterior color of a sherd whose
+
+=== PAGE 18 ===
+18 
+exterior surface has been completely broken off.  This applies to both glazed and unglazed 
+sherds. 
+ 
+If the exterior surface is not intact, the Exterior Glaze field  should be listed as “Missing” and 
+Exterior Color should be listed as “Not Applicable.” If a sherd is burned, stained, or damaged so 
+that you cannot tell the original color of the vessel’s surface, list the Exterior Color as 
+“Unidentifiable.”  Do not use “No Applied Color.” 
+ 
+For all white-bodied glazed and unglazed ware types (see below for list): 
+Match the color of the exterior glaze to one of the chips on the Refined Ceramic 
+Surface Colors section of the DAACS Color Book.  
+White-bodied Ware types are as follows:  
+ 
+Specific White-bodied refined earthenwares: “Creamware”, “Creamware 
+(Carolina)”, “Delftware, Dutch/British”, “Faience”, “Ironstone/White Granite”, 
+“Pearlware”, “Tin Enameled, unid.”, “Whiteware”).  
+ 
+All white-bodied refined stonewares: “Slip Dip”, “Turner Type”, “White Salt 
+Glaze” 
+ 
+All Porcelains:  “Porcelain, Chinese”, “Porcelain, Japanese”, “Porcellaneous/ 
+English Hard Paste”, “Porcelain, English Bone China”, “Porcelain, English Soft 
+Paste”, “Porcelain, French”, “Porcelain, unidentifiable” 
+ 
+ 
+For non-white bodied glazed and non-glazed ware types (see list below): 
+ 
+Record the color range that best matches the color of the exterior and interior 
+surface found in the Detailed Color Groups section of the DAACS Color Book.   If 
+a sherd is burned, stained or you cannot otherwise tell the original color of the 
+surface, list the Exterior or Interior Color as “Unidentifiable.”     
+ 
+The exception to this rule relates to unglazed coarse earthenware ceramics 
+whose ware types are:  “Coarse Earthenware, unid”, “Colonoware”, “Caribbean 
+Ware” and “Native American, prehistoric.”  See Section 6.2 for cataloging 
+protocols relating to these ware types.   
+ 
+Other Refined Earthenwares: “Agate, refined”, “Astbury-Type”, 
+“Bennington/Rockingham”, “Canary Ware”, “Jackfield Type”, “Redware, 
+refined”, “Red Agate, refined”, and “Yellow Ware” 
+ 
+Non-white bodied Coarse Earthenwares: ”Buckley”, “Iberian Ware”, “North 
+Devon Gravel Tempered”, “North Devon Plain”, “Red Agate, coarse”, “Slipware,
+
+=== PAGE 19 ===
+19 
+North Midlands/Staffordshire”, “Slipware, North Italian”, “Staffordshire Mottled 
+Glaze”, “Wedgwood Green”, and “Whieldon-type Ware” 
+ 
+Non-white bodied Stonewares: ‘”American Stoneware”, “Black Basalt”, “Bristol 
+Glaze Stoneware”, “British Stoneware”, “Burslem”, “Frechen Brown”, “Fulham 
+Type”, “German Stoneware”, “Jasperware Type”, “Westerwald/Rhenish”, and 
+“Nottingham.” 
+ 
+For “Coarse Earthenware, unid”, “Colonoware”, “Caribbean Ware”, and “Native American, 
+prehistoric”:  See also Section 10. 
+ 
+ For Decorated Sherds: 
+If a decorative technique such as applied powder crystals, paint, or slip covers the entire 
+surface of a sherd (thus obscuring the color of the vessel’s exterior surface), list the 
+Exterior Color as “Body Color Obscured by Decoration.”  The color as seen on the sherd 
+should then be listed in the Decoration table under the Stylistic Element section. 
+ 
+1.1 2 EXTERIOR GLAZE OPACITY  
+Opacity is recorded for all glazed ceramics with Material recorded as “Coarse Earthenware”.  
+This field provides a description of the amount of light that can pass through the sherd paste.   
+ 
+“Opaque”: The ceramic paste (or decoration such as a slip beneath the glaze) is not 
+visible through the glaze. Some light may pass through where glaze is thin, or 
+along broken edge, but only to a small extent. 
+ 
+“Translucent”: The ceramic paste (or decoration such as a slip beneath the glaze) and 
+inclusions, if present, are visible through the glaze, but the glaze is not clear. 
+ 
+“Transparent”: Very clear. The ceramic paste (or decoration such as a slip beneath the 
+glaze) and inclusions, if present, are plainly visible through the glaze. 
+ 
+1.1 3 INTERIOR SURFACE  
+The same protocols apply for Interior Surface as for Exterior Surface.  See the above 
+descriptions for cataloging instructions.  
+ 
+1.1 4 INTERIOR COLOR  
+The same protocols apply for Interior Color as for Exterior Color.  See the above descriptions for 
+cataloging instructions. Do not use “No Applied Color”. 
+ 
+1.1 5 INTERIOR GLAZE OPACITY  
+The same protocols apply for Interior Glaze Opacity as for Exterior Glaze Opacity.  See the 
+above descriptions for cataloging instructions.
+
+=== PAGE 20 ===
+20 
+1.1 6 CERAMIC TABLE SPECIAL CASE : DETACHED AND MISSIN G GLAZE  
+ 
+1.1 6.1  DET AC HE D  GLAZ E  
+Most detached glaze will be from tin-enameled earthenware, although glaze from other refined 
+and coarse earthenwares is sometimes found. Detached glaze can be batched. The only 
+measurement that needs to be taken is weight. 
+   
+Material, Manufacturing Technique, and Ware refer to the sherd the glaze came from (not the 
+glaze itself). Thus, if you can identify the glaze as coming from a tin-enameled earthenware, 
+catalog the glaze as follows:   
+  
+ Ware:   “Tin-Enameled, Unidentified” (if you have only the glaze, do   
+  not identify the ware as “Delftware, Dutch/British.” Instead,  
+  use “Tin-Enameled, Unid”).   
+ Material:   “Refined earthenware”  
+ Manu Tech:   “Wheel Thrown” 
+ Vessel Category:  “Unidentified” 
+ Vessel Form:   “Unidentified” 
+ Completeness:   “Detached Glaze” 
+ Ext/Int Glaze:   Choose one (since you usually will not be able to tell if the  
+  glaze is from the interior or exterior, unless the glaze has an  
+  identifiable curvature), and note the glaze type as “Tin Glaze.”  
+  For the alternate side, list the glaze as “Missing,” with “Not  
+  Applicable” for the Exterior/Interior Color.  
+ 
+1.1 6.2  MI SSI N G  GL AZ E 
+If a sherd is entirely missing glaze on one or both sides, Exterior/Interior Surface should be 
+listed as “Missing,” and Color should be listed as “Not Applicable.” 
+ 
+If some, but not all, of the glaze from one or both sides of a sherd is missing, “Missing Glaze” 
+should be entered into the Use Wear table.    
+ 
+If a refined earthenware sherd or coarse earthenware sherd is missing all of its glaze and is thus 
+unidentifiable, the Ware field should read “Refined earthenware, unidentifiable,” or “Coarse 
+Earthenware, unidentifiable” as appropriate. 
+ 
+2. MEASUREMENTS  
+ 
+2.1  SHERD THICKNESS  
+The original surface must still be attached to both sides of the sherd to measure sherd 
+thickness.  If not, this field is left blank.  When a rim is present, thickness measurements are 
+always and only taken at the rim.  Again, the original surface must remain on both sides of the 
+rim to take this measurement.
+
+=== PAGE 21 ===
+21 
+2.2  MAXIMUM SHERD MEASUREMENT  
+Maximum sherd size is measured using the cataloging mats.  Each mat has a series of circles 
+used to measure sherds in 5mm increments.  The size of the smallest circle into which the sherd 
+fits completely is the sherd size.  If the sherd is too large to fit within any of the circles on the 
+mat, a tape measure is used and the measurement is rounded up to the next number divisible 
+by 5.  
+ 
+2.3  SHERD WEIGH T  
+Sherd weight is taken in grams, to the nearest tenth. To calculate the individual sherd weight of 
+a sherd that is physically mended to other sherds (and therefore cannot be weighed 
+individually), divide the mended sherd weight by the number of sherds that compose it.  
+ 
+2.4  MENDED SHERD WEIGHT  
+Only record Mended Sherd Weight for sherds that are physically glued together (this is the 
+combined weight of the mended sherds). 
+ 
+2.5  RIM LENGTH  
+Rim length is measured for all rim sherds.  This measurement should be taken in millimeters, to 
+the nearest hundredth using calipers.  If a rim has significant curvature, its rim length is 
+measured with a bendable tape measure. 
+ 
+2.6  RIM DIAMETER  
+Rim diameter is taken for sherds with rim lengths of greater than 20mm.  The radius template 
+on the cataloging mat is used for this measurement –the curvature of the rim is matched to the 
+curves on the mat to the nearest arc shown on the mat.  When dealing with thicker sherds, the 
+general rule is to measure along the exterior of the rim (rather than trying to determine the 
+interior diameter of the vessel).  Diameter measurements on the mats are in millimeters.   
+ 
+In order to measure the rim diameter for a flat, scalloped-edge vessel using the radius 
+template, there must be three scalloped points.  If less than three points are present but an 
+interior edge of the marley is present, use the radius template and add twice the marley width 
+to complete the total diameter measure. 
+ 
+2.7  MENDED RIM DIAMETER   
+Enter the rim diameter for mended rim sherds. 
+ 
+2.8  BASE LENGTH  
+Base length is measured for all base sherds.  This measurement should be taken in millimeters, 
+to the nearest hundredth using calipers.  If a base has significant curvature, its length is 
+measured with a bendable tape measure. 
+ 
+2.9  BASE DIAMETER
+
+=== PAGE 22 ===
+22 
+Base diameter is taken for base footring sherds with lengths of greater than 20mm and for 
+which a reliable measurement can be obtained.  The base diameter template (transparent 
+sheet) is used for this measurement –the curvature of the base is matched to the curves on the 
+template to the nearest arc.  Diameter measurements are in millimeters.   
+ 
+2. 10  MENDED BASE DIAMETER  
+Enter the mended base diameter for applicable sherds using the base diameter template. 
+ 
+3. DECORATION  
+ 
+3.1   GENERAL  
+This section in the Decoration Tab enables the cataloger to record ceramic decoration at a more 
+general level than the thorough identification of individual stylistic elements recorded in the 
+Decorative Attributes section. This section should not be used in place of the Decoration 
+Attributes but rather as a supplement to it. The section consists of three fields: 
+ 
+3.1.1  GENR E  
+The Genre field is used to assign, where possible, each decorated sherd to a temporally 
+significant decorative genre, e.g. “Shell Edge, blue” or “Famille Rose”. The Genre field allows 
+researchers to conduct analysis using commonly accepted decorative terminology. The current 
+list of Genres is below. Use “Not Applicable” (default) for undecorated sherds, and sherds 
+whose “decoration” is inherent in the form (some molded body decorations). See the Ceramics 
+Genre Appendix (https://www.daacs.org/about-the-database/daacs-cataloging-manual/) for 
+complete list of Genres with images and descriptions of each. 
+ 
+3.1.2  P AT TE R N  NAM E 
+Identifiable transfer print and handpainted pattern names are recorded here. Enter 
+“Unidentifiable” for all transferprinted sherds for which the printed pattern cannot be 
+determined. Unidentifiable handpainted or molded patterns do not need to be recorded as 
+Unidentifiable, the default is “Not Applicable.” See the Ceramics Pattern Appendix 
+(https://www.daacs.org/about-the-database/daacs-cataloging-manual/) for complete list of 
+Patterns with images and descriptions of each. 
+ 
+3.1.3  P AT TE R N  NO T E S 
+Cite any additional published reference, not in the Pattern appendix, in the Pattern Notes 
+field. In addition, use this field to record notes about unidentifiable patterns, if desired. 
+Contact DAACS administrator if you would like to add a new Pattern.  
+ 
+3. 2 DECORATIVE ATTRIBUTES  
+ 
+3.2.1  IN TER I O R/E X T ER I O R 
+Indicates whether the decoration being recorded is located on the interior or exterior of the 
+vessel. Each instance of decoration is recorded on a separate line in the table; therefore,
+
+=== PAGE 23 ===
+23 
+even if a sherd has decoration on both sides they will be recorded as separate lines in the 
+decoration table. Three options are provided in this field: “Interior,” “Exterior,” and 
+“Perforate.” “Perforate” is reserved for those decorations (stylistic elements) that involve 
+puncturing the vessel completely through, as in the following illustration:   
+DAACS ID# 1001-341J-NOS--00108 
+3.2.2  LO C AT I O N 
+Where, on the original vessel, the decoration in question is believed to have been located.  
+For example, the perforate decoration on the creamware sherd above has “body” recorded 
+as the location of the decoration.  
+ 
+Most choices for Location are self-explanatory.  However, the term “proximal rim” may 
+prove especially confusing.  “Proximal Rim” is used to describe decoration that is adjacent 
+to the rim of a vessel.  Use “Proximal Rim” to describe decoration that is located next to the 
+rim on what has traditionally been called the marley. DAACS employs “Proximal Rim” as a 
+replacement for marley because hollow vessels such as bowls and teacups do not have 
+marleys, but they do have exterior and interior decoration located next to or along the rim. 
+ 
+The location of decoration on the exact rim, such as a painted band on the exterior edge of 
+a rim sherd or a scalloped edge, should be cataloged as “Rim” with Interior/Exterior 
+recorded as “Exterior.” 
+ 
+If a decoration extends from one location to another (for example a transferprinted scene 
+that extends from the base onto the body), record the location where a majority of the 
+decoration lies. 
+ 
+3.2.3  DE C O R AT I VE  T E C HN I QUE 
+The method by which the particular decoration being recorded was applied.  For discussion 
+of specific decorative techniques by ware, see Section 10, below. 
+ 
+3.2.4  DE C O R AT I ON  C O L O R 
+Color of the decoration is determined using the Detailed Color Groups section of the DAACS 
+Color Book.  Note that in addition to the detailed color groups, “copper,” “gilt,” and “silver” 
+should also be used when applicable.  When recording decoration color, determine the 
+number of color ranges represented in a particular decoration, and record each color range 
+as a separate decoration entry.  For example, on the sherd below the botanical band 
+element contains two colors, which will be recorded as two separate entries in the
+
+=== PAGE 24 ===
+24 
+decoration table.  The only difference between those two entries will be the Decoration 
+Color; all other fields will be identical.   
+ 
+ 
+DAACS ID# 1003-950TPS-NOS—00009 
+ 
+There are several terms in the Decoration Color list that require further explanation: 
+ “No Applied Color”: The decorative technique does not involve an applied color  
+  (such as for Feather Edge creamware, molded White Salt Glazed  
+  stoneware, etc.). 
+“Not Applicable”:  Use when you have a single motif comprised of both an  
+ applied color and an additional decorative technique such as molding or  
+ incising (for instance, Shell Edge pearlware involves both painting and  
+molding). Record the applied color and the additional decorative technique 
+separately. For the applied color record, use the Detailed Color Groups section 
+to identify the color. For the other decorative technique, enter “Not Applicable” 
+under Decoration Color. For example, for a blue shell-edged pearlware rim 
+sherd, record the following: 
+ 
+Int/Ext Location Dec Tech Decoration Color 
+“Interior” “Proximal Rim” “Painted, under free hand” “Purple-Blue, Muted Medium” 
+“Interior” “Proximal Rim” “Molded” “Not Applicable” 
+ 
+ “No Glaze/Color”: Do not use this term for ceramics, even though it appears on  
+  the list. Use “No Applied Color” instead.  
+  
+ “Not Recorded”: Do not use this term for ceramics, even though it appears on  
+  the list. 
+ 
+3.2.5  ST Y L I ST IC  EL E M EN T 
+These are the individual design elements that together form a motif.  Not every single mark 
+of decoration on a sherd of ceramic is recorded as a stylistic element as this would quickly 
+become cumbersome. However, several hundred stylistic elements have been defined for 
+DAACS.  Each of these elements is described and illustrated in the Stylistic Element 
+Glossaries.  See also Section 10 below, for descriptions of stylistic elements that commonly 
+appear on specific wares. Note: DAACS does not record Stylistic Elements for transfer 
+printed decorations. In these cases, Stylistic Element is “Not Applicable.”
+
+=== PAGE 25 ===
+25 
+3.2.6  MOTI F   
+A motif, as defined for DAACS, is a group of individual stylistic elements that combine to 
+create a larger, coherent thematic element that occupies part or all of a sherd or vessel.  
+Motif was included in the database as a way for analysts to acknowledge that stylistic 
+elements often work together to create larger designs or scenes.  For example, on the sherd 
+of Chinese porcelain illustrated below (DAACS Object 430) “Geometric Band 11,” “Trellis 
+Band 47” and “Fish Roe Band 10” combine to create a single motif on the marley of the 
+plate. In this case, these elements are stacked concentrically, and are therefore part of the 
+same “stacked combination” motif, described below. Stylistic elements in the well and on 
+the base combine to form separate motifs as well. Note: DAACS does not record Motif for 
+transfer printed decorations. In these cases, Stylistic Element is “Not Applicable.” 
+ 
+ 
+DAACS Object # 430 
+ 
+The motif field captures information about both which elements work together to comprise 
+a motif and how those elements are spatially related to each other.  Options in the motif 
+field are: 
+ 
+ “Individual (A, B, C, D, E, etc.)”:  A single element such as a sprig, cat’s eye,   
+ Trellis Band, Plain Band, etc.  Used for solitary stylistic elements that   
+ appear only once on the sherd and are not touching other stylistic   
+ elements. For example, on the painted pearlware sherd 1003-950TPS-  
+ NOS—00009 shown above, the plain brown band is “Individual, A”, and   
+ the Botanical Band is “Individual, B.”* The two elements are perceived as   
+ two individuals because they do not actually touch. If they did touch,   
+ they would instead be cataloged as both part of “Stacked Combination   
+ A.”  
+ 
+ *Note: The Decorative Technique entry for this sherd has two entries for  
+  “Individual, B.” These are not actually two separate botanical bands, but   
+ are instead two different colors recorded as part of the same botanical   
+ band, “Individual, B.” The “B” after Individual indicates that the two
+
+=== PAGE 26 ===
+26 
+  entries are part of the same single individual. If there were two separate   
+ botanical bands, one would be recorded as “Individual, A” and the other   
+ as “Individual, B.” 
+ 
+ *Note: Decoration on the interior and exterior surfaces of the sherd should have separate 
+Motif designation letters, e.g. if the Motif for the decoration on the interior of the sherd is 
+designated “Individual A” and “Individual B”, record any decoration on the exterior 
+beginning with “Individual C.”  
+ 
+ “Individual, repeated (A, B, C, D, etc.)”: A single element that is identically  
+  repeated on the sherd. For example, a sprig that appears more than once  
+ on a sherd. The repeated element must be the same color and design.    
+ If, for example, a sherd of a slipware mug has two cat’s eyes that each  
+  consist of the same three colors, there would be three lines entered in  
+the Decoration tab – one for each color.  All three lines would be identical except for color. 
+All would be “Individual, repeated A” if the cat’s eye was the only repeated element on the 
+sherd. 
+ 
+ “Adjacent combination”: Applies to elements that are adjacent to and touch  
+  each other. In most cases, these will be bands on Chinese porcelain that   
+ consist of different stylistic elements placed side-by-side.  In the image   
+ below, the “Trellis 2” and “Botanical, composite” located on the body of   
+ the plate (in the well, encircling the central scene) comprise an Adjacent   
+ Combination. Elements that together comprise a single “Adjacent    
+ Combination” should all be given the same letter designation, e.g.   
+ “Adjacent Combination A,” to indicate that they are part of the same   
+ grouping. 
+ 
+DAACS ID # 1000-546AA-NOS—00330 
+ “Stacked combination”: Occurs when two or more elements are concentrically  
+  stacked so closely that they actually touch each other.  The geometric  
+  band, diaper/dot band, and swag at the proximal rim of DAACS Object
+
+=== PAGE 27 ===
+27 
+  #430 are an example of a stacked combination.  Again, elements forming  
+  the same motif should be designated with the same letter in the Motif  
+  field. 
+ 
+DAACS Object # 430 
+ 
+ “Adjacent/Stacked combination”: When a complex motif (usually a band on  
+  Chinese porcelain) consists of both adjacent and stacked elements, it is  
+  recorded as an “Adjacent/Stacked Combination.” For example, on sherd  
+  1000-546AA-NOS--00330 shown above, the proximal rim decoration is a  
+  band that has both elements stacked on top of each other and elements  
+  arranged side-by-side. It is an Adjacent/Stacked Combination.  Again,  
+  remember to group elements that form the same motif with the same  
+  letter designation in the Motif Field.  Note that the molded edge is NOT  
+  part of the Adjacent/Stacked combination, it is an Individual element. 
+ 
+DAACS ID # 1000-546AA-NOS—00330 
+ 
+ “Scene Combination”: This designation is used to link stylistic elements that,  
+  together, form a scene.  Most commonly used for central scenes. For
+
+=== PAGE 28 ===
+28 
+  example, on DAACS Object #430, the Chinese porcelain plate shown  
+  above, the tree and house are both listed as “Scene Combination A”  
+  under motif.  The “A” indicates that they are both part of the same scene,  
+  which was the first (and in this case only) scene identified on the object.   
+  Again, be sure to group elements from the same motif with the same  
+  letter in the Motif Field. 
+ 
+ “Not Applicable”: Use this option for transfer printed sherds, wherein Stylistic  
+  Element and Motif are both recorded as “Not Applicable.” Also applies to  
+  burnished sherds (see 7.3.1). 
+ 
+3.2.7   RE CO R D I NG  T RAN SF E R-P RI N T ED  DE CO R AT I O N 
+Transfer printed elements are not recorded individually in the database, therefore 
+Stylistic Element and Motif should be recorded as “Not Applicable.” For example, a 
+body sherd with blue transfer printed decoration is recorded as follows: 
+ 
+Int/Ext:  “Interior” 
+Location:  “Body” 
+Dec Tech:   “Printed, under” 
+Dec Color:  “Purple-Blue, Muted Medium” 
+Styl Elem:  “Not Applicable” 
+Motif:   “Not Applicable” 
+ 
+Note: Non-diagnostic, transfer-printed under sherds can be batched if they are 15 mm 
+or smaller.  However, the Genre must be the same for all sherds in the batch (for 
+example, each sherd in the batch is "Transfer Print Under, Green"), and the Pattern, 
+Form, and Completeness must be unidentifiable. Stylistic Elements do not need to be 
+recorded for batched sherds. 
+If the pattern is identifiable, then those sherds should be cataloged individually.  Any 
+sherds with overglaze transfer print should be cataloged individually. 
+a.  If sherds are printed on one side: they should be batched 
+together, with Category, Form, Completeness, and Pattern as 
+“Unidentifiable.” 
+i. If sherds are printed and the surface of one side is missing: 
+then they should be batched with the printed-on-one-side 
+sherds. 
+b.  If sherds are printed on both sides: they should be batched 
+together, with Category as “Hollow,” and Form, Completeness, 
+and Pattern as “Unidentifiable.”
+
+=== PAGE 29 ===
+29 
+4.  WEAR /C ONDITION  
+ 
+4.1   EVIDENCE OF BURNING  
+This field is recorded as “Not Recorded” for the following ware types: “Coarse 
+Earthenware, unid”, “Colonoware”, Caribbean coarse earthenwares, and “Native 
+American”. This attribute is recorded in the field Oxidized vs. Reduced Fabric (on the 
+Coarse Earthenware tab) instead for these wares (see Section 6 for more details on 
+coarse earthenwares).  
+ 
+For all other wares, the default for this field is “Unburned.”  Otherwise, pick the 
+appropriate description from the list.  If a sherd is entirely burned, enter “Both Interior 
+and Exterior Burned.”  See the section on Batching Rules for what to do with batched, 
+burned sherds. 
+ 
+This table is used to identify the location and nature of any identifiable wear on the 
+sherd. These marks can be identified according to the specific operation performed on 
+the vessel.  
+ 
+4.2   POST -MANUFACTURING MODIFICATION  
+Post-Manufacturing Modification is a field present in all of the different artifact entry 
+forms.  Use this field when an artifact appears to have been physically modified in order 
+to change its original function.  Examples include grinding down a piece of ceramic to 
+form a gaming piece, working a broken glass sherd into a usable point, drilling a hole in a 
+coin to make a pendant, etc. 
+ 
+Specific cataloging notes: A pearlware sherd that has been modified into a gaming piece, 
+for example, should be cataloged in the Ceramics table– as pearlware, perhaps Unid: 
+Teaware. The fact that the sherd has been made into a gaming piece should be 
+indicated in the Notes field. 
+For artifacts that exhibit post-manufacturing modification, enter “Yes” in the Post-
+Manufacturing Modification field (“No” is the default).  Disregard the N/A option.  
+If yes, add any applicable notes in the Notes field on the Material Tab. 
+ 
+4.3   WEAR LOCATION  
+Record whether the location occurs on the “exterior” or “interior” of the vessel. If 
+necessary, “Not Applicable” and “Unidentifiable” may also be used. 
+ 
+4.4   CERAMIC COMPLETENESS  
+Record where, on the original vessel, the wear is located.   
+ 
+4.5   WEAR PATTERN  
+The cataloger should be able to identify the following use wear patterns:
+
+=== PAGE 30 ===
+30 
+ “Utensil Wear”:  Utensil marks and scratches are seen in and around the  
+  depressed center of the vessel. 
+ 
+ “Base Abrasion”:  The base of a vessel often gets abraded from continual use.  
+  The glaze on the resting point of the vessel is often worn away. 
+ 
+ “Spalling”: Small, circular flaking of the glaze. 
+ 
+ “Worn/Eroded”: Use this term when you cannot tell the specific type of  
+  deterioration seen on the vessel but it is clearly deteriorated. 
+ 
+“Toothbrush Abrasion”:  A result over-cleaning in the lab, toothbrush abrasion is 
+primarily seen on prehistoric Native American ceramics and other soft-
+bodied earthenwares.  
+ 
+“Partially Missing Surface”:  Use this phrase when a sherd is missing a part of its 
+glaze or surface.  When a sherd is completely missing its glaze or surface, 
+this should be indicated in the Exterior/Interior Glaze, and  
+  Exterior/Interior Color fields. There is no need to also include this  
+  information in the Use Wear field. 
+5.   BASE MARK  
+ 
+5.1   BASE MARK  
+This field indicates how the base mark was applied to the vessel.  Choices are: 
+ 
+ “Impressed” 
+ “Incised” 
+ “Printed” 
+ “Painted” 
+ “Not Applicable”: This is the default; when a sherd has no mark. 
+ “Unidentifiable”: When a mark can be discerned but the cataloger cannot, for  
+  example, tell whether it has been painted or printed on. 
+ 
+Do not record base mark cartouches or other decorative elements in the Decoration 
+table. 
+ 
+5.2   BASE MARK COLOR  
+If the base mark has an applied color, determine the color using the Basic Colors section 
+of the DAACS Color Book. 
+ 
+5.3   BASE MARK REFERENCE  
+List any reference that gives information about the observed base mark.
+
+=== PAGE 31 ===
+31 
+6.   COARSE  EARTHENWARE PROTOCOLS  
+The coarse earthenware protocols were developed to better capture the variation 
+within this heterogeneous class of material. Coarse earthenwares, unlike most other 
+ceramics, were produced throughout the Atlantic World using a variety of methods. The 
+attributes recorded here assist in identifying both “locally-made” and “ambiguous 
+imported” coarse earthenwares, ranging from low-fired handbuilt vessels to glazed and 
+wheel thrown vessels. “Ambiguous imported” coarse earthenwares are those whose 
+diagnostic attributes are not agreed upon or are more difficult to identify, but were 
+produced in European traditions. 
+As noted in Section 1.2, information about “known imported” coarse earthenware 
+sherds are recorded using the same fields and protocols as are used for refined 
+earthenware, stoneware, and porcelain. For “known imported” coarse earthenwares, 
+do not fill out any data fields on the Coarse Earthenware Tab in the Ceramics Module. 
+There are different cataloging protocols and additional data fields for ceramic sherds 
+whose ware-types can be categorized as “ambiguous imported” and “locally-made” 
+coarse earthenwares.  This section describes those protocols.  
+ 
+6.1  NON -BATCHED “AMBIGUOUS  IMPORTED ” AND “LOCALLY -MADE ” 
+COARSE EARTHENWARES  
+ 
+This section describes the fields that are recorded for both non-batched “ambiguous 
+imported” and “locally-made” coarse earthenwares.  Additional cataloging protocols for 
+“locally-made” coarse earthenwares are described below in Section 6.2. 
+ 
+First, the exceptions: 
+  
+None of the Coarse Earthenware fields are filled out for industrial sugar-ware forms.  
+These forms are: “Drip Jar”, “Sugar Mold”, “Sugarware, unid.” 
+ 
+Paste Color and Paste Inclusions are the only fields on this tab recorded for the 
+following ware types: 
+Biot 
+Non-local (or imported) “Coarse Earthenware, unid.” 
+Iberian ware 
+ 
+See section 10.1.5 below for additional “Redware” cataloging protocols. 
+ 
+6.1 .1   EAR T HE N W AR E TY P E   
+Coarse earthenware “type” designations are recorded in this field. These types identify 
+subsets of existing Ware Types according to diagnostic attributes. Some of types, such 
+as “American Redware, unid” offer a geographic boundary for the source of the vessel. 
+Site-level coarse earthenware “types” for research purposes can also be recorded here
+
+=== PAGE 32 ===
+32 
+at the discretion of the project manager. When cataloging colonoware, this field is 
+recorded as “Unidentifiable”; in cases where a sherd can further be identified as 
+“Catawba” for example, record the Earthenware Type as such. The default Earthenware 
+Type is “Not Applicable.” Contact Jillian Galle to add additional CEW types. 
+ 
+6.1 .2  P AST E  C O L O R 
+Paste Color records the color of the ceramic paste, as observed along the broken edge 
+of the sherd, using the Ceramic Paste Color Groups section of the DAACS Color Book.  
+The goal here is to record the “most representative” color visible on the sherd. Ideally, 
+one clips the sherd with a tile-clipper to get a clean, clear view of the paste color before 
+matching the sherd to a Paste Color Group. If the sherd has some form of reduction, but 
+an identifiable color is still visible, record this color using the DAACS Paste Color Groups. 
+This color could conceivably be taken from the interior, paste or exterior of the sherd. 
+ 
+Reduction: If the paste color along the broken edge is obscured by reduction, record 
+paste color as “Unidentifiable, reduced.”   
+ 
+Unidentifiable: If paste color is discolored for any other reason, enter “Unidentifiable.” 
+ 
+6. 1. 3  O X ID I Z ED  VS. RE D UC ED  FAB R I C 
+Determine whether the sherd exhibits a very dark grey or black color by examining the 
+paste and interior and exterior surfaces. Often this will appear as a dark band, known as 
+a “firing core” in center of the sherd, visible in cross-section. If present, enter 
+“Reduced”; if not, enter “Not Reduced.” Default is “Not Applicable.”  Note that 
+reduction from the firing process is distinct from burning during the use or discard of a 
+vessel, which is instead recorded in Wear/Condition, section 4.1. 
+ 
+6. 1. 4 T O TAL  P ASTE  IN C L USI O N DE N SI T Y 
+At least 5% of the paste must contain inclusions for the inclusions to be recorded for this 
+field.  Use the Munsell inclusion percentage guide to determine paste inclusion density. 
+ 
+If the density is greater than 5%, use the following protocols: 
+With the microscope’s magnification level set a 1, or with a 10x loupe, place sherd 
+under the microscope or loupe.  Estimate the density of all inclusions using the 
+percentage inclusion chart (Mathew, Woods and Oliver 1991).  The inclusion density 
+should be recorded as either   
+ 1. Less than or equal to 7.5% (5 - 7.5%) 
+ 2. Greater than 7.5% and less than 15% 
+ 3. Greater than or equal to 15%. 
+ 
+6.1. 5 C O AR SE  E AR T HE N W AR E INC L USI O N S 
+Specific paste inclusions are recorded when paste inclusion density has also been 
+recorded. These are best identified under magnification. The following inclusions are 
+recorded:
+
+=== PAGE 33 ===
+33 
+“Black, crypto-crystalline”: a natural clay inclusion or tempering agent. Black,  
+unid should be used for inclusions that cannot be positively identified as 
+a listed black inclusion type (i.e., hematite). Identify or describe the 
+inclusion in the Notes field. 
+ 
+ “Grog”: an intentional tempering agent, produced from crushed fired ceramic.  
+Grog may be difficult to see. It was often produced from the same type of 
+ceramic containing it, so the texture and color may be similar or identical. 
+However, grog is typically angular and the edges can still be seen in cross-
+section. Uncommon in historic ceramics. 
+ 
+ “Hematite”: a natural clay inclusion. This term is used here to encompass a  
+variety of iron-rich minerals, the most common being hematite (Fe203). 
+This mineral will appear as red or black spots in the clay matrix. 
+Depending on the clay source and degree of weathering, the hematite 
+may be angular, spherical, or rounded, and hard or soft. Size of these 
+inclusions can also vary greatly among clay sources. Hematite is the 
+primary colorant of red earthenware and is present in the majority of 
+coarse earthenwares worldwide. 
+ 
+ “Limestone”: a natural clay inclusion or tempering agent. Limestone is a fine- 
+grained rock composed of calcium carbonate (CaO). It typically appears as 
+a white, buff, or pale yellow angular or sub-angular inclusion. As with 
+shell, acidic environments may leach out limestone, leaving angular voids 
+within the clay body. 
+ 
+“Mica”: a natural clay inclusion or tempering agent. Mica is a naturally occurring  
+ silica mineral within many clays worldwide. Mica appears in ceramic  
+bodies as a thin platy material with high reflectivity, imparting a shine to  
+the surfaces of vessels. Mica is soft and often the inclusions are quite  
+small in size. Crushed quartz may be mistaken for mica, so ensure that  
+the inclusion presents as thin plates before identifying as mica. 
+  
+ “Quartz”: a natural clay inclusion or tempering agent. As one of the most   
+Abundant minerals on earth, quartz minerals (SiO2) are naturally  
+occurring in earthenware clays. Depending on the source, the quartz may  
+appear as grains of colorless,  white, tan, gray, red, or pink crystalline  
+rock. It may be angular or rounded. Most sand and gravel inclusions in 
+ historic ceramics should be recorded as quartz. 
+ 
+“Red, unid”: a natural clay inclusion or tempering agent. Red, unid. should be  
+used for inclusions that cannot be positively identified as a listed red 
+inclusion type (i.e., hematite or quartz). Describe or identify the inclusion 
+in the Notes field.
+
+=== PAGE 34 ===
+34 
+ 
+ “Rock, other”: a natural clay inclusion or tempering agent. Rock, other should be  
+used to identify inclusions that are clearly mineral in origin, but cannot be 
+positively identified to a listed inclusion type. Describe or identify the 
+inclusion in the Notes field. 
+ 
+“Rock, white”: a natural clay inclusion or tempering agent. Rock, white should be  
+used to identify inclusions that are white or very pale in color, but cannot 
+be positively identified as quartz or limestone. 
+ 
+ “Shell”: an intentional tempering agent. Shell was prepared by burning and  
+crushing freshwater or marine shell. The resulting temper tends to be  
+thin and roughly rectangular-shaped in profile. Shell temper tends to 
+align parallel to the vessel surface during production, and is usually white 
+in color.   
+ 
+ “Voids, fiber”: Fiber is an intentional tempering agent, uncommon in historic  
+Ceramics. During the firing process, the fiber will burn out, leaving voids. 
+In the American Southeast, Spanish moss was a common tempering 
+agent, though other plant matter was also used. Fiber voids tend to be 
+large and randomly oriented, sometimes with an identifiable impression 
+of the fiber. 
+ 
+ “Voids, shell”: Shell is an intentional tempering agent. In acidic environments,  
+the calcium within the shell will dissolve from the ceramic paste over 
+time, leaving voids. These voids are typically thin and roughly 
+rectangular-shaped in profile. Shell temper tends to align parallel to the 
+vessel surface during production, so the voids will maintain this 
+orientation. 
+ 
+ “Voids, unid.”: This inclusion type should be recorded when there are large or a  
+  significant quantity of holes within the clay matrix that do not appear to  
+be naturally occurring pores within the clay, but cannot be identified as 
+fiber or shell voids. Identify or describe the voids in the Notes field 
+ 
+The Ceramic Module allows you to record multiple inclusion types. Use the “Add 
+Inclusion” button to record more than one inclusion type.
+
+=== PAGE 35 ===
+35 
+6.2  “L OCALLY -MADE ” COARSE EARTHENWARE   
+The following protocols apply to sherds of the following ware types:  
+“Caribbean Coarse Earthenware, handbuilt” 
+“Caribbean Coarse Earthenware, wheel thrown” 
+“Caribbean Coarse Earthenware, unid.” 
+“Colonoware” 
+“Native American, prehistoric” 
+“Coarse Earthenware, unidentifiable” found on Caribbean sites* 
+ 
+Notes:  
+* If a sherd is from a Caribbean site, but cataloger is unsure whether it is a locally-made 
+“Caribbean Coarse Earthenware,” record the ware type as “Coarse Earthenware, 
+unidentified.” 
+ 
+Remember: fields on the Coarse Earthenware tab are not recorded for industrial sugar 
+forms: “Drip Jar”, “Sugar Mold”, or “Sugarware, unid.” See the specific cataloging 
+protocols for these in Section 10.1.2. 
+ 
+A number of research questions motivate the recordation of the following fields and 
+their attendant protocols.  As one might expect, many of these questions relate to the 
+production, distribution and use of these vessels.  In addition to hoping to understand 
+where vessels were being made, we would like to identify and understand the 
+differences between pots produced for local, household use and those made for market.  
+For example, paste color, inclusions, and information on reduction in the firing 
+environment can help identify sherds/vessels that may have been produced in the same 
+area or by the same people.  Consistency in measurements such as sherd thickness and 
+the degree of investment in surface finishing and decoration may help pinpoint vessels 
+produced for sale in markets as opposed to those made for local consumption.  The 
+presence of residue and sooting, as well as vessel form and sherd thickness, can help 
+distinguish pots used for cooking from those used as tablewares or for food storage.     
+ 
+Attributes related to decoration and especially to the conservative aspects of vessel 
+manufacture also can be used in quantifying variation between colonoware—found on 
+slave sites in Virginia, South Carolina, and elsewhere—and coarse earthenwares found 
+on contemporaneous Native American and West African sites, thus allowing us to get 
+even closer to resolving the longstanding debate over who made these local wares. 
+ 
+We hope that researchers will use these specific data in conjunction with other artifact 
+and excavation information available through www.daacs.org. For example, the spatial 
+and temporal site information can be used with the colono data to track the location of 
+specific types through time and space. Comparing colono forms with other ceramic 
+types (as well as iron pot fragments) may provide clues to provisioning strategies among 
+owners and ceramic consumption strategies among slaves.
+
+=== PAGE 36 ===
+36 
+The realities of a DAACS analysis restrict the types of data that we collect from locally-
+made coarse earthenwares. DAACS does not have the resources to conduct 
+petrography, refirings, or compositional analysis.  
+ 
+Please note that the data fields and protocols listed below are the result of extensive 
+testing among 12 catalogers for inter-cataloger variability.  Since the goal of DAACS is to 
+provide reliable data that is reproducible within a group of archaeologists, the 
+cataloging test required archaeologists to record over 20 different attributes for 
+colonowares and other locally-made coarse earthenwares.  The fields and protocols 
+below are those that received the highest number of correct answers, meaning that 
+there was low-inter-cataloger variability.  While we could require additional data fields 
+be recorded (such as lip form and percentages of individual paste inclusions), we had 
+clear data that fields such as these could not reliably be recorded by multiple catalogers. 
+We feel confident that the data fields required can be recorded in a relatively uniform 
+manner by trained catalogers. 
+ 
+6.2 .1  LO C AL L Y-M AD E AN D  AMB I GUO US I M P O R TE D C O AR SE  EAR T HEN W AR E  
+BAT C HI N G P R O T O C O L S 
+Batch all non-diagnostic body sherds that are 30 mm or less in maximum sherd size. Do 
+not batch sherds with decoration or when sherd completeness can be identified as 
+other than “body.” 
+Note: The batching size rule may vary by project.   
+ 
+Two exceptions: 
+ 
+1) Coarse Earthenwares from Yaughan and Curriboo sites: They contained such 
+large quantities of small colonoware sherds that we increased the batching size 
+to 40 mm or less.  
+ 
+2) Burnished and slipped sherds (with no other diagnostic attributes) under 40 mm 
+have also been batched for these sites. In these cases, no decoration is recorded 
+in the Decoration related table; only Dec Mode on the Coarse Earthenware tab is 
+recorded. Note: When both slipping and burnishing are present, slipping trumps 
+burnishing.  
+ 
+Batch locally-made sherds whose completeness is “Unidentifiable” and sherds with no 
+identifiable vessel form elements.  
+ 
+Do not batch if the sherds have any of the following characteristics:  
+ Completeness: Rims, bases, handles, feet/pipkin legs, etc.  
+  
+ Form: If you are able to identify form such as bowl, jar, plate, etc. 
+  
+ Evidence of: residue, burnishing, slip, or other decoration. Note: For
+
+=== PAGE 37 ===
+37 
+ some projects, burnished sherds may be batched. 
+ 
+Sherds can be batched together even if some in the group have fire-clouding or are 
+missing surfaces.   
+ 
+Record the following for batched sherds:  
+ 
+ Material:  “Coarse Earthenware” 
+ Vessel Category:  “Unidentifiable” 
+ Form:  “Not Recorded” 
+ Int/Ext Surface:  “Unglazed/Bisque” 
+ Int/Ext Color:  “Not Recorded, batched”    
+ Paste Color:  “Not Recorded, batched”  
+ Oxidized vs. Reduced:  “Not Recorded” 
+ Evidence of Burning:  “Not Recorded” 
+ Max. Sherd Size:  Record as the largest sherd’s maximum size 
+ Sherd Weight:  Combined weight of sherd batch. 
+ 
+ All other fields remain their default values. 
+ 
+6.2 .2   NON -B AT C HED L O C AL L Y-M AD E  C O AR SE  E AR T HEN WAR E  P R OT O C O L S 
+For Non-batched Sherds, Record the following: 
+  
+ Ware:  “Colonoware”; “Native American, prehistoric”;  
+  “Coarse Earthenware, unidentified” (from   
+  Caribbean sites); “Caribbean Coarse Earthenware” 
+  
+ Manu Tech:   “Handbuild, unid” for the vast majority. This is a “catch  
+  all” for  both sherds that have been coiled and slab built.  
+  Most of the time there is no visible evidence of either  
+  manufacturing technique. If evidence of coiling is  
+  observed, record as “Handbuild, coil.” 
+  
+ Vessel Category:   The vast majority of vessels will be hollow, but flat forms  
+  are possible as well.  
+  
+ Vessel Form:  Record forms as you would for other ceramic wares.  
+  Note that “Colonoware” and “Native American,  
+  prehistoric” wares were produced in a variety of vessel  
+  forms such as table wares in addition to utilitarian  
+  wares. Be careful not to assume these wares were  
+  utilitarian. 
+  
+ Int/Ext Surface:   Most often “Unglazed/Bisque”
+
+=== PAGE 38 ===
+38 
+  
+ Int/Ext Color:   Enter “Not Recorded.” If sherd is glazed, enter the glaze 
+color using the DAACS Detailed Color Group section of 
+the DAACS Color Group. 
+ 
+ Evidence of Burning:  Enter “Not Recorded” in the “Evidence of Burning” field.  
+  When cataloging Colonoware, Caribbean Ware, or Native  
+  American prehistoric wares, or “Coarse Earthenware,  
+  unidentifiable” sherds, do not use the “Burning” field to  
+  describe what would appear to be evidence of burning  
+  or exposure to heat or flame. Evidence of fire clouding or  
+  charred residue is instead entered in the Use Wear.  
+ 
+ Earthenware Type: See section 6.1.1 above 
+ 
+ Decoration Mode: If applicable. See section 6.2.2.2 and 6.2.3 for Decoration 
+Protocols. 
+  
+ Vessel Shape:  For sherds whose completeness is not “Unidentifiable.”  
+   See section 6.2.2.3 below 
+ 
+ Orifice Type:  For sherds whose completeness is not “Unidentifiable.”  
+  See section 6.2.2.4 below 
+ 
+ Base Shape: If applicable. See section 6.2.2.5 below 
+ 
+ Rim Shape: If applicable. See section 6.2.2.6 below 
+ 
+ Rim Angle: If applicable. See section 6.2.2.7 below 
+  
+ Max. Rim Width: If applicable. See section 6.2.2.8 below 
+ 
+ Handle Shape: If applicable. See section 6.2.2.9 below 
+ 
+ Paste Color:   The goal here is to record the “most representative”  
+color visible on the sherd. For entirely reduced sherds,  
+enter “Unidentifiable, reduced.” If the sherd has some 
+form of reduction, but an identifiable color is still visible, 
+record this color using the DAACS Paste Color Group 
+section of the DAACS Color Book. This color could 
+conceivably be taken from the interior, paste or exterior 
+of the sherd.
+
+=== PAGE 39 ===
+39 
+ Oxidized vs. Reduced:   Determine whether the sherd exhibits a very dark grey 
+or black color by examining the paste and interior and 
+exterior surfaces. If so, enter “Reduced”; if not, enter 
+“Not Reduced.” 
+ 
+ Paste Inclusion Density: See section 6.1.4 above 
+ Paste Inclusions: See section 6.1.4 above 
+  
+ Multiple Sherd Thickness:   See section 6.2.2.12 below 
+ 
+6.2. 3 EAR THE N W AR E  T Y PE 
+See section 6.1.1 above. 
+ 
+6.2. 4  DE CO R AT I O N  MO D E    
+This field is comparable to the Genre field that is used for refined ceramics. When 
+surface treatments or decorations are recorded in the Decoration Tab for these 
+coarsewares, the information must also be recorded in the Colono Decoration Mode 
+field. This field can be thought of as a generalization of the decoration recorded in the 
+Decoration Tab.  
+ 
+VE SSE L SHAP E  DE SC R IP T O R  FIE LD S 
+These fields describe the overall shape of a vessel and its components.  There are five 
+fields: Vessel Shape, Orifice Shape, Base Shape, Rim Shape, and Handle Shape.  Do not 
+record any sherd shapes if completeness is unidentifiable; leaves fields as “Not 
+Applicable.” 
+ 
+Note these shapes apply only to the following types: 
+Caribbean Coarse Earthenware (all types) 
+Coarse Earthenware, unid. (unknown, local, or ambiguous imported) 
+Colonoware 
+Native American 
+Redwares (ambiguous imported) 
+ 
+6.2. 5  VE SSE L  SHAP E  
+This field describes the overall shape of the vessel body, which is the portion between 
+the orifice and base that includes max diameter or greatest region of enclosed volume. 
+Options are: Cylindrical, Globular, Sloping, or Unidentifiable.  
+ 
+“Cylindrical”: In order to identify vessel shape as “Cylindrical,” a sherd must have 
+an identifiable completeness of at least “Body, rim” or “Base, 
+body”.  In other words, part of rim or part of base must be present 
+to identify this shape.  The sherd exhibits curvature along one 
+plane and not a second plane (i.e. the sherd is not concave or
+
+=== PAGE 40 ===
+40 
+convex but rather has straight sides.) If a base is present, the 
+body/base juncture is vertical, nearly 90 degrees. 
+ 
+Rice 1987:Figure 7-14 
+ 
+“Globular”:  Use globular if the shape of the sherd is convex and is not part of a 
+base (i.e. it is part of body or shoulder of vessel). 
+ 
+Rice 1987:Figure 7-4 
+ 
+“Sloping”: In order to identify vessel shape as “Sloping,” a sherd must have an 
+identifiable completeness of at least “Body, rim” or “Base, body”.  In 
+other words, part of rim or part of base must be present to identify 
+this shape.  The angle of body-to-base must be obtuse.  There should 
+be no indications of convexity or concavity.  
+ 
+Rice 1987:Figure 7-4 
+ 
+6.2. 6  O RIF I C E  T YP E 
+This field is a description of the orifice shape, or the mouth opening of the vessel.  To 
+complete this assessment it is necessary to compare the shape and size of the orifice 
+with the rest of the vessel.  Options are: Restricted, Unrestricted, or Unidentifiable.   
+ 
+“Restricted”: If the opening at the rim is narrower than at the vessel’s widest 
+diameter (this could be at base or equator) the orifice is restricted. 
+Indicators of restriction on a vessel are presence of a neck or an 
+inverted rim that constricts opening.
+
+=== PAGE 41 ===
+41 
+“Unrestricted”: If the rim is the widest point on the vessel; no constriction on 
+the vessel is discernible, as indicated by absence of a neck or inverted 
+rim then the orifice is considered unrestricted. 
+  
+Rice 1987:Figure7-6 
+ 
+6.2. 7 BASE SHAP E  
+This field describes an assessment of the base shape.  To complete this assessment it is 
+necessary to compare the shape and size of the base with the rest of the vessel.  
+Options are: Conical, Feet, Footring, Pedestal, Plain, or Unidentifiable.  Please review the 
+images and descriptions below. 
+ 
+“Conical”: If the overall shape of base is convex it is recorded as “Conical”.  
+ 
+Rice 1987:Figure 7-14 
+ 
+“Feet”:  If the sherd has added legs/appendages, or feet that serve as vessel 
+supports, choose “Feet”.
+
+=== PAGE 42 ===
+42 
+ 
+“Footring”: If the base has a thin raised ring of clay that encircles exterior surface 
+circumference of base use “Footring.”   
+ 
+Greer 1981:67 
+ 
+ “Pedestal”: A pedestaled vessel has a base whose outer edges often extend 
+beyond the body walls of the vessel. May provide added stability. 
+ 
+Greer 1981:67 
+  
+“Plain”: In order to identify vessel shape as “Plain,” a sherd must have an 
+identifiable completeness of at least “Base, body”.  In other words, 
+the base/body juncture must be present in order to identify this 
+shape. For plain bases, the exterior edge of body ends at resting point 
+of vessel, no pedestal or footring is present, and the overall base 
+shape is not rounded or conical. 
+Plain 
+Greer 1981:67  Rice 1987:7-4 
+ 
+6.2. 8  RIM  SHAP E   
+Record the profile shape of the rim as everted, inverted, or straight. This is an 
+assessment of the orientation of the rim to the body or the maximum point of inflection 
+for that vessel. 
+ 
+ “Straight”: If the rim is in line with the rest of the body, and there is no  
+  maximum point of inflection discernible, it is recorded as “Straight.”  
+  The Rim Angle is recorded as “0” for straight rims.       
+ 
+ 
+ 
+ “Everted”: If the rim appears to “flare out” from a point of inflection, it is
+
+=== PAGE 43 ===
+43 
+  recorded as “Everted.” Note that the Rim Angle for the three  
+  examples below, right would be “Unmeasurable” due to the uniform  
+  nature of the curve. 
+ 
+ 
+   
+ 
+ “Inverted”: If the rim appears to angle inward from a point of inflection, it is  
+  recorded as “Inverted.” Note that the three examples below would  
+  have “unmeasurable” Rim Angles due to the uniform nature of the  
+  curve of the rims. 
+ 
+ 
+ 
+ 
+6.2. 9  RIM  A NG LE  
+Use a goniometer to measure the angle of the rim sherd.  This angle is the actual 
+measurement of the “rim orientation” discussed above. Many times this measurement 
+is unidentifiable as there is not enough of the sherd that includes the maximum point of 
+inflection. Make certain there is a substantial amount of the body of sherd below where 
+the rim meets the body in order to obtain this measurement.  This ensures that the 
+goniometer has two relatively flat areas to rest against. 
+ 
+6.2. 10   MAX I M UM  RI M WI DT H  
+In most instances this will be recorded as “Not Applicable”. Only record this 
+measurement when you have the lip and the point where the body meets the rim. 
+Measure the distance from the turn of the body to the end of the rim/lip. 
+ 
+6.2. 11  HAN DL E  SHAPE  
+Field must be recorded for any handle sherd. Select “Unidentifiable” if you cannot 
+determine shape. All images below taken from Greer 1981:72. 
+ 
+“Tubular”: Hollow and cylindrical, handle is circular in cross section, often with a  
+flared end. These are seen on pipkins and saucepans.
+
+=== PAGE 44 ===
+44 
+ 
+ 
+“Strap”: Handle is solid and roughly square or rectangular in cross section,  
+created from a single piece of clay that has been pulled or extruded to  
+create an arched shape, usually attached vertically to the vessel. 
+ 
+ 
+“Lug”: Handle is created from a single, solid slab or coil of clay that is adhered to  
+exterior surface with slip.  Much of the lug’s surface is connected to 
+exterior surface of vessel unlike strap handles, which are often only 
+connected at the top and bottom of the handle.  Lugs can be crescent-
+shaped or flat and often do not extend far out from the vessel body 
+ 
+ 
+“Knob”: Most often found on lids, solid in construction, may be fully round,  
+flattened or cuplike in shape.
+
+=== PAGE 45 ===
+45 
+T O T AL P AST E  INC L USI O N  DEN SI TY  
+At least 5% of the paste must contain inclusions for the inclusions to be recorded for this 
+field.  See section 6.1.4 for details.  
+ 
+C O AR SE  EAR T HE N W ARE  IN C L USI ON S 
+Specific paste inclusions are recorded when paste inclusion density has also been 
+recorded. See section 6.1.4 for inclusion descriptions. 
+ 
+6.2. 12   MUL T I P LE  SHE R D  T HI C KN E SS 
+This related table allows us to record a sherd thickness for every part (completeness) 
+present on a sherd or vessel. For example, if one has a sherd that contains a section of 
+the vessel’s rim, body, and base, one would record all three thicknesses linked to the 
+appropriate vessel portion in the Coarse Earthenware Thickness table. The cataloger 
+should then record an average thickness for the entire sherd in the Sherd Thickness field 
+found on the Measurement tab. This “average” thickness, however, is not the actual 
+average of any measurements recorded in the Coarse Earthenware Thickness table. 
+Rather, the sherd thickness on the Measurement tab should be taken as a cataloger 
+takes a sherd thickness for any other ware-type: measuring where they judge the 
+average thickness to be on that sherd. See Artifact # 01 in the example below. 
+ 
+If a sherd includes a rim, then the sherd thickness located on the Measurement tab will 
+be the rim thickness, not the average thickness.  This protocol follows the general 
+protocol currently established for Ceramics. See Artifact # 04 and 05 in the example 
+below. 
+If the sherd is from only one portion of the vessel, i.e. the body, its sherd thickness still 
+needs to be recorded in the Coarse Earthenware Thickness table, and on the 
+Measurement tab. See Artifact # 02 and Artifact# 03 in the example below. 
+ 
+ 
+Examples of Coarse Earthenware Sherd Thickness Recording: 
+ 
+Artifact ID Sherd 
+Completeness 
+From Ceramics 
+Form 
+Sherd Completeness 
+From Colonoware tab 
+on Ceramics Form 
+Sherd Thickness 
+From Colonoware 
+tab on Ceramics 
+Form 
+Sherd 
+Thickness 
+From 
+Ceramics 
+Form 
+01 Base, Body Base 4.3 4 
+01 Base, Body Body 3.7 4 
+     
+02 Base Base 5 5 
+     
+03 Body Body 2.5 2.5 
+     
+04 Rim, body Rim 2.3 2.3 
+04 Rim, Body Body 3.4 2.3
+
+=== PAGE 46 ===
+46 
+     
+05 Rim, body, base Rim 4 4 
+05 Rim, body, base Body 4.3 4 
+05 Rim, body, base Base 4.7 4 
+ 
+ 
+6.2. 13   DEC O R AT I O N  P R O T O C OL S F O R  LO C ALL Y-M AD E AN D AM B IG UO US IM P O RT E D 
+C O AR SE  EAR T HE N W ARE   
+In addition to treatments traditionally thought of as decoration such as cord marking 
+and fabric impressing on colonowares and prehistoric Native American wares, we record 
+surface treatments like burnishing and slipping as decoration. The cataloging protocols 
+for these treatments are described below. Other techniques, such as cut, punctate, and 
+so forth should be used when appropriate.   
+Note: When decoration is recorded, the Colono Decoration Mode must also be 
+recorded (see Coarse Earthenware tab fields above). 
+ 
+6.2. 13.1   B U R N I S H E D  D E C O RA T IO N 
+This surface treatment leaves thin, long impressions that are frequently parallel to each 
+other.  Burnishing marks, made by a stone or other small tool, must be visible to use this 
+term. 
+Use the following protocols when cataloging burnished sherds: 
+ 
+ Decorative Technique: “Burnished (w/visible facets)” 
+ Decoration Color: “No Applied Color” 
+ Stylistic Element: “Not Applicable” 
+ Motif: Not Applicable 
+ Note: The Colono Decoration Mode must also be recorded as “Burnished”. 
+ 
+  
+  
+       Closeup of horizontal (parallel) burnishing facets. 
+ 
+6.2. 13.2   P U N C T A T E  D E C O R A T I ON 
+This decoration was executed by pressing an object (often a reed or stick; sometimes a 
+pipe stem) on the exterior of the vessel, producing a pattern of regular indentions 
+known as punctates. 
+Use the following protocols when cataloging sherds with punctuate decoration:
+
+=== PAGE 47 ===
+47 
+ Decorative Technique: “Punctate” 
+ Decoration Color: “No Applied Color” 
+ Stylistic Element: “Not Applicable” 
+ Motif:  “Not Applicable” 
+Note: The Colono Decoration Mode must also be recorded as “Punctate.”  
+         
+Left and Center are tobacco pipe or reed punctate. Right is punctate with an unidentified object. 
+ 
+6.2. 13.3   S L I P  D E C O RA T I O N 
+Identifying slip on Colonoware can be difficult as it is often subtle. When viewing a 
+freshly broken sherd in profile, a slip should appear as a very thin layer lying on the 
+exterior or interior surface. Although slip may be the same color as the paste, it will look 
+like a separate layer of clay lying on the surface of the sherd (Shepard 1995:191–193) 
+and sometimes has a “waxy” appearance when viewed under magnification.  Another 
+indicator of slip is shallow flaking of the vessel surface (Rye 1981:41).  This indicates a 
+failure in the slip adhering to the paste during either firing or use.  The flaking should 
+not be deep or rounded like spalling. 
+ 
+Use the following protocols when cataloging slipped sherds: 
+ Decorative Technique:  “Slip” 
+ Decoration Color:  Use the Paste Color Groups in the DAACS Color Book 
+ Stylistic Element: “Solid” 
+ Motif:  “Individual A” 
+Note: Slip type also needs to be recorded in the Colono Decoration Mode field. 
+     
+  
+Slipped sherds 
+ 
+6.2. 14   U SE  WE AR  P RO T O C O L S FO R  LO C AL LY-M AD E  C OAR SE  EAR THE N W AR E 
+ 
+6.2. 14 .1   W E A R L O C A T I O N
+
+=== PAGE 48 ===
+48 
+Record whether the location occurs on the “exterior” or “interior” of the vessel. If 
+necessary, “Unidentifiable” may also be used. 
+ 
+6.2. 14.2   B O D Y  C O M P L E T E N E S S   
+This field identifies the part of the vessel on which use wear appears, for example 
+“body” or “base.” 
+ 
+6.2. 14.3   U S E  W E A R  P A T T E RN   
+The following two use-wear types should be used to describe residue/soot and fire-
+clouding on coarse earthenwares. The other use-wear types described in the ceramics 
+cataloging manual also apply to coarse earthenwares (see Section 4).  
+ 
+ “Residue/Soot”: Charred, crusty deposit on exterior or interior surface of vessel  
+  sits on top of the surface. It can also sometimes appear as a shiny  
+  deposit. This is not to be confused with fire-clouding or reduction, which  
+  does not sit on-top of the sherd’s surface.  
+ 
+ “Fire-clouding”: Dark area on the surface of sherd/vessel that results from  
+  exposure to flame, heat, or fuel.  Can occur during firing or use (i.e. use as  
+  cooking vessel). Resulting from uneven firing and deposit of carbon in  
+  paste. Fire-clouding does not extend below the surface of the vessel. 
+  
+             
+  
+Examples of fire-clouding on two colonoware sherds from Curriboo Plantation, SC. 
+ 
+7. IMAGE  
+Please see manual on Image capture and entry into the database.  
+ 
+8. OBJECT  
+Please see manual on Object entry into the database. 
+ 
+9. MENDS  
+If your sherd is mended, fill out the appropriate information in the Mends tab. Be sure 
+to also indicate on the Main tab that the sherd is mended (Mended? “Yes”).
+
+=== PAGE 49 ===
+49 
+9.1  MENDS TO ARTIFACT  
+Enter only the artifact IDs for sherds that mend with (not physically glued) or are directly 
+mended (physically glued) to the sherd being cataloged.  
+ 
+9.2 MENDED FORM  
+The default for this field is “Not Mended.” Form should always be identified on an 
+individual sherd level.  Mending often allows catalogers to identify forms otherwise 
+unidentifiable from these individual sherds. In the Mended Form field, enter in the form 
+of the vessel as seen from its mended sherds. 
+ 
+10 . DESCRIPTIONS AND CATALOGING PROTOCOLS FOR SPECIFIC 
+WARES  
+ 
+10 .1  COARSE EARTHENWARES  
+Coarse earthenwares are most often seen as utilitarian vessels, such as bowls, milk 
+pans, and storage containers.  Coarsewares are generally quite thick-walled and can be 
+irregularly shaped, with some specific exceptions noted below.   
+Most coarse earthenwares are lead-glazed on the interior, and in many cases the glaze 
+continues up over the vessel rim and onto part of the exterior.  Glazed coarse 
+earthenwares generally appear warm brown, as most of these vessels are made of 
+reddish-brown clay.  In many instances, however, white slip was applied to part of the 
+vessel.  These white-slipped areas generally appear yellow after glazing and firing.  
+Metallic oxides were sometimes used to color the glaze.  The most common colored 
+glazes seen on coarse earthenwares are opaque black, a translucent tinted glaze, and 
+glazes with flecks of brown or green caused by these oxides. 
+ 
+10.1.1  ALB I SO L A 
+This is a type of North Italian coarse earthenware. It shares many characteristics with 
+French coarse earthenwares. The paste is red and high-fired with abundant small white 
+rock inclusions. Plates and shallow dishes are more common than hollow forms. The 
+vessels are lead glazed with a clear glaze that appears brown over the body. Thick trails 
+of black or brown slip decoration in a random or zig-zag pattern may be visible under 
+the glaze.  Date Range: 1690-1750. 
+ 
+ Ware:   “Albisola” 
+ Material:  “Coarse Earthenware” 
+ Manu Tech:   “Wheel Thrown” 
+ Glaze Type:   “Lead  Glaze” 
+ 
+10.1.2  BIOT  
+Biot is a French coarse earthenware. It was primarily exported in the form of very large 
+storage jars with round rims, typically handbuilt with coils. They often have white slip, 
+producing a glaze that may appear opaque, in buff to pale yellow or olive green color.
+
+=== PAGE 50 ===
+50 
+Vessels are typically glazed on the interior only, with some spillover onto the exterior. 
+The paste is buff to pink, sometimes with faint marbling, and may exhibit uneven 
+oxidation layers in cross-section. Sherds are very thick (>10mm). There are abundant 
+inclusions such as large hematite and limestone (white rock) nodules. Date Range: 1700-
+1800 
+ 
+ Ware:   “Biot” 
+ Material:  “Coarse Earthenware” 
+ Manu Tech:  Generally “Handbuilt, unid”, if coils are visible “Handbuilt, coil” 
+ Glaze Type:  “Lead  Glaze” 
+ 
+10.1. 3 BUC KL E Y-T YPE  
+Produced in the Buckley district of Wales, and in other parts of the Coal Measures of 
+Great Britain.  Buckley-type has a distinctive, two-toned “marbled” body composed of 
+brick red clay amended with buff-colored clay, and is typically highly-fired.  It often 
+contains quartz, hematite, and white inclusions. Buckley-type is most often glazed with 
+a very dark brown or black glaze.  Buckley-type milk pans are quite distinctive in form, 
+with a thick rim that has a double-lipped exterior.  Date rage: 1720-1775.  
+ 
+ Ware:   “Buckley-type” 
+ Material:   “Coarse Earthenware” 
+ Manu Tech:   “Wheel thrown” 
+ Glaze Type:   “Lead Glaze” 
+ 
+Note: If a sherd has some of these characteristics, but cannot be confidently identified 
+as Buckley-type, it should be cataloged as Redware, with a Coarse Earthenware Type of 
+“Coal Measures.” See Section 6.1 for cataloging protocols.  
+ 
+10.1. 4  C AR I B B E AN CO AR SE  EAR T HE N W AR E 
+Coarse earthenwares recovered on sites in the Caribbean are recorded in the same way 
+that Colonoware and Native American ceramics are recorded. Note that Caribbean 
+Coarse Earthenwares are categorized according to manufacturing technique, e.g. 
+“Caribbean Coarse Earthenware, handbuilt”, “Caribbean Coarse Earthenware, wheel 
+thrown” and “Caribbean Coarse Earthenware, unid.”.  Follow cataloging protocols for 
+Colonoware and Native American ceramics (see Section 6.2) with the exception of 
+Caribbean Coarse Earthenware sherd whose form is identifiable as either a “Drip Jar”, 
+“Sugar Mold”, or “Sugarware, unid.”  
+ 
+The above “sugar forms” should be cataloged as follows: 
+Batch all sugar forms under 100 mm. 
+ 
+Unbatched sherds protocols:
+
+=== PAGE 51 ===
+51 
+Ware:  Choose “Caribbean Coarse Earthenware, unid.”, “Caribbean 
+Coarse Earthenware, wheel thrown” or “Caribbean Coarse 
+Earthenware, handbuilt”*   
+ Material:  “Coarse Earthenware” 
+ Manu Tech:  “Wheel thrown”, “Handbuilt” or “Unidentifiable” 
+ Vessel Category:  “Hollow” 
+ Form:  “Sugarware, unid.” 
+ Exterior Surface:  “Unglazed/Bisque” in most cases. 
+ Exterior Color: “Not Recorded” 
+ Interior Surface:  “Unglazed/Bisque” in most cases. 
+ Interior Color:  “Not Recorded” 
+ 
+Record all measurements in the Measurements tab. 
+Do not fill out any information on the Coarse Earthenware Tab. 
+ 
+*If you are unsure of the manufacturing location of the “sugar form” sherd(s), record 
+ware type as “Coarse Earthenware, Unid.” 
+ 
+10.1. 5 C OL O N O W AR E 
+Colonoware is an unglazed, low-fired ceramic.  Scholars debate whether Colono was 
+produced by African Americans, Native Americans, or both.  For this reason, we use the 
+ware type “Native American, prehistoric” to encompass ceramics produced prior to 
+European contact and the term “Colonoware” for wares produced after contact. 
+Colonoware varies in its appearance regionally; vessels in the Coastal Plain generally 
+range from tan to gray in color.  Piedmont sherds, such as those found at Shadwell, are 
+more commonly dark gray to reddish-brown.  Colonoware is sometimes burnished, as 
+well, which can help distinguish it from most Woodland Period (“Native American, 
+prehistoric”) vessels.  
+ 
+Outside the Chesapeake, distinguishing between pre-contact Native American pottery 
+and Colonoware can be difficult. The distinction is not always obvious since both are 
+relatively low-fired, are coil/slab built, have no glaze, are likely comprised of locally 
+available clays, are sometimes shell-tempered, and have some overlap in common 
+vessel forms. Please see Section 6.2 for cataloging protocols for Colonoware. 
+ 
+10.1.6  D E L ’H UVE AUN E  
+This French coarse earthenware from the Huveaune Valley was produced from clay with 
+very few inclusions. The vessels feel lightweight for their size and the red-to-orange 
+paste is rather chalky in texture. Both the interior and exterior surfaces are usually lead 
+glazed. Interiors may have a thick white slip applied under the glaze. Glaze colors are 
+predominantly caramel/ginger color, also some clear and yellow glazes. Shallow milk 
+pans and bowls are common. Slip trailed decoration is possible, but rare on sites in the 
+Americas.
+
+=== PAGE 52 ===
+52 
+ Ware:   “de l’Huveaune” 
+ Material:  “Coarse Earthenware” 
+ Manu Tech:     “Wheel Thrown” 
+ Glaze Type:  “Lead  Glaze” 
+ 
+10.1. 7 FR EN C H C O AR SE  EAR T HENW AR E  
+The ware type “French Coarse Earthenware” is used to generally describe coarse 
+earthenware sherds that do not easily fall into known French types (Biot, de l’Huveaune, 
+Saintonge, Vallauris); however, they display a constellation of characteristics seen in the 
+identifiable French earthenwares. These sherds are clearly European in manufacture. 
+Sherds with a paste color matching one of the Redware color chips and without 
+similarities to French ware types (e.g., paste inclusions and density of paste) should be 
+cataloged as Redware. 
+ 
+ Ware:   “French Coarse Earthenware” 
+ Material:  “Coarse Earthenware” 
+ Manu Tech:      Generally, “Wheel Thrown” 
+ Glaze Type:   Generally, “Lead Glaze” 
+ 
+ 
+10.1. 8 IB ER I AN WAR E 
+Iberian vessels are most often seen in the form of very large, undecorated storage jars 
+used to transport olive oil and dried goods.  The body is thick with obvious potting rings 
+on interior surfaces; it is dusty red to pinkish brown in color and usually includes 
+granules of a white, chalk-like temper or, less often, sand.  Exterior surfaces are not 
+glazed, but often have traces of what appears as a chalky, white wash.  Low, crescent-
+shaped handles are found on the shoulders.  Interior surfaces are sometimes treated 
+with a dark brown lead glaze (indicating that the vessel was used to transport liquids); 
+this glaze is almost always heavily spalled on recovered sherds.  Iberian jars have wide 
+mouths with thick rims, no neck, expand at the shoulder and taper to a flat or conical 
+base.  Lids, rarely recovered, are unglazed slabs of clay that are roughly circular.  Smaller 
+Iberian jars (some 18 inches in height) are also found; body walls are noticeably thinner 
+than in their larger counterparts.  Date Range:  1600-1800.  Flat bases are more 
+common after 1745; conical bases tend to be earlier. 
+ 
+ Ware:    “Iberian Ware” 
+ Material:   “Coarse Earthenware” 
+ Manu Tech:  “Wheel Thrown” 
+ Glaze Type:   Most often “Unglazed/Bisque” (interiors sometimes “Lead  
+    Glaze”) 
+ Vessel Category:  “Hollow”  
+ Form:    Usually “Storage Jar”, but if you only have a small piece  
+    use “Unid: Utilitarian”
+
+=== PAGE 53 ===
+53 
+10.1. 9 NAT I VE  A M E RI C AN C E R AM I C S 
+DAACS employs an attribute-based system for cataloging of prehistoric Native American 
+ceramics.  This system was developed so that historical archaeologists, possibly 
+unfamiliar with prehistoric Native American ceramics could catalog these ceramics in a 
+way that, although simple, would provide descriptive information that archaeologists 
+studying the Woodland and Contact Periods could use. In addition to the attribute-
+based analysis, regional “type” classifications can also be recorded in the Earthenware 
+Type field (see Section 6.2.1.4) 
+ 
+Of course, distinguishing prehistoric Native American ceramics from Colonoware (which 
+may in some cases be produced or influenced by Indian potting traditions) and small 
+fragments of other coarse earthenwares can prove quite difficult.  Generally, though, 
+those sherds identified as “Native American” ceramics are unburnished, are primarily 
+hollow (non-Anglo) forms such as storage jars, and have either no surface treatment or 
+are surface treated with textile impressions (net impressed, fabric impressed), simple 
+stamping, cord-marking, or punctuate designs near the rim. Please see Section 6.2 for 
+cataloging protocols for Native American ceramics. 
+ 
+10.1.1 0 NO R T H DE VO N P L AI N AND  GR AVE L-T E MP E R ED 
+This coarse earthenware exhibits surface and interior reduction from uneven firing 
+conditions. The body ranges in color from salmon pink or orange to dark gray. The lead 
+glaze is transparent or translucent, ranging from bright yellow to olive green or brown in 
+appearance, depending on the degree of reduction. Occasionally an allover white slip is 
+present beneath the glaze. The most common forms are large shallow plates, bowls, 
+milk pans, and storage jars.  There are two primary types of North Devon Ware.  
+ 
+North Devon Gravel-Tempered has abundant large angular quartz inclusions, 
+comprising up to 25% or more of the body. Decoration is rare. Date Range: 1600-1775 
+ 
+North Devon Plain has finer quartz sand inclusions. North Devon Plain may occasionally 
+have sgraffito decoration that scratches through white slip. Date Range: 1600-1710 
+ 
+ Ware:   “North Devon Gravel-Tempered” or “North Devon Plain” 
+ Material:  “Coarse Earthenware” 
+ Manu Tech:  Generally “Wheel Thrown” 
+ Glaze Type:  “Lead  Glaze” 
+ 
+10.1.1 1 PO ST-ME D I EVAL  LO N D ON-A R E A RED W AR E 
+Coarse earthenware from the London Basin is characterized by a deep orange-red body 
+that has a sandpaper or emery board texture. Under 10x magnification, abundant well-
+rounded sand grains and hematite nodules are typically present. Occasionally flint may 
+also be seen as an inclusion. The paste often exhibits well-defined bands of oxidation 
+and reduction, especially in thicker sherds. The most common glaze seen in America is 
+translucent dull/honey-colored, appearing opaque where damaged or deteriorated. The
+
+=== PAGE 54 ===
+54 
+forms found in America are mostly utilitarian, especially large milk pans with round rims. 
+Black glaze may be present on tablewares, which can also have slip trailing with thick 
+white slip raised above the surface. Date Range: 1600-1750. 
+ 
+ Ware:  “Post-Medieval London-Area Redware” 
+ Material:  “Coarse Earthenware” 
+ Manu Tech:  “Wheel Thrown” 
+ Glaze Type: “Lead Glaze” 
+ 
+10.1. 12  RED AG AT E, C O AR SE 
+A wheel thrown, coarse-grained earthenware initially introduced in Staffordshire during 
+the third quarter of the eighteenth century. Forms are mainly utilitarian. Paste was 
+formed by wedging two or more clays together (usually red and white/yellow). Forms 
+are primarily tablewares and frequently have rouletted bands or white slip decorations. 
+The distinction between “Red Agate, Coarse” and “Red Agate, Refined” is often difficult 
+at the sherd level. The designation is based primarily on decoration, thickness and, form. 
+Record the surface colors using the Detailed Color Groups, recording the “redder” of the 
+two wedged clays.  
+ 
+Ware:  “Red Agate, Coarse” 
+Material: “Coarse Earthenware” 
+Manu Tech: “Wheel thrown” 
+Glaze Type: “Lead Glaze” 
+                                       
+Taken from Ceramics in America (2003, p. 91).        ArtifactID: 1212-1-B-05-DRS--00082 
+ 
+10.1. 13  RE D W AR E 
+“Redware” is a generic name sometimes used for red-bodied coarse earthenwares.  For 
+DAACS, Redwares have been defined as those wares whose body color (as viewed along 
+the broken edge of the sherd) falls into one of the following four color chip categories 
+found in the Redware Color Range section of the DAACS Color Book: Pantone 718, 722,
+
+=== PAGE 55 ===
+55 
+7412 or 7592. Note that these colors are not entered as Paste Color for the sherd; these 
+categories help control the parameters of how DAACS defines Redwares.  
+Once the sherd is categorized as a Redware, record the surface colors (whether glazed 
+or unglazed/bisque) using the Detailed Color Groups. Record Paste Color by matching 
+the closest color range using the Paste Color Group Section of the DAACS Color Book.  
+You do not need to record paste inclusions for Redware. 
+ 
+All other coarse earthenwares of undefined type (i.e. those that do not have a paste 
+color within the Redware Color Range noted above and that cannot be identified as a 
+known ware-type) should be cataloged as “Coarse Earthenware, Unidentifiable.” 
+ 
+See section 6.1 for further information on cataloging Redwares: 
+ 
+ Ware:  “Redware” Paste Color must be close to one of the chips in  
+  the Redware Color Range in the DAACS Color Book (Pantone 718,  
+  722, 7412 or 7592).  
+ Material:  “Coarse Earthenware” 
+ Manu Tech:  Usually “Wheel Thrown.” In some cases, Redwares may be “Press  
+  Molded” (e.g. modern terra-cotta flowerpots). 
+ Surface Colors: Use Detailed Color Groups to record glazed or unglazed surface  
+  colors. 
+ Glaze Type:  Almost always “Lead Glaze” 
+ Coarse Earthenware Type: As applicable 
+ Paste Color:  Use the Paste Color Groups section in the DAACS Color  
+  Book to record the paste color, as identified along the broken  
+  edge of the sherd.  
+  
+Note:  Modern terra-cotta flowerpots should be cataloged as follows: 
+ 
+ Ware:  “Redware” if it is close to one of the chips in the Redware  
+  Color Range. If not, then “Coarse Earthenware, Unid” 
+ Material:  “Coarse Earthenware” 
+ Manu Tech:  “Press Molded” 
+ Vessel Category:  “Hollow” 
+ Form:  “Flower Pot” 
+ Exterior Surface:  “Unglazed/Bisque” in most cases. 
+ Exterior Color: Use Detailed Color Groups to identify surface color. 
+ Interior Surface:  “Unglazed/Bisque” in most cases. 
+ Interior Color:  Use Detailed Color Groups to identify surface color. 
+ 
+10.1.1 4 SAI N T O NG E 
+Saintonge is a French coarse earthenware common on French colonial sites. These 
+wares have a pink or salmon colored pasted with large hematite inclusions. They often 
+have an overall white slip with a transparent or translucent copper green glaze on top.
+
+=== PAGE 56 ===
+56 
+Milk pan forms are common, as are pitchers. Wares from Saintonge are rarely decorated 
+but may have oxide paints. Date Range: 1600-? (at least 1770s). 
+ 
+ Ware:   “Saintonge” 
+ Material:  “Coarse Earthenware” 
+ Manu Tech:   “Wheel Thrown” 
+ Glaze Type:   “Lead  Glaze” 
+ 
+10.1.1 5 SLI P W AR E, NO R T H IT AL IAN  
+This early coarse earthenware is sometimes identified as Pisan Ware, as it originated in 
+Tuscany. It has a fine red body with few inclusions. It is generally decorated with 
+multiple colors of slip, including red, brown, and copper green, all over a white slip 
+ground. The slips were joggled while wet to produce a marbled effect. Lead glazed. 
+Incised decoration with clouded colors is less commonly seen. In America, North Italian 
+forms include plates, shallow bowls, and costrels. Date Range: 1610-1675 
+ 
+ Ware:   “Slipware, North Italian” 
+ Material:  “Coarse Earthenware” 
+ Manu Tech:  “Wheel Thrown” 
+ Glaze Type:  “Lead  Glaze” 
+ Exterior Color:  If slip present, “Body Obscured by Decoration” 
+ Interior Color: If slip present, “Body Obscured by Decoration” 
+ Decoration  
+ Table:  Record the applied color with using the Detailed Color Groups. 
+Two-color     marbleized slip would be entered with a separate 
+line for each color, with    the same Stylistic Element (“Marbleized”). 
+ 
+10.1. 16  SLI P W AR E, NO R T H MI DLAN D S/S T AFF O R D SHI R E 
+This distinctive yellow coarse earthenware is sometimes referred to as “combed,” 
+“combed and dotted,” or “dotware.”  The lead-glazed, buff body includes a sparse 
+peppering of dark inclusions; it is covered with a white slip (appearing yellow beneath 
+the transparent glaze) into which trails and/or dots of red slip (appearing brown 
+beneath the glaze) have been introduced.  The most common forms are combed 
+platters and shallow bowls, produced using press molding, usually having crimped 
+edges, and handled cups or mugs.  The latter usually have dotted rims (the dots are 
+about 1 cm in diameter) with several thin, parallel trails of slip encircling the bulbous 
+bodies.  The lead glaze usually does not extend to the foot.  A seldom-seen variant of 
+this buff-bodied ware is covered with a dark brown engobe decorated by yellow (white) 
+dots of slip.  Another variant is a red clay body agatized with lesser amounts of buff-
+colored clay; these vessels are covered with a white engobe through which trails of slip 
+are combed.  Flat form vessels usually have crimped rims.  “Dot” wares range from 
+1700-1770, and combed dishes from 1670-1795. 
+ 
+ Material:   “Coarse Earthenware”
+
+=== PAGE 57 ===
+57 
+ Manu Tech:   “Wheel Thrown” or “Press Molded” 
+ 
+There are several combinations of Surface and Color treatments that are manifest on 
+North Midlands Slipware sherds. Examples below describe how these combinations 
+should be recorded. 
+ 
+If there is a clear lead glaze over solid slip, record the sherd as follows: 
+ 
+ Glaze Type:  “Lead Glaze”  
+ Exterior Color:   Record the color of the slip with the Detailed Color Groups  
+ Interior Color: Same as Ext Color above 
+ Ext/Int Opacity:  “Transparent” if clear glaze 
+ Decoration?: “No.” Also, nothing is entered in the Decoration Table. 
+ 
+If the surface is unglazed/bisque, but there is a slip that obscures the color of the 
+ceramic paste, record the sherd as follows: 
+ 
+ Glaze Type: “Unglazed/Bisque”  
+ Exterior Color:  Record the color of the slip with the Detailed Color Groups  
+ Interior Color:  Same instructions as Exterior Color 
+ Ext/Int Opacity:  “Not Applicable” if both surfaces are unglazed. 
+ Decoration?: “No.” Also, nothing is entered in the Decoration Table. 
+ 
+If the surface is lead glazed or unglazed/bisque and the unslipped ceramic paste is 
+exposed, record the sherd as follows: 
+ 
+ Ext/Int Surface: “Unglazed/Bisque”  
+ Ext/Int Color:   Record the exterior paste color Detailed Color Groups 
+ Ext/Int Opacity: Dependent on whether paste or slip is visible through glaze. 
+See section 1.12. 
+ 
+If there is a clear lead glaze over a solid slip, and there is combed, trailed, or dotted 
+decoration, record the sherd as follows: 
+ 
+ Ext/Int Surface:  “Lead Glaze”  
+ Exterior Color:  Record the color of the solid slip with Detailed Color Groups
+ Interior Color:  Same instructions as Exterior Color 
+ Ext/Int Opacity: “Transparent” if clear glaze 
+ Decoration table:  Record the color and stylistic element of the applied    
+  decorative slip with the Detailed Color Groups. For example,  
+  “Yellow-red, muted medium” with Stylistic element  
+  “Trailed” or “Dots.” 
+ 
+Please see screen shot below for an example:
+
+=== PAGE 58 ===
+58 
+ 
+ 
+ 
+Example of how to record decoration for sherd with slipped/trailed decoration: 
+ 
+ 
+ 
+If there is a clear lead glaze over a marbleized slip pattern, and it is impossible to tell 
+which slip was the main base color, record the marbleized sherd as follows: 
+ 
+ Ext/Int Surface:  “Lead Glaze”  
+ Exterior Color:   Body Obscured by Decoration. 
+ Interior Color:  Record the color of the solid slip.
+
+=== PAGE 59 ===
+59 
+ Decoration Table: Record the applied color with using the Detailed Color  
+   Groups. Brown and yellow marbleized slip would be  
+   entered as two lines for each color, with the same Stylistic  
+   Element (“Marbleized”). 
+ 
+10.1. 17  ST AF F O R D SHI R E  MO TT LE D  (O R MAN G ANE SE  MO T T L ED) 
+This finely-potted ware has a caramel brown lead glaze with evenly-dispersed, dark 
+purplish-brown flecks and streaks of manganese; the flecks are small but vary in size.  
+The dense clay body has a grainy texture and is light tan in color; sherds usually 
+represent small tankards, bowls, and other tavern ware.  Tankards can be cordoned 
+above the base.  Date Range: 1680-1780.   
+ 
+ Ware:  “Staffordshire Mottled  
+ Material:   “Coarse Earthenware” 
+ Manu Tech:  “Wheel Thrown” 
+ Glaze Type: “Lead Glaze” 
+ Exterior Surface:   Record the predominant exterior color with the Detailed  
+  Color Groups. 
+ Interior Surface: Record the predominant interior color with the Detailed 
+  Color Groups. 
+ 
+10.1. 18  SUR R E Y-HAM P SHI R E  BO R D E R  WAR E 
+ This coarse earthenware was produced in the early post-medieval period in England. It 
+is generally produced with a white or pale gray colored clay with very few inclusions. 
+The vessels tend to be very thin, with lead glaze that appears bright yellow or apple 
+green. Occasionally translucent brown glazed vessels are also found. Border Ware 
+vessels are typically glazed on the interior only, but with substantial spillover onto the 
+exterior. The most common forms are pipkins, pitchers, and chafing dishes. Pink or red-
+bodied Border Ware was produced, but is less often encountered on American sites. The 
+majority of these wares are undecorated, though occasionally rustication is present. 
+Date Range: 1600-1700.  
+ 
+ Ware:  “Surrey-Hampshire Border Ware” 
+ Material:  “Coarse Earthenware” 
+ Manu Tech:   “Wheel Thrown” 
+ Glaze Type:   “Lead  Glaze” 
+ 
+10.1. 19  VAL L AUR I S 
+Vallauris is a coarse earthenware whose paste color ranges fall into the buff, pink and 
+orange categories in the DAACS Paste Color Range, and contains numerous quartz, 
+hematite, and white rock inclusions.  The core is often pink with whiter, oxidized 
+sections near the exterior. The interior is nearly always lead-glazed with a clear glaze, 
+which results in a glazed interior color ranging from light orange to dark reddish brown. 
+The exterior is often unglazed. Burned or heavily reduced Vallauris may resemble
+
+=== PAGE 60 ===
+60 
+Caribbean Coarse Earthenwares (i.e. “locally-made CEW”). Yellow glaze may be an 
+indicator that the heavily burned sherds are indeed Vallauris. Residue/Sooting/Fire 
+Clouding on the exterior is also common on Vallauris sherds. The most common forms 
+are for cooking, have straight sides, and small loop handles extending from the lip. Date 
+Range: 1750-1900.  
+ 
+ Ware:   “Vallauris” 
+ Material:  “Coarse Earthenware” 
+ Manu Tech:     “Wheel Thrown” 
+ Glaze Type:  “Lead  Glaze” 
+ 
+ 
+10.2   REFINED EARTHENWARES  
+ 
+10.2 .1   A GAT E  WAR E, RE F IN ED 
+A dense, highly-fired earthenware covered with a transparent lead glaze. Marbling from 
+the mixture of red and buff clays is visible on the surface and in cross-section. In some 
+cases white sprig molding or bands were applied. It was made in tableware and teaware 
+forms. Far less common is “laid agate,” which was made by press-molding agatized clay 
+dyed in multiple colors, generally in hollow teaware forms.  Date Range: 1740-1775. 
+ 
+ Ware:    “Agate, refined (Whieldon-type)” 
+ Material:   “Refined Earthenware” 
+ Manu Tech:  “Press Molded” or “Wheel Thrown”  
+ Ext Surface:   “Lead Glaze” 
+ Ext Color: “Agate Body”.  
+Int Surface:   “Lead Glaze” 
+Int Color: “Agate Body” 
+ 
+10.2 .2  A ST B UR Y 
+A dense, red-bodied, highly-fired earthenware covered with a clear lead glaze.  Astbury 
+is distinguishable from “Redware, refined” in several wares: the paste color can range 
+from a pale pink/buff to dull red. The paste is dense, almost stoneware like, and the 
+exterior color is often described as “ginger”—more light brown than the red or dark red 
+seen on “Redware, refined”.  Astbury often has a white-slipped rim. It is often found 
+with white spring molding and engine-turned decoration. As Luster decoration was not 
+introduced into the Staffrodshire potteries until the late 18th-century, luster decoration 
+will not be seen on Astbury.  Very similar to red-bodied agateware.  Usually seen in tea 
+services and bowls.  Date Range:  1727-1750. 
+ 
+ Ware:    “Astbury-Type” 
+ Material:   “Refined Earthenware” 
+ Manu Tech:  “Press Molded” 
+ Ext Surface:   “Lead Glaze”
+
+=== PAGE 61 ===
+61 
+10.2. 3  BEN N IN GT O N/R O C KI N GHAM 
+Though some recognize this type as merely a variant of Yellow Ware (10.2.16), DAACS 
+identifies Bennington/Rockingham as a distinct ware type with characteristics of a buff 
+refined earthenware paste and a lead glaze with inclusions of clear manganese that 
+creates a “runny,” caramel-spotted effect. See Claney 2004 for more information. Date 
+Range: 1830-1900. 
+ 
+ Ware:   “Bennington/Rockingham” 
+ Material:  “Refined Earthenware” 
+ Manu Tech:   Most often “Wheel Thrown” 
+ Ext/Int Surface “Lead Glaze” 
+ Ext/Int Color:   Record the predominant color for each surface using the  
+Detailed Color Groups 
+ 
+10.2 .4  C AN AR Y  WARE  
+Canary Ware was a white-bodied type of refined earthenware with a bright yellow glaze, 
+produced in England and Wales. Luster decoration, transfer printing, and mottos are 
+types of decoration commonly seen on Canary Ware.  Be careful not to confuse Canary 
+Ware with the yellow-bodied, clear-glazed earthenwares known as Yellow Ware.  Date 
+Range:  1780-1835. 
+ 
+ Ware:  “Canary Ware” 
+ Material:   “Refined Earthenware” 
+ Manu Tech:  “Press Molded” 
+ Ext Surface:   “Lead Glaze” 
+ 
+10.2 .5  C AUL I F L O W E R W AR E 
+Cauliflower Ware is an offshoot of Wedgwood Green Ware (see below). The vessel 
+forms include tea and tablewares with molded vegetable and fruit forms such as 
+cauliflower and pineapple. They typically have multiple colors of glaze, mimicking the 
+natural coloration of the plant. Note that the glaze color is considered inherent in this 
+ware type and is recorded as the Surface Color, not as decoration. Date Range: 1760-
+1780.  
+ 
+ Ware:  “Cauliflower Ware” 
+ Material:   “Refined Earthenware” 
+ Manu Tech:  “Press Molded” 
+ Glaze Type:   “Lead Glaze” 
+ Genre: Either “Cauliflower” or “Pineapple” 
+ 
+10.2. 6  C RE AM W AR E 
+Creamware was successfully marketed by Josiah Wedgwood as “Queen’s Ware.”  It has 
+a cream-colored body covered by a clear lead glaze that, in puddled areas such as foot 
+rings appears yellow or olive-yellow.  Early creamware tends overall to be a deeper
+
+=== PAGE 62 ===
+62 
+yellow or darker cream color than in later years.  Molded rims, including “Feather Edge” 
+and neoclassical borders, are common decorative techniques in early vessels; hand-
+painted overglaze enamel colors, over and underglaze transfer printing, and annular 
+style decoration are also seen, particularly in later years.  Engine-turned bodies and 
+sprig molding are seen throughout the span of this ware type.  Date Range: (overall) 
+1762-1820. 
+ 
+ Ware:   “Creamware” 
+ Material:  “Refined Earthenware” 
+ Manu Tech:   “Press Molded” 
+ Ext/Int Surface:  “Lead Glaze” 
+ 
+10.2.7  C RE AM W AR E, C AR O L I N A 
+The production of refined white earthenware was brought to North and South Carolina 
+by John Bartlam in the 18th c. He produced earthenwares with molded decorative motifs 
+common on White Salt Glaze Stoneware, Creamware, Whieldon Ware, and Cauliflower 
+Ware, such as Barley Pattern, Pineapple, and engine turning. The plates and hollow 
+forms were most commonly glazed with clear, copper green, or honey brown lead glaze, 
+occasionally with clouded or tortoise decoration. Unlike European creamwares, hollow 
+forms were often wheel-thrown. Date Range: 1765- 1775. 
+ 
+ Ware:   “Creamware, Carolina” 
+ Material:  “Refined EW” 
+ Manu Tech:  “Wheel Thrown” or “Press Molded” 
+ Glaze Type:   “Lead  Glaze” 
+ 
+10.2 .8  DEL F TW AR E, DUT C H/B RI T I SH 
+The term “Delftware” collectively refers to tin-enameled ware from England and the 
+Netherlands.  Delftware has a very soft clay body – it is most often buff or pinkish-buff in 
+color, but it can range from salmon to pale yellow.  The tin glaze is fragile and readily 
+flakes off.  This opaque white glaze usually has a pale blue tint, but it can also be a 
+grayish-white.  Cobalt-blue, painted designs are most frequent, but polychrome painted 
+decoration is not uncommon.  In addition, a distinctive palette of pastel colors referred 
+to as “Fazackerly” enjoyed a brief period of popularity.  Date Range:  1600-1800.  
+Fazackerly:  1750-1770.   
+ 
+ Ware:    “Delftware, Dutch/British” 
+ Material:   “Refined Earthenware” 
+ Manu Tech:   Almost always “Wheel Thrown” 
+ Ext Surface:   “Tin Glaze” 
+ 
+For Delftware with painted decoration, the Decorative Technique should be listed as 
+“Painted, under free hand.”  Another common decoration during the mid-18th century
+
+=== PAGE 63 ===
+63 
+on Delft was “powdered” decoration. It was executed mainly on plates and bowls 
+whereby the pigment was “blown” on over a stencil, creating a speckled effect.  
+For powdered decoration, use the following protocols: 
+ 
+ Decorative Technique: “Applied Powder/Crystals” 
+ Decoration Color: Use Detailed Color Groups to identify color 
+ Stylistic Element: Often “Solid” 
+ Motif: “Individual A” 
+ Genre: “Applied Powder/Crystals” 
+ 
+Delftware is also often sponge-painted; Decorative Technique for this is “Sponged.” On 
+Delft, sponging was a quick way to depict such objects as trees and bushes. 
+ 
+If you have a Delftware sherd that is missing all of the glaze, catalog as follows: 
+ 
+ Ware:  “Tin-Enameled, Unid” Use this instead of “Delftware,  
+  Dutch/British”) 
+ Material:  “Refined Earthenware” 
+ Manu Tech:   “Wheel Thrown” 
+ 
+See the section 1.17.1 for instructions on how to catalog pieces of detached tin glaze. 
+ 
+10.2. 9  FAI E N C E 
+Faience is a French, tin-enameled earthenware.  Its grainy body is most often buff in 
+color, but like most tin-enameled wares it can range from deep salmon to nearly cream.  
+Two readily identifiable varieties are Rouen and Nevers. Rouen has a bluish-white tin-
+enameled glaze on interior surfaces, and a deep brown lead glaze on the exterior.  
+Usually seen in platters, bowls, and mugs. “Debased” Rouen comes in very thick body 
+forms, with a narrow blue and black border on interior rims; platters often have 
+scalloped edges. Nevers-type wares have a deep blue glaze decorated with white or 
+bluish-white and/or polychrome painted designs. Date Range:  1700-1800. Debased 
+Rouen:  1775-1800. 
+ 
+ Ware:   “Faience” 
+ Material:   “Refined Earthenware” 
+ Manu Tech:   “Wheel Thrown” 
+ Ext Surface:  “Tin Glaze” (except for the exterior of Rouen, which is “Lead  
+   Glaze”) 
+ 
+Note:  Rouen and Nevers are not listed in DAACS as separate ware types.  Catalog the 
+ware type as “Faience” and indicate in the notes whether you have Rouen or Nevers. 
+ 
+10.2. 9  IRO N ST O N E/W HI T E  GRAN I T E
+
+=== PAGE 64 ===
+64 
+Ironstone and White Granite are later forms of whiteware.  They can be distinguished 
+from whitewares by their dense white paste, that will occasionally be light grey to slight 
+blue in color.  Ironstone and White Granite wares have harder, less porous clay bodies 
+than whitewares. The alkaline-lead glazes generally had whiteners and opacifiers such 
+as calcium, zinc, or tin added.  Ironstone/White Granite comes in a wide range of vessel 
+forms, which are often heavier, with vessel body thicknesses greater than whiteware 
+vessels. Date Range:  post 1840. 
+ 
+ Ware:   “Ironstone/White Granite” 
+ Material:   “Refined Earthenware” 
+ Manu Tech:   “Press Molded” 
+ Ext/Int Surface:   “Alkaline/Lead” 
+ 
+Note: For “Victorian Majolica”, a decorative variant of Ironstone/White Granite, catalog 
+as follows: 
+ Ware:   “Ironstone/White Granite” 
+ Material:   “Refined Earthenware” 
+ Manu Tech:  “Press Molded” 
+ Ext/Int Surface:   “Alkaline/Lead Glaze” 
+ Ext/Int Color:  Detailed Color Section of the DAACS Color Book 
+ Genre: “Victorian Majolica” 
+ Decoration: Enter any molded decoration appropriately 
+ 
+10.2 .10   JAC KF I E L D 
+Jackfield has a dense, purplish-black to gray refined earthenware body, high-fired, with 
+a glossy black lead glaze.  Molded spouts and handles common; some vessels have oil-
+gilded designs over the glaze.  Thomas Whieldon’s Jackfield wares had a slightly redder 
+body.  Tea wares, pitchers.  Date Range: 1745-1790. 
+ 
+ Ware:    “Jackfield Type” 
+ Material:   “Refined Earthenware” 
+ Manu Tech:   “Press Molded” 
+ Ext Surface:   “Lead Glaze” 
+ 
+10.2.11  MAJO L I C A 
+Majolica is the Spanish version of tin-enameled earthenware, produced in Spain and 
+Mexico. The paste color is highly variable, depending on the type, with an overall white 
+or pale blue tin-enamel glaze. The decoration may single color, such as blue and white, 
+but is more commonly polychrome. Botanical motifs are common, and much of the 
+painting has a soft, impressionistic quality, in contrast to the sharper scenic or 
+representational decorations on tin glazed wares such as Delft. Tablewares such as 
+plates and assorted hollow forms are common. Date Range: 1540-1800, narrower 
+ranges possible depending on Tin Enamel Types represented.
+
+=== PAGE 65 ===
+65 
+ Ware Type:   “Majolica” 
+ Material:   “Refined Earthenware” 
+ Manu Tech:   “Wheel Thrown” 
+ Ext/Int Surface:  “Tin Glaze” or “Missing” 
+ Ext/Int Color:   Use Surface Color chips to identify color. If glaze is missing, 
+record     color as “Not Applicable.” 
+ Opacity:   Opacity is recorded for all glazed surfaces of Majolicas. 
+ CEW Type:  “Not Applicable” 
+ Tin Enamel Type: As Applicable 
+ 
+10.2. 12   PE AR L W AR E 
+Pearlware has an off-white clay body with a clear lead glaze that has a slightly bluish 
+tint, most evident where the glaze has built up, as in foot rings, etc.  Decoration includes 
+molded rims, with “Shell Edge” the most common.  These rims were painted blue and, 
+to a slightly lesser extent, green.  Blue and polychrome hand-painted designs, transfer 
+printed patterns, and annular, common cable, and dendritic motifs are very common, 
+often in combination with engine-turned bodies and sprig-molded elements.  Date 
+Range: (overall) 1775-1830. 
+ 
+ Ware:   “Pearlware” 
+ Material:   “Refined Earthenware” 
+ Manu Tech:  “Press Molded” 
+ Ext/Int Surface:  “Lead Glaze” 
+ 
+10.2.1 3  RE D  AG AT E, RE F I NE D  
+A fine-grained clay body, often wheel thrown, that is the result of wedging two different 
+clays (red and white/yellow) together.  Glaze is clear, lead-fluxed. Forms are primarily 
+teawares with some mugs and bowls. The distinction between “Red Agate, Coarse” and 
+“Red Agate, Refined” is often difficult at the sherd level. The designation is based 
+primarily on decoration, thickness and, form. Record the surface colors using the 
+Detailed Color Groups, recording the “redder” of the two wedged clays. 
+ 
+ Ware:  “Red Agate, Refined” 
+ Material:  “Coarse Earthenware” 
+ Manu Tech:  “Wheel thrown”  
+ Glaze Type:  “Lead Glaze”
+
+=== PAGE 66 ===
+66 
+             
+Taken from Ceramics in America (2003, p91). ArtifactID: 1225-M08.1-DRS--00004  
+ 
+10.2. 14  RE F I N ED EAR T HE N W ARE, MOD E RN 
+In DAACS we define modern refined earthenwares as any refined earthenware type that 
+post-dates 1900. Modern refined earthenwares can be batched regardless of form, 
+sherd size, and color.  Batch by ware (which will be Refined earthenware, modern) and 
+record count and weight.  List other fields as “Not Recorded.” 
+ 
+If a principal investigator does not want to batch refined earthenwares that post-date 
+1900, such as Fiesta Wares, they can choose to catalog each sherd individually by ware 
+type. Please contact the DAACS Project Director to add modern ware types.  
+ 
+10.2.1 5  RE F I N ED EAR T HE N W ARE, U N ID EN TI F I AB L E 
+Occasionally we encounter refined earthenware sherds whose ware type cannot be 
+identified.  We recognize two types of unidentifiable refined earthenwares, those that 
+are damaged beyond identification and those whose ware type cannot be identified 
+with current research or resources. 
+ 
+Damaged Sherds: These sherds may be burnt, stained or otherwise damaged such that 
+ware-type identification is impossible.  In those cases, earthenwares that are 
+unidentifiable due to damamge to the sherds should be batched regardless of form, 
+sherd size, and color.  Batch by ware (which will be Refined earthenware, unidentifiable) 
+and record count and weight.  List other fields as “Not Recorded.” 
+ 
+Currently Unidentified Sherds: In other cases, we see refined earthenware sherds 
+whose ware types are not identifiable by DAACS staff using available resources. IN those 
+cases, the sherds are not batched and each individual attribute is recorded.  An example 
+of a “Refined Earthenware, unidentifiable” would be a black-bodied refined 
+earthenware with yellow transfer print that does not resemble Jackfield in terms of 
+paste color, form, and glaze.   Such sherds have been called a range of “types” from 
+“Portebello Ware” to others “Yellow Transfer Printed Brown Ware”.  As consensus
+
+=== PAGE 67 ===
+67 
+among researchers has not been reached in regards to a type name and exact defining 
+characteristics, we would record the ware type as follows: 
+ 
+ Ware:   “Refined Earthenware, unidentifiable” 
+ Material:   “Refined Earthenware” 
+ Manu Tech:  “Press Molded” 
+ Ext/Int Surface:   “Lead Glaze” 
+ Ext/Int Color:  Detailed Color Section of the DAACS Color Book 
+ Genre:         “Yellow Printed Brown/Black Ware (Portbello)” 
+ Decoration: Enter any molded decoration appropriately 
+ 
+10.2.1 6 RE D W AR E, RE F I N ED 
+“Redware, refined” is used to describe fine-pasted, thin-walled red bodied 
+earthenwares that date to the first three decades of the 19th century.  Most commonly 
+made in hollow vessel forms, especially creamers and small pitchers, they have a clear 
+lead glaze. Common decorative types include a variety of luster colors, rustication, 
+yellow transfer print/portebllo, and underglaze painting.  A white slip on the interior of 
+red-bodied refined ware, especially one with exterior luster decoration, is not 
+uncommon.  
+ 
+Note: The only resemblance between Refined Redwares and Coarse Earthenware 
+Redwares is the color of the paste.  In all other ways—from paste composition and glaze 
+to form—Refined Redwares resemble the refined earthenwares of the late 18th and 
+early 19th centuries, such as Creamware and Pearlware. 
+ 
+For DAACS, “Redware, refined” have been defined as those fine-pasted, thin-walled 
+wares whose body color (as viewed along the broken edge of the sherd) falls into one of 
+the following four color chip categories found in the Redware Color Range section of 
+the DAACS Color Book: Pantone 718, 722, 7412 or 7592. Note that these colors are not 
+entered as Paste Color for the sherd; these categories help control the parameters of 
+how DAACS defines Redwares.  
+ 
+Once the sherd is categorized as a Redware, record the surface colors (whether glazed 
+or unglazed/bisque) using the Detailed Color Groups. Record Paste Color by matching 
+the closest color range using the Paste Color Group Section of the DAACS Color Book.  
+ 
+Redwares should be cataloged as follows: 
+ 
+ Ware:  “Redware, refined” Paste Color must be close to one of the chips 
+in  the Redware Color Range in the DAACS Color Book (Pantone 
+718,  722, 7412 or 7592).  
+ Material:  “Refined Earthenware” 
+ Manu Tech:  Usually “Press Molded” 
+ Surface Colors: Use Detailed Color Groups to record glazed or unglazed surface
+
+=== PAGE 68 ===
+68 
+  colors. 
+ Paste Color:  Not Recorded 
+ Glaze:  “Lead Glaze” 
+ Genre: Depending on Decoration: “Luster”, “Yellow Printed Brown/Black 
+Ware (Portbello)”, “Slipware, factory made”, or “not Applicable.  
+Please note: if you have a sherd with both Luster and Slip or hand 
+painted decoration, the luster trumps the slip/paint, and “Luster” 
+should be entered into the Genre Field.  You can then record all 
+decorative technique types in the Stylistic Element fields. 
+ Stylistic Element Fields: Record all instances of different decorative types on the 
+sherd. 
+ 
+10.2. 17  WE DG W O OD  GR EE N 
+Wedgwood’s Green Glaze was developed in partnership by Whieldon and Wedgwood.  
+The same cream-colored body as Whieldon but covered with a lustrous green lead 
+glaze.  Vessel forms include tea and tablewares with molded vessel rims borrowed from 
+the white salt-glazed stoneware repertoire.  Date Range:  1759-1775. Note that the 
+green color is considered inherent in this ware type and is recorded as the Surface Color, 
+not as decoration. 
+ 
+ Ware:    “Wedgwood Green” 
+ Material:   “Refined Earthenware” 
+ Manu Tech:   “Press Molded” 
+ Ext Surface:  “Lead Glaze” 
+Surface Color:   Record green color using Detailed Color Groups section of the 
+DAACS Color Book 
+ 
+10.2. 18  WHI E L D O N WAR E 
+Whieldon Ware is associated with Thomas Whieldon’s factory.  This early refined 
+earthenware has a lead glaze splashed with translucent colors.  Teawares and 
+tablewares also often had molded vessel rims, borrowed from the white salt-glazed 
+repertoire.  Date Range:  1740-1775. 
+ 
+ Ware:   “Whieldon-type Ware” 
+ Material:   “Refined Earthenware” 
+ Manu Tech:   “Press Molded” 
+ Ext/Int Surface: “Lead Glaze” 
+ Ext/Int Color:   “Body Obscured by Decoration” or, if you can reliably identify 
+the undecorated body color, use the Refined Ceramic Surface Color section of 
+the DAACS Color Book. 
+ 
+With Whieldon, information about color will always have to be entered into the 
+Decoration table.  Decorative Technique should be “Applied Powder/Crystals”.  The two 
+main Stylistic Elements seen on Whieldon are Clouded and Tortoiseshell.  Clouded
+
+=== PAGE 69 ===
+69 
+decoration can be seen in a variety of colors, including brown, yellow, green, purple, 
+blue, and gray.  The decoration appears as blurry, cloud-like splotches of color.  
+Tortoiseshell is a less blurry, more stippled style of decoration.  It usually appears as 
+brown on a cream-colored background.  Clouded and Tortoiseshell decorations 
+occasionally appear together on the same vessel. 
+ 
+Molded rim patterns often seen on Whieldon are Dot, Diaper, and Basketweave; Bead 
+and Reel; Barley; Queen’s shape; Royal pattern, and Feather-edged. 
+ 
+10.2.1 9  WHI T E W ARE 
+Whiteware is refined earthenware that more or less evolved from pearlware.  The body 
+is very dense and white with a clear glaze that often appears thick and glassy, with 
+overall, large-patterned crazing.  When puddled, whiteware glazes sometimes appear 
+blue-tinted, but note that the overall surface is white and be aware of the crazing.  
+Vessels are often thick and clunky.  Glazes on whitewares were either lead or more 
+commonly alkaline-lead. Visually distinguishing glaze type is nearly impossible, therefore 
+we record the glaze as “Alkaline-Lead.”  
+ 
+Transfer printed designs are the most commonly seen form of decoration up to c.1860, 
+undecorated pieces are most common after that.  Embossed (molded, unpainted) vessel 
+rims are common; occasionally one sees sponged and annular decoration.  Also note the 
+later forms of whiteware, Ironstone and White Granite wares.  Date Range:  post 1820. 
+ 
+ Ware:   “Whiteware” 
+ Material:   “Refined Earthenware” 
+ Manu Tech:   “Press Molded” 
+ Ext/Int Surface:  ”Alkaline/Lead”. 
+ 
+10.2. 20   YE L L O W WAR E 
+American yellow ware has a dense, yellow-to-buff colored body with a clear glaze.  The 
+English variety has a cream to buff body with a yellow-tinted glaze.  Factory made 
+slipware decoration is most often seen.  Most common as utilitarian and some serving 
+vessels.  It is seen on molded hollowware vessels, with low-relief scenes such as 
+“Rebecca at the Well.”  Be careful not to confuse “Yellow Ware” with “Canary Ware.” Or 
+“Bennington/Rockingham.”  Date Range:  1825-early 20th c. 
+ 
+ Ware:   “Yellow Ware” 
+ Material:   “Refined Earthenware” 
+ Manu Tech:  “Press Molded” 
+ Ext/Int Surface:   “Lead Glaze” 
+ Ext/Int Color: Record using DAACS Detailed Color Groupssurface colors. 
+ 
+10.3   PORCELAINS
+
+=== PAGE 70 ===
+70 
+10.3.1   P OR C E L AI N, CHI N E SE 
+Chinese porcelain is a hard-paste porcelain, and accounts for nearly all of the porcelain 
+found on colonial and early Federal periods archaeological sites.   
+ 
+Chinese porcelain has an extremely dense body that is white in color.  The hard, very 
+glossy, transparent glaze is fused to the body and has a bluish or light gray tint.  Blue 
+underglaze- painted floral and landscape designs are most common.  Overglaze colors 
+include red, black, green, pink (“famille rose”), pale green (“famille verte”), and gilding, 
+and are often used in combination with underglaze blue.  Low-relief incising or molding 
+(“An Hua”) is sometimes seen.  A chocolate-brown slip covered the exterior surfaces of 
+“Batavian” wares; rarely one sees a pale, jade-green slip referred to as “Ceyledon,” and 
+white, underglaze slip-trailed designs (“bianco sopro bianco”).  By the nineteenth 
+century, vessel forms were often quite thick and designs had a heavy-handed quality.  
+Date Range:  post 1690. 
+    
+ Ware:   “Porcelain, Chinese” 
+ Material:   “Porcelain” 
+ Manu Tech:   Use “Press Molded” unless there are obvious signs that wheel  
+  throwing is the primary mode of manufacture. 
+ Ext/Int Surface: “Feldspathic/Alkaline” 
+ Ext/Int Color: Record using Refined Surface Colors 
+ 
+10.3.2   P OR C E L AI N, EN GL I SH BO N E  C HI N A 
+English bone china has a dense, white clay body fluxed with calcined bone.  It is translucent.  The 
+glossy to semi -glossy glaze is minutely crazed and has a yellowish tint.  Decorative techniques 
+include both underglaze and overglaze painting, d ecalcomania, and sprig molding.  Date Range:  
+post 1794. 
+ 
+ Ware:  “Porcelain, English Bone China” 
+ Material:   “Porcelain” 
+ Manu Tech:  “Press Molded” 
+ Ext/Int Surface:   “Lead Glaze” 
+ Ext/Int Color: Record using Refined Surface Colors 
+ 
+10.3.3   P OR C E L AI N, EN GL I SH SO FT  P AST E  
+The clay body of English soft -paste porcelain seems chalky, both in color and texture.  Only the 
+thinnest of sherds are translucent; most sherds recovered archaeologically are not.  The glaze is 
+just semi -glossy, and can be very white in color (as compared  to the bluish -gray of Chinese 
+porcelain).  It is sometimes susceptible to the same degree of crazing that occurs on whiteware.  
+English soft-paste porcelains often have blue, underglaze painted Chinoiserie designs.  Overglaze 
+polychrome colors and gilding  are less common.  Date Range: 1745 -1795. Beginning in the 
+1750s, Soft Paste Porcelain was also sometimes transfer printed. The first examples were 
+overglaze printed in black; blue underglaze printing followed soon thereafter. 
+ 
+ Ware:  “Porcelain, English Soft Paste”
+
+=== PAGE 71 ===
+71 
+ Material:   “Porcelain” 
+ Manu Tech:   “Press Molded” 
+ Ext/Int Surface:   “Lead Glaze” 
+ Ext/Int Color:  Record using Refined Surface Colors 
+ 
+10.3.4   P OR C E L L AN E OUS/E N GL I SH HAR D  P AST E  
+After the Revolutionary War, hard-paste Continental porcelain made its way to America.  
+Porcelains produced during the later nineteenth and twentieth centuries in England, 
+America, and elsewhere are fired to hard-paste consistency but are usually referred to 
+as “Porcellaneous” wares.  Porcellaneous wares and English hard-paste porcelains have 
+very dense, hard porcelain bodies and are translucent.  Vessels are dead white in color 
+and the clear glaze is glassy in appearance.  Molded forms, sprig molding, transfer 
+printed designs, and hand-painting are all seen, but twentieth-century vessels are 
+almost exclusively decorated over the glaze with decalcomania and liquid gold.  Date 
+Range: post 1820. 
+ 
+ Ware:   “Porcellaneous/English Hard Paste” 
+ Material:   “Porcelain” 
+ Manu Tech:   “Press Molded” 
+ Ext/Int Surface:   “Feldspathic/Alkaline” 
+ Ext/Int Color: Record using Refined Surface Colors 
+ 
+10.3.5   P OR C E L AI N, JAP AN E SE 
+Japanese porcelain became available early in the eighteenth century.  From 1690-1720, 
+Japanese porcelains tend to be heavier and thicker than most contemporary Chinese 
+porcelains.  Another noticeable difference is the appearance of small, pimple-like 
+blemishes found on the bases of Japanese porcelains.  These were the result of a 
+particular firing technique and are not seen on Chinese porcelains.  The glaze on 
+Japanese porcelain also tends to be thicker than on Chinese porcelain.  Common 
+decoration on Japanese porcelain includes underglaze and overglaze painting, as well as 
+transfer printing.  The blue color used in underglaze painting on Japanese porcelain is 
+grayer in hue than the typical Chinese blue.  The designs on Chinese porcelain are also 
+usually sharper than on Japanese porcelain, as the glaze on Japanese porcelain tends to 
+run. 
+ 
+ Ware:   “Porcelain, Japanese” 
+ Material:   “Porcelain” 
+ Manu Tech:   “Press Molded” 
+ Ext/Int Surface:   “Feldspathic/Alkaline” 
+ Ext/Int Color: Record using Refined Surface Colors 
+ 
+10.4   STONEWARES  
+Throughout the seventeenth and much of the eighteenth century, the overwhelming 
+majority of stonewares were imported from England and Germany, up until the
+
+=== PAGE 72 ===
+72 
+American Revolution.  Though American potters began producing stonewares during the 
+eighteenth century, with William Rogers’ 1725 Yorktown pottery being one of the most 
+prolific in the Tidewater region, they are rarely seen in the archaeological record until 
+the fourth quarter of the eighteenth century. Documents indicate that stoneware 
+potteries were established in Virginia’s Shenandoah Valley as early as the 1750s, though 
+most did not appear until the fourth quarter of the century.  By c.1800, they were 
+supplying local needs for utilitarian wares, having taken the place of British coarsewares.  
+Stonewares are almost always salt-glazed, which is colorless and imparts a pitted, 
+“orange-peel” effect to vessel surfaces; this effect is more pronounced on the exterior 
+of hollow forms than on interior surfaces.  
+ 
+Note: Even when the salt-glaze is not at all pronounced on the interior of a hollow, salt-
+glazed vessel, go ahead and catalog the Interior Surface as Salt Glaze (unless there is an 
+interior wash – in this case, catalog this as Wash).  Also, remember to take Munsell 
+colors for both the interior and exterior of stoneware vessels, using the DAACS Detailed 
+Color Groups book.  
+ 
+10.4.1   A ME R I C AN  STO N E W AR E 
+The dense clay body is light brown to brown, or medium to dark grey in color.  Surfaces 
+are usually salt-glazed.  During the nineteenth century a dark, glossy brown engobe 
+(“Albany slip”) was applied to the surfaces of hollow forms.  Also in the 19th century, 
+alkaline-glazed stonewares began to produced in the southern states, characterized by 
+thick, runny translucent or milky glazes. 
+Hand painted or stenciled designs in cobalt blue are usually simple floral or stylized 
+motifs; many vessels are undecorated.  Utilitarian wares such as storage jars and 
+bottles, butter churns, bowls, and chamber pots.  Date Range: 1750-1920. 
+ 
+Tidewater/Chesapeake region only: William Rogers of Yorktown, VA (1730-1750) 
+produced stoneware that tends to have a dark grey body, partially dipped in a brown to 
+dark brown iron oxide and salt-glazed, mimicking Fulham-type British stoneware.  
+Elsewhere in the state: grey and brown stonewares are commonly are seen beginning 
+late in the eighteenth and early nineteenth century; they continue until the early 
+twentieth century.  
+ Ware:   “American Stoneware” 
+ Material:   “Stoneware” 
+ Manu Tech:   “Wheel Thrown” 
+ Vessel Category:  “Hollow” 
+ Ext Glaze Type:   Usually “Salt Glaze.” May be “Feldspathic/Alkaline” 
+ Int Glaze Type: Often “Salt Glaze.” May be “Wash,” or “Unglazed/Bisque” 
+ 
+Note:  There is no separate category in DAACS for what is often referred to as “American 
+Blue and Gray.” Catalog these vessels as “American Stoneware,” and enter the 
+decoration information into the Decoration table, including Genre (“Blue and Gray”).
+
+=== PAGE 73 ===
+73 
+A common type of nineteenth-century American Stoneware had a thick, white alkaline 
+glaze on the exterior of the vessel, with a dark brown Albany-slipped interior.  Catalog 
+these vessels as follows: 
+ 
+ Ware:   “American Stoneware” 
+ Material:  “Stoneware” 
+ Manu Tech:  “Wheel Thrown” 
+ Vessel Category:   “Hollow” 
+ Form:   As appropriate 
+ Ext Surface:   “Feldspathic/Alkaline” (same glaze as seen on Bristol Glaze 
+Stoneware) 
+ Ext Color:   Record using Detailed Color Groups. 
+ Int Surface:   “Albany Slip” 
+ Int Color:   Record using Detailed Color Groups. 
+ 
+Note:  There is no need to include the Albany Slip in the Decoration table. 
+ 
+ 
+10.4.2   BRI T I SH ST O NE W AR E 
+The term “British Stoneware” is used in DAACS to encompass any stonewares that are 
+identifiable as British, but unidentifiable as any specific types such as Fulham-type.  It is 
+also used when cataloging Bristol-glaze bottles (see below). Specific types of British 
+stoneware can be found below. 
+ 
+10.4. 3  BRI ST O L  GL AZ E 
+Bristol glaze refers to vessels, typically bottles, with a two-toned surface, the bottom 
+half being white, and the top half a yellow to brown. The white surface is an allover 
+opaque glaze, often applied to both the interior and exterior. The top half is a rendered 
+brown by manganese oxide, iron oxide, or both. The glaze may be alkaline or alkaline-
+lead, so “Alkaline-Lead” is the default. The first Bristol-glazed stoneware was produced 
+in England in the nineteenth-century. The ware was immensely popular and the glazing 
+process was adopted by American potters by the 1880s. Most commonly beverage 
+bottles, such as ginger beer and soda water.  Date Range: post 1835. 
+ 
+ Ware:   “Bristol Glaze Stoneware” 
+ Material:   “Stoneware” 
+ Manu Tech:   “Wheel Thrown” 
+ Vessel Category:   “Hollow” 
+ Glaze Type:   “Alkaline” 
+ 
+Decoration on Bristol Glazed Stoneware should be treated like decoration on North 
+Midlands Slipware.  If the sherd is all white, the color of the base glaze is recorded in 
+both the interior and exterior fields. If the exterior is covered solely by the yellow glaze,
+
+=== PAGE 74 ===
+74 
+then the exterior color is recorded as “Body Obscured by Decoration” and then the 
+yellow glaze is recorded in the Stylistic Element field (see example below). The interior 
+white-to-buff base color is recorded in the Interior Glaze Color field.    
+If the exterior has both the white and yellow glaze, the exterior white-to-buff base color 
+is recorded in the Exterior Glaze Color field and the yellow glaze is recorded as dipped 
+decoration in the Decoration table. 
+ 
+ Ext/Int Surface:  “Feldspathic/Alkaline”  
+ Ext Color:  “Body Obscured by Decoration” 
+ Int Color:  Record using Detailed Color Groups 
+ 
+In the Decoration table: 
+ Int/Ext: “Exterior” 
+ Location: As Appropriate 
+ Dec Tech:   “Dipped” 
+ Dec Color: Record using Detailed Color Groups 
+ Stylistic Element:  “Solid” 
+ Motif: “Individual A” 
+ 
+10.4. 4  FUL HAM -T Y P E 
+Fulham-type is the brown, salt-glazed British stoneware most commonly encountered 
+on eighteenth-century colonial sites.  Fulham-type vessels are dipped in brown iron 
+oxide; often this oxide only covers the upper half of the body.  The brown exterior has a 
+pronounced stippled appearance.  The clay body is medium gray in color; it appears 
+darker and somewhat grainier than German stoneware.  Reduction from firing often 
+leaves the interior surfaces with a red or salmon tint but this is not an applied surface. 
+Tavern wares – storage jugs and bottles, tankards, and mugs are most common.  
+Tankards and mugs are cordoned above the base.  Government capacity stamps are 
+impressed on many pieces. Produced in Fulham, Southwark, and Bristol.  Date Range:  
+post 1690. 
+ 
+ Ware:   “Fulham Type” 
+ Material:   “Stoneware” 
+ Manu Tech:  “Wheel Thrown” 
+ Vessel Category:  “Hollow” 
+ Ext Glaze Type:   “Salt Glaze” 
+ Int Glaze Type:   Usually “Salt Glaze” 
+ 
+Note:  Do not catalog the dipped iron oxide into the Decoration table.  This technique is 
+implied with the ware type “Fulham-type.”  Any cordoning should be cataloged into the 
+Decoration table, with the Decorative Technique listed as “Incised, lathe-engine 
+turned.” 
+ 
+10.4.5   SHAW  ST ON EW AR E
+
+=== PAGE 75 ===
+75 
+This refined stoneware has a brown to black body. The exterior was decorated with 
+brown slip, over which white sprig molding and fine slip bands were applied. Cordoning 
+is often present. The interior was white-slipped, and vessels were salt-glazed. The most 
+common forms are pitchers, jugs, and tankards. This ware was patented by Ralph Shaw 
+in 1733, and produced by him and other Staffordshire potters until midcentury. Date 
+Range: 1733-1750. 
+ 
+ Ware:    “Shaw Stoneware” 
+ Material:   “Stoneware” 
+ Manu Tech:   “Press molded” or “Wheel Thrown” 
+ Glaze Type:    “Salt Glaze” 
+ 
+10.4. 6  T UR N E R’S T Y PE 
+Although Turner’s Type may appear somewhat like porcelain, it should be cataloged into 
+DAACS as a stoneware.  Exterior surfaces are ecru or off-white in color and have a matte 
+finish; interiors appear creamy under a glossy glaze.  Vessels are press molded often 
+with engine-turning and sprig molding; bases and rims may be overglaze painted with 
+contrasting, dark enamel color.  Pieces were often originally fitted with silver rims and 
+lids.  Mostly seen in ewers and mugs.  English.  Date Range:  1785-1825. 
+ 
+ Ware:  “Turner Type” 
+ Material:  “Stoneware” 
+ Manu Tech:   “Press Molded” 
+ Vessel Category:   “Hollow” 
+ Ext/Int Surface:   Exterior is “Unglazed/Bisque.”  If the interior has a glossy  
+  surface, catalog this as “Lead Glaze.”  
+ 
+10.4. 7  WHI T E  SALT  GL AZ E ST ON E W AR E 
+White salt-glazed stoneware is an English stoneware with a nearly white, dense clay 
+body.  The salt glaze produces a finely pitted surface.  White salt-glazed stoneware could 
+be finely potted and was used extensively for table and tea wares, as well as for tavern 
+ware and chamber pots.  Molded vessel rims, including a distinctive repertoire of plate 
+rims, are very common as are sprigged decorations.  Overglazed polychrome enamel 
+colors are also seen.  Date Range: 1720-1805.  
+ 
+ Ware:   “White Salt Glaze” 
+ Material:   “Stoneware” 
+ Manu Tech:  Could be “Press Molded”, “Wheel Thrown”, or “Slip Cast” 
+ Exterior Surface: “Salt Glaze” 
+Ext/Int Color:       Use Refined Ceramic Surface Colors 
+ 
+The following decorative techniques are often seen on white salt glaze: 
+ 
+Scratch Blue and Scratch Brown
+
+=== PAGE 76 ===
+76 
+White salt-glazed stoneware with incised designs, usually floral, filled with cobalt or iron 
+oxide slip; in “debased” versions the potter did not completely wipe the excess slip from 
+the surrounding surfaces.  Seen on tavern wares and chamber pots. 
+Date Ranges:  Scratch Brown, 1720-1730.  Scratch Blue, post 1750.  
+ 
+ Genre:   “Scratch Blue” or “Scratch Brown” as appropriate 
+ Decorative Tech:   “Scratch/Fill” or “Scratch/Fill Debased” 
+ Decoration Color:  Identify color of the painted decoration using the   
+    Detailed Color Section of the DAACS Color Book 
+ 
+Littler’s Blue 
+White salt-glazed stoneware hollow forms with exteriors entirely covered by a solid blue 
+slip. Occasionally decorated by gilded designs. The color is uniform and surfaces are 
+smooth; seen in tea wares. Record Genre (Decoration table) as “Littler’s Blue.” Date 
+Range: 1750-1765.   
+ 
+Slip-casting 
+The slip-casting process allowed for crisp, finely detailed molded patterns, which are 
+visible in reverse on the interiors of these extremely thin-bodied vessels. Often tea 
+wares and small serving vessels such as sauce boats.  Date Range: post 1745. 
+ 
+Note: For Manufacturing Technique, vessels that have been slip-cast should be listed as 
+such.  The molded patterns should be listed in the Decoration table, with “Molded” 
+recorded as Decorative Technique. There is no corresponding Genre for this decoration. 
+ 
+Transfer-printing  
+Black transfer printed designs apparently were used for only a brief period.  Date Range: 
+1756-1765.  See section 1.1 for how to catalog transfer printed decoration. 
+ 
+Molded Plate Rim Patterns 
+Include “Dot, Diaper, and Basketweave”; “Bead and Reel”; “Barley”; “Queen’s shape”; 
+“Royal pattern”; and, “Feather Edge.” Date Range: post 1740.  Each of these patterns 
+has a corresponding Genre. See the Genre Appendix for instructions on how to catalog 
+molded rim patterns. 
+ 
+Enameled Colors 
+Overglaze hand painted designs, usually floral motifs. Genre should be “Overglaze, 
+handpainted.” Date Range: post 1746. 
+ 
+10.4. 8  “S L I P  DIP ,” DI P P ED, O R SL I P P ED WHI T E  SALT  GL AZ E D 
+Dipped White Salt Glazed is a light gray to tan-bodied stoneware that is dipped in white 
+slip, or engobe. Hollowware rims, spouts, and the tops of handles are often covered 
+with brown oxide slip. The pitting associated with salt-glazing is not always evident here.
+
+=== PAGE 77 ===
+77 
+Seen in rather thick-bodied tavern wares; initially thought to be an early version of 
+White Salt-glazed stoneware. Date Range: 1715-1775. 
+ 
+ Ware:   “Slip Dip” 
+ Material:    “Stoneware” 
+ Manu Tech:   “Wheel Thrown” 
+ Ext/Int Surface:  “Salt Glaze” 
+ 
+10.4. 9  BLAC K BASAL T  
+“Black Basalt” is Wedgwood’s name for a dry-bodied (unglazed), black to charcoal-gray 
+stoneware, very dense and relatively thin-walled.  Usually has sprigged decoration; 
+sometimes molded or engine-turned, or hand-painted in polychrome colors or gilding.  
+Tea services, pitchers, vases.  Made by a number of Staffordshire potteries, essentially 
+the same ware as Rosso Antico had manganese added to produce the black clay body.  
+Also referred to as “Dry-Bodied Black Stoneware.”  Date Range:  1750-1820. 
+ 
+ Ware:   “Black Basalt” 
+ Material:   “Stoneware” 
+ Manu Tech:   “Press Molded” or “Slip Cast” 
+ Vessel Category:   “Hollow” 
+ Ext/Int Surface:   Usually “Unglazed/Bisque.” May have “Lead Glaze” interior. 
+ Ext/Int Color:   Record using DAACS Detailed Color Groups, usually “Neutrals,  
+  Dark.” 
+ 
+10.4. 10   RO SSO  A NT IC O 
+“Rosso Antico” is Wedgwood’s name for a dry-bodied (unglazed), red stoneware, very 
+dense and thinly potted.  Usually sprigged; sometimes molded or engine turned.  Tea 
+and coffee services. Produced by a number of Staffordshire potters; all of it may simply 
+be referred to as “Dry-Bodied Red Stoneware.”  Date Range:  1700-1772. 
+ 
+ Ware:   “Rosso Antico” 
+ Material:  “Stoneware” 
+ Manu Tech:  “Press Molded” or “Slip Cast” 
+ Vessel Category:   “Hollow” 
+ Exterior Surface:   Usually “Unglazed/Bisque.” May have “Lead Glaze” interior. 
+ Ext/Int Color:  Record using DAACS Detailed Color Groups  
+ 
+10.4. 11   JASP E R  WAR E T Y P E 
+Dry-bodied stoneware.  Jasper ware is dyed a pastel color such as pale blue, olive green, 
+or pink with white-sprigged Classical figures, medallions, etc. Most often seen as trinket 
+or cosmetic boxes, wall plaques, and vases. Produced by Wedgwood.  Date Range: post 
+1775. 
+ Ware:   “Jasperware Type” 
+ Material:   “Stoneware”
+
+=== PAGE 78 ===
+78 
+ Manu Tech:   “Press Molded” 
+ Ext/Int Surface:  Usually “Unglazed/Bisque”. May have “Lead glaze”.  
+ Ext/Int Color:   If slipped, record “Body Color Obscured by Decoration.” 
+Otherwise record using DAACS Detailed Color Groups 
+ 
+10.4. 12   NO T T I NG HAM 
+Nottingham is an English brown stoneware having an even, lustrous or metallic brown-
+slipped exterior.  A thin white layer that can be seen only in cross-section lies between 
+the brown exterior and the tan, compact clay body.  Seen in finely-potted tavern vessels 
+such as mugs, tankards, pitchers, as well as bowls, coffee and tea pots.  Bands of 
+rustication (tiny fragments of clay applied to exterior surfaces, resulting in an 
+appearance not unlike grated coconut) are a common decorative technique.  The ware 
+is salt-glazed, though the characteristic pitted effect is not evident here.  Date Range:  
+1700-1810. 
+ Ware:   “Nottingham” 
+ Material:   “Stoneware” 
+ Manu Tech:   “Wheel Thrown” 
+ Vessel Category:   “Hollow” 
+ Ext/Int Surface:   “Salt Glaze” 
+ Ext/Int Color:  Record using DAACS Detailed Color Groups 
+ 
+Note: There is no need to include the brown-slipped exterior surface or the white layer 
+in the Decoration table, as this is implied with the ware type “Nottingham.” 
+Here is an example of how to catalog the “rustication” decorative technique: 
+ 
+ 
+ 
+ 
+10.4. 13   ST AF F O R D SHI R E  BR O WN 
+Staffordshire Brown is virtually identical to Nottingham stoneware except for the 
+absence of an underlying white slip.  The clay body is tan to medium gray in color; forms 
+are the same as in Nottingham.  Date Range:  1700-1800.
+
+=== PAGE 79 ===
+79 
+ Ware:   “Staffordshire Brown Stoneware” 
+ Material:   “Stoneware” 
+ Manu Tech:   “Wheel Thrown” 
+ Vessel Category:   “Hollow” 
+ Ext/Int Surface:   “Salt Glaze” 
+ Ext/Int Color:  Record using DAACS Detailed Color Groups 
+ 
+Note: There is no need to include the brown-slipped exterior surface in the Decoration 
+table, as this is implied with the ware type “Staffordshire Brown Stoneware.” 
+ 
+ 
+10.4. 14   GE R M AN  ST ON E W AR E 
+The term “German Stoneware” is used in DAACS to encompass any stonewares that are 
+identifiable as German, but unidentifiable as any specific types such as Westerwald.  
+Specific types of German stoneware can be found below. 
+ 
+10.4. 15   WE ST E R W AL D/R HEN I SH  
+Westerwald is a German salt-glazed stoneware with a very dense clay body, light to 
+medium gray in color.  It is decorated with incised and stamped flower motifs, checks, 
+and abstract designs that are usually filled with a rich cobalt blue.  Manganese (purple) 
+is found along with the cobalt blue in earlier vessels.  Sprig molding is also common; 
+usually the gray clay sprig is encircled by a blue ring of color.  Tankards and mugs are 
+usually cordoned above the base and below the rim.  Most often seen in tankards, 
+mugs, chamber pots, and, in earlier contexts, cordoned, cylindrical-necked serving jugs.  
+Date Range:  post 1600-c.1775; blue and purple:  1650-c.1725. 
+ 
+ Ware:   “Westerwald/Rhenish” 
+ Material:   “Stoneware” 
+ Manu Tech: “Wheel Thrown” 
+ Vessel Category: “Hollow” 
+ Ext/Int Surface:   “Salt Glaze” 
+ Ext/Int Color: Record using DAACS Detailed Color Groups 
+ 
+“Chatter” marks (sharp, narrow, slightly raised parallel lines) from the potter’s tool are 
+often evident on exterior surfaces of bulbous-bodied chamber pots and other vessels.  
+These should not be recorded as decoration.  They can be noted in the notes if they are 
+substantial. 
+ 
+10.4.3.2  F R E C HE N  BROWN  
+This is a brown stoneware with a light or dark gray to light brown homogenous 
+stoneware clay body that has a dense paste. The paste color varies from creamy buff to  
+pale gray. Vessels include jugs, bottles, tankards, chamber pots, storage containers 
+and “Bellarmine Bottles” (English terminology) or “Bartmann Krug” (German 
+terminology) jugs. Date Range: 1700-1800.
+
+=== PAGE 80 ===
+80 
+ 
+ Ware:   “Frechen Stoneware” 
+ Material:   “Stoneware” 
+ Manu Tech: “Wheel Thrown” 
+ Vessel Category: “Hollow” 
+ Ext/Int Surface:   “Salt Glaze” 
+ Ext/Int Color:        Record using DAACS Detailed Color Groups
