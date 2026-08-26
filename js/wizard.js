@@ -50,7 +50,6 @@ function skipStep() {
 
 function renderStep(n) {
   currentStep = n;
-  // Update step bar
   document.querySelectorAll('.step-item').forEach((el, i) => {
     el.classList.toggle('active', i === n);
     el.classList.toggle('done', i < n);
@@ -58,12 +57,29 @@ function renderStep(n) {
   document.getElementById('prev-btn').disabled = (n === 0);
   document.getElementById('next-btn').textContent = n === 7 ? '✓ Save Record' : 'Next →';
   const skip = document.getElementById('skip-btn');
-  skip.classList.toggle('hidden', n < 5 || n === 7);
-  // Render content
+  skip.classList.toggle('hidden', !(n === 4 || n === 6)); // Measures (4) and Base Mark (6) are skippable
   const panel = document.getElementById('step-content');
   panel.innerHTML = '';
-  const steps = [step0, step1, step2, step3, step4, step5, step6, step7];
-  panel.appendChild(steps[n]());
+  // Measures moved to index 4; Decoration → 5; Base Mark → 6
+  const steps = [step0, step1, step2, step3, step6, step4, step5, step7];
+  const stepEl = steps[n]();
+  // Inject right-side help panel
+  const helpContent = typeof STEP_HELP[n] === 'function' ? STEP_HELP[n]() : (STEP_HELP[n] || '');
+  if (helpContent) {
+    const titleEl = stepEl.querySelector('h2.step-title');
+    const layout = document.createElement('div');
+    layout.className = 'step-layout';
+    const formSide = document.createElement('div');
+    formSide.className = 'form-side';
+    Array.from(stepEl.children).filter(c => c !== titleEl).forEach(c => formSide.appendChild(c));
+    const helpSide = document.createElement('aside');
+    helpSide.className = 'help-panel';
+    helpSide.innerHTML = helpContent;
+    layout.appendChild(formSide);
+    layout.appendChild(helpSide);
+    stepEl.appendChild(layout);
+  }
+  panel.appendChild(stepEl);
 }
 
 function collectStep(n) {
@@ -73,8 +89,8 @@ function collectStep(n) {
     if (el.type === 'checkbox') { currentRecord[f] = el.checked ? 'Yes' : 'No'; }
     else { currentRecord[f] = el.value || ''; }
   });
-  // Collect decoration rows
-  if (n === 4) {
+  // Collect decoration rows (Decoration is now at index 5)
+  if (n === 5) {
     currentRecord.decorations = [];
     panel.querySelectorAll('.dec-row').forEach((row, i) => {
       const d = newDecRow();
@@ -195,25 +211,8 @@ function step1() {
 
 function step2() {
   const isRefined = WHITE_BODIED_WARES.has(currentRecord.ware) || !currentRecord.ware;
-  const ware = currentRecord.ware;
   const div = makePanel('Surfaces & Colour', '3 of 8');
-
-  // Build ware-aware guidance box
-  const chartName = isRefined ? 'Refined Surface Colors (Individual Glossy)' : 'DAACS Detailed Color Groups (MCRS)';
-  const wareNote = surfaceColourNote(ware, isRefined);
   div.innerHTML += `
-    <div class="step-guide">
-      <div class="guide-row">
-        <span class="guide-label">Colour chart for this ware:</span>
-        <strong>${escHtml(chartName)}</strong>
-      </div>
-      ${wareNote ? `<div class="guide-note">${wareNote}</div>` : ''}
-      <div class="guide-cases">
-        <span><strong>Surface absent?</strong> Surface = <em>Missing</em> · Color = <em>Not Applicable</em></span>
-        <span><strong>Burned / stained?</strong> Color = <em>Unidentifiable</em> — do not use &ldquo;No Applied Color&rdquo;</span>
-        <span><strong>Decoration covers whole surface?</strong> Color = <em>Body Color Obscured by Decoration</em></span>
-      </div>
-    </div>
     <div class="field-group">
       <div class="field">
         <label>Exterior Surface</label>
@@ -251,6 +250,122 @@ function step2() {
     </div>`;
   setTimeout(() => wireSurfaceColourFields(div), 0);
   return div;
+}
+
+// ── Step help panel content (right side of each step) ─────────────────────
+const STEP_HELP = {
+  0: `<h3>Material Types</h3>
+    <dl class="help-dl">
+      <dt>Refined Earthenware</dt><dd>Harder/denser than coarse. Cream to white body, usually lead-glazed. Tin-enameled wares (Delftware, Faience) cataloged here.</dd>
+      <dt>Porcelain</dt><dd>Vitrified, white, translucent. Hard paste (Chinese; European post-1820), soft paste (English c.1745–1810), or bone china (post 1794).</dd>
+      <dt>Stoneware</dt><dd>Vitrified, non-porous. Salt-glaze typical (pitted orange-peel surface). American stonewares common in Ontario c.1850–1920.</dd>
+      <dt>Coarse Earthenware</dt><dd>Porous paste with visible inclusions. Usually grey/red/brown. Broken edge sticks to tongue.</dd>
+      <dt>Unidentifiable</dt><dd>Only when material type (not just ware type) cannot be determined.</dd>
+    </dl>
+    <h3>Batching Rules</h3>
+    <ul class="help-ul">
+      <li>Non-diagnostic body sherds 15mm or less may be batched.</li>
+      <li>Do <strong>not</strong> batch decorated sherds (except non-diagnostic transfer-print 15mm or less with same Genre).</li>
+      <li>All post-1900 unidentifiable refined earthenwares: batch as <em>Refined Earthenware, modern</em>.</li>
+    </ul>`,
+  1: `<h3>Vessel Category</h3>
+    <dl class="help-dl">
+      <dt>Hollow</dt><dd>Bowls, cups, mugs, jars, teapots, pitchers, chamberpots</dd>
+      <dt>Flat</dt><dd>Plates, platters, saucers. Dish-plates (shallow bowls) are Flat.</dd>
+    </dl>
+    <h3>Form Shortcuts</h3>
+    <dl class="help-dl">
+      <dt>Unid: Teaware</dt><dd>Thin, likely tea/coffee related — specific form unclear</dd>
+      <dt>Unid: Tableware</dt><dd>Food service or tavern ware — form unclear</dd>
+      <dt>Unid: Utilitarian</dt><dd>Thick, functional — jars/crocks, form unclear</dd>
+    </dl>
+    <h3>Teaware vs Tableware</h3>
+    <p>Teaware: teapots, teabowls, teacups, saucers, slop bowls, creamers, coffee pots.<br>Mugs and tankards are <em>Tableware</em>, not teaware.</p>
+    <h3>Completeness</h3>
+    <p>Record what part of the vessel this sherd represents. "Base" includes any foot ring sherd. "Detached Glaze" = glaze fragment only. Use compound terms (Body, Rim) when both are present.</p>`,
+  2: () => buildSurfacesHelp(),
+  3: `<h3>Evidence of Burning</h3>
+    <p><em>Unburned</em> is the default — only change with visible evidence.</p>
+    <dl class="help-dl">
+      <dt>Fire-clouding</dt><dd>Dark patches from uneven kiln firing — not use-burning</dd>
+      <dt>Residue/Soot</dt><dd>Indicates vessel was used near fire or in cooking</dd>
+      <dt>Not Recorded</dt><dd>Only for batched coarse earthenware; all others default to Unburned</dd>
+    </dl>
+    <h3>Wear Patterns</h3>
+    <dl class="help-dl">
+      <dt>Utensil Wear</dt><dd>Scratches in the central depression of the interior</dd>
+      <dt>Base Abrasion</dt><dd>Glaze worn on the resting surface of the base</dd>
+      <dt>Spalling</dt><dd>Small circular flaking of the glaze</dd>
+      <dt>Partial Missing Surface</dt><dd>Part of glaze absent; when all glaze is missing, record in the Surface field</dd>
+    </dl>
+    <h3>Post-Manufacturing Modification</h3>
+    <p>Mark <em>Yes</em> only if intentionally reworked after firing — e.g. ground into a gaming piece, hole drilled. Add details in Notes.</p>`,
+  4: `<h3>Measurement Protocols</h3>
+    <dl class="help-dl">
+      <dt>Thickness</dt><dd>Thinnest part of the body wall — not including glaze. In mm.</dd>
+      <dt>Max Size</dt><dd>Longest measurement across the sherd using the mat grid. In mm.</dd>
+      <dt>Weight</dt><dd>Grams. Individual sherd only — exclude bag weight.</dd>
+    </dl>
+    <h3>Rim Diameter</h3>
+    <p>Use the radius template on the cataloging mat. Match the rim curvature to the nearest arc. For thick sherds, measure along the <strong>exterior</strong>. For scalloped edges, at least 3 points are needed. In mm.</p>
+    <h3>Base Diameter</h3>
+    <p>Only for base/foot ring sherds with length greater than 20mm. Use the base diameter template.</p>
+    <h3>Mended Measurements</h3>
+    <p>Only record mended fields when sherds are physically glued or confirmed to join. Measure the joined unit as a whole.</p>`,
+  5: `<h3>One Row Per Decoration Instance</h3>
+    <p>Interior and exterior decorations are recorded as <strong>separate rows</strong>. Two colours in the same design = two rows, all other fields identical.</p>
+    <h3>Decorative Technique</h3>
+    <dl class="help-dl">
+      <dt>Printed, under</dt><dd>Transfer print underglaze — most common in Ontario assemblages</dd>
+      <dt>Decalcomania</dt><dd>Decal transfer — dominant post-1890</dd>
+      <dt>Painted, under free hand</dt><dd>Hand-painted underglaze (blue, brown, black)</dd>
+      <dt>Painted, over free hand</dt><dd>Overglaze enamel painting</dd>
+      <dt>Molded</dt><dd>Design formed in the press mold — shell edge, feather edge, etc.</dd>
+      <dt>Sponge</dt><dd>Sponged or spattered oxide decoration</dd>
+    </dl>
+    <h3>Transfer Printing</h3>
+    <p>Set Stylistic Element and Motif to <em>Not Applicable</em>. Genre = specific type (e.g. <em>Transfer Print Under, blue</em>).</p>
+    <h3>Decoration Colour</h3>
+    <p>Use the DAACS MCRS chart for all decoration regardless of ware type. Copper luster = <em>Gilt</em>. Silver luster = <em>Silver</em>.</p>`,
+  6: `<h3>Base Marks</h3>
+    <p><em>Not Applicable</em> is the default. Only record when a mark is present on the base.</p>
+    <h3>Mark Types</h3>
+    <dl class="help-dl">
+      <dt>Impressed</dt><dd>Pressed into clay before firing</dd>
+      <dt>Incised</dt><dd>Cut or scratched into clay before firing</dd>
+      <dt>Printed</dt><dd>Transfer-printed, usually underglaze</dd>
+      <dt>Painted</dt><dd>Applied in overglaze enamel after firing</dd>
+    </dl>
+    <h3>Dating from Marks</h3>
+    <ul class="help-ul">
+      <li>"Made in [country]" = post 1891 (McKinley Tariff Act)</li>
+      <li>"England" alone = post 1891</li>
+      <li>"Bone China" in mark = post ~1900</li>
+      <li>English Rd. No. marks: consult Godden's Encyclopedia</li>
+    </ul>`,
+};
+
+function buildSurfacesHelp() {
+  const ware = currentRecord.ware;
+  const isRefined = WHITE_BODIED_WARES.has(ware) || !ware;
+  const wareNote = surfaceColourNote(ware, isRefined);
+  return `
+    <h3>Colour Chart: ${escHtml(ware || 'This Ware')}</h3>
+    <p><strong>${isRefined ? 'Refined Surface Colors' : 'DAACS Detailed Color Groups'}</strong><br>
+    <span style="font-size:0.74rem;color:var(--dim)">${isRefined
+      ? 'Match to Individual Glossy swatches (DAACS Color Book)'
+      : 'Match to the named MCRS colour categories'}</span></p>
+    ${wareNote ? `<div class="help-callout">${wareNote}</div>` : ''}
+    <h3>Special Cases</h3>
+    <dl class="help-dl">
+      <dt>Surface absent</dt><dd>Surface = <em>Missing</em> · Color = <em>Not Applicable</em></dd>
+      <dt>Burned or stained</dt><dd>Color = <em>Unidentifiable</em><br><small>Do <strong>not</strong> use "No Applied Color"</small></dd>
+      <dt>Decoration covers whole surface</dt><dd>Color = <em>Body Color Obscured by Decoration</em></dd>
+    </dl>
+    <h3>Paste Color</h3>
+    <p>Examine the <strong>cross-section (broken edge)</strong> in consistent light. Match to Munsell Soil chart. Optional for refined wares and porcelain. Do not record for batched sherds.</p>
+    <h3>Oxidized vs Reduced</h3>
+    <p><em>Reduced</em> = very dark grey or black core in the paste cross-section. Not recorded for coarse earthenware types.</p>`;
 }
 
 // Returns a ware-specific colour tip for the surfaces step
@@ -339,7 +454,7 @@ function step3() {
 }
 
 function step4() {
-  const div = makePanel('Decoration', '5 of 8');
+  const div = makePanel('Decoration', '6 of 8');
   // Decorated toggle
   const decYes = currentRecord.decorated === 'Yes';
   div.innerHTML += `
@@ -460,7 +575,7 @@ function openDecColourModal(rowIdx, rowEl) {
 }
 
 function step5() {
-  const div = makePanel('Base Mark', '6 of 8 — Optional');
+  const div = makePanel('Base Mark', '7 of 8 — Optional');
   div.innerHTML += `
     <div class="field-group">
       <div class="field">
@@ -480,20 +595,28 @@ function step5() {
 }
 
 function step6() {
-  const div = makePanel('Measurements', '7 of 8 — Optional');
+  const div = makePanel('Measurements', '5 of 8 — Optional');
   const f = currentRecord;
   div.innerHTML += `
-    <div class="measure-grid">
-      ${mField('Thickness (mm)',     'thickness',     f.thickness)}
-      ${mField('Max Size (mm)',      'maxSize',       f.maxSize)}
-      ${mField('Weight (g)',         'weight',        f.weight)}
-      ${mField('Mended Weight (g)',  'mendedWeight',  f.mendedWeight)}
-      ${mField('Rim Length (mm)',    'rimLength',     f.rimLength)}
-      ${mField('Rim Diameter (mm)',  'rimDiam',       f.rimDiam)}
-      ${mField('Mended Rim Diam',    'mendedRimDiam', f.mendedRimDiam)}
-      ${mField('Base Length (mm)',   'baseLength',    f.baseLength)}
-      ${mField('Base Diameter (mm)', 'baseDiam',      f.baseDiam)}
-      ${mField('Mended Base Diam',   'mendedBaseDiam',f.mendedBaseDiam)}
+    <div class="measures-section">
+      <p class="section-label">Standard measurements</p>
+      <div class="measure-grid">
+        ${mField('Thickness (mm)',     'thickness',  f.thickness)}
+        ${mField('Max Size (mm)',      'maxSize',    f.maxSize)}
+        ${mField('Weight (g)',         'weight',     f.weight)}
+        ${mField('Rim Length (mm)',    'rimLength',  f.rimLength)}
+        ${mField('Rim Diameter (mm)', 'rimDiam',    f.rimDiam)}
+        ${mField('Base Length (mm)',   'baseLength', f.baseLength)}
+        ${mField('Base Diameter (mm)', 'baseDiam',  f.baseDiam)}
+      </div>
+    </div>
+    <div class="measures-section">
+      <p class="section-label">Mended measurements <span class="optional">only when sherds are physically joined</span></p>
+      <div class="measure-grid">
+        ${mField('Mended Weight (g)',    'mendedWeight',   f.mendedWeight)}
+        ${mField('Mended Rim Diam (mm)', 'mendedRimDiam',  f.mendedRimDiam)}
+        ${mField('Mended Base Diam (mm)','mendedBaseDiam', f.mendedBaseDiam)}
+      </div>
     </div>`;
   return div;
 }
