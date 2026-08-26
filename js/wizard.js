@@ -365,7 +365,18 @@ function buildSurfacesHelp() {
     <h3>Paste Color</h3>
     <p>Examine the <strong>cross-section (broken edge)</strong> in consistent light. Match to Munsell Soil chart. Optional for refined wares and porcelain. Do not record for batched sherds.</p>
     <h3>Oxidized vs Reduced</h3>
-    <p><em>Reduced</em> = very dark grey or black core in the paste cross-section. Not recorded for coarse earthenware types.</p>`;
+    <p><em>Reduced</em> = very dark grey or black core in the paste cross-section. Not recorded for coarse earthenware types.</p>
+    <h3>Glaze Type Guide</h3>
+    <dl class="help-dl">
+      <dt>Salt Glaze</dt><dd>Pitted "orange-peel" texture, colorless. No separate layer — fused to body. Stoneware only. Per DAACS manual: record <em>Salt Glaze</em> for the interior of hollow forms even when texture is not visible. For a stoneware plate: both sides = Salt Glaze.</dd>
+      <dt>Lead Glaze</dt><dd>Shiny, transparent or semi-transparent. Most refined earthenwares. Pools in foot rings — yellow (creamware) or blue (pearlware).</dd>
+      <dt>Feldspathic/Alkaline</dt><dd>Porcelain glaze. Very smooth, glass-like, fused to body. Cannot be scratched off with a fingernail.</dd>
+      <dt>Tin Glaze</dt><dd>Thick, opaque white. "Floats" on surface — often flakes easily. Delftware, Faience, Majolica.</dd>
+      <dt>Albany Slip</dt><dd>Dark, smooth, glossy brown. Applied as liquid clay. Interior of American stoneware crocks and jugs.</dd>
+      <dt>Bristol Glaze</dt><dd>Opaque white stoneware glaze. Often two-toned with dipped brown/yellow upper half.</dd>
+      <dt>Zinc Emulsion</dt><dd>Matte or semi-matte white. 20th-century utilitarian wares and commercial stoneware.</dd>
+      <dt>Unglazed/Bisque</dt><dd>No glaze. Dry, slightly porous surface. Black Basalt, Rosso Antico, Jasperware exteriors.</dd>
+    </dl>`;
 }
 
 // Returns a ware-specific colour tip for the surfaces step
@@ -712,24 +723,24 @@ function renderRefinedGrid(grid) {
       return;
     }
     const hex = computeHex(c.code);
-    const sw = document.createElement('div');
-    sw.className = 'cswatch';
-    sw.style.background = hex;
-    sw.title = c.label;
-    sw.addEventListener('click', () => selectColour(c.code, hex));
-    grid.appendChild(sw);
+    const wrap = document.createElement('div');
+    wrap.className = 'cswatch-lab';
+    wrap.title = c.label;
+    wrap.innerHTML = `<div class="cswatch-lab-color" style="background:${hex}"></div><div class="cswatch-lab-code">${escHtml(c.code)}</div>`;
+    wrap.addEventListener('click', () => selectColour(c.code, hex));
+    grid.appendChild(wrap);
   });
 }
 
 function renderMunsellGrid(grid, entries) {
   entries.forEach(e => {
     const hex = computeHex(e.munsell);
-    const sw = document.createElement('div');
-    sw.className = 'cswatch';
-    sw.style.background = hex;
-    sw.title = `${e.munsell} — ${e.desc}`;
-    sw.addEventListener('click', () => selectColour(e.munsell, hex));
-    grid.appendChild(sw);
+    const wrap = document.createElement('div');
+    wrap.className = 'cswatch-lab';
+    wrap.title = `${e.munsell} — ${e.desc}`;
+    wrap.innerHTML = `<div class="cswatch-lab-color" style="background:${hex}"></div><div class="cswatch-lab-code">${escHtml(e.munsell)}</div>`;
+    wrap.addEventListener('click', () => selectColour(e.munsell, hex));
+    grid.appendChild(wrap);
   });
 }
 
@@ -742,7 +753,8 @@ function renderMCRSGrid(grid, entries) {
     const cell = document.createElement('div');
     cell.className = 'cswatch-named';
     cell.title = e.codes.join(' · ') || e.name;
-    cell.innerHTML = `<div class="cswatch-named-color" style="background:${hex}"></div><div class="cswatch-named-label">${escHtml(shortLabel)}</div>`;
+    const repCode = (!e.special && e.codes.length) ? e.codes[0] : '';
+    cell.innerHTML = `<div class="cswatch-named-color" style="background:${hex}"></div><div class="cswatch-named-label">${escHtml(shortLabel)}${repCode ? `<span class="swatch-code">${escHtml(repCode)}</span>` : ''}</div>`;
     cell.addEventListener('click', () => selectColour(e.name, hex));
     wrap.appendChild(cell);
   });
