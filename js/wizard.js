@@ -9,6 +9,14 @@ let colourModalPending = null; // pending colour value in modal
 // ── Boot ──────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   if (!window.munsell) console.warn('munsell.js not loaded — swatches will be grey');
+
+  // Splash → app transition
+  document.getElementById('start-btn').addEventListener('click', () => {
+    document.getElementById('splash').style.display = 'none';
+    document.getElementById('app-header').classList.remove('hidden');
+    document.getElementById('app-main').classList.remove('hidden');
+  });
+
   document.getElementById('export-btn').addEventListener('click', exportCSV);
   document.getElementById('prev-btn').addEventListener('click', prevStep);
   document.getElementById('next-btn').addEventListener('click', nextStep);

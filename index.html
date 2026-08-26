@@ -8,7 +8,46 @@
 </head>
 <body>
 
-  <header>
+  <!-- Splash screen shown on first load -->
+  <div id="splash">
+    <div class="splash-inner">
+      <div class="splash-icon" aria-hidden="true">⬡</div>
+      <h1 class="splash-title">DAACS Ceramic Recorder</h1>
+      <p class="splash-region">Southern Ontario · Late 19th – Mid 20th Century</p>
+      <p class="splash-desc">
+        A guided recording tool for historical ceramic sherds based on the
+        <strong>DAACS</strong> cataloging standard. Step-by-step wizard covers all
+        fields — ware identification, surface colour, decoration, measurements — and
+        exports a DAACS-compatible CSV.
+      </p>
+
+      <div class="splash-sources">
+        <div class="source-card source-primary">
+          <span class="source-badge">Primary source</span>
+          <strong>DAACS</strong>
+          <span>Digital Archaeological Archive<br>of Comparative Slavery</span>
+          <a href="https://www.daacs.org/" target="_blank" rel="noopener">daacs.org ↗</a>
+        </div>
+        <div class="source-card">
+          <span class="source-badge">Identification support</span>
+          <strong>Maryland Diagnostic Artifacts</strong>
+          <span>Maryland Archaeological<br>Conservation Lab</span>
+          <a href="https://apps.jefpat.maryland.gov/diagnostic/HistoricCeramics/HistoricCeramics.aspx" target="_blank" rel="noopener">jefpat.maryland.gov ↗</a>
+        </div>
+        <div class="source-card">
+          <span class="source-badge">Identification support</span>
+          <strong>SMU Ceramics Database</strong>
+          <span>Saint Mary's University<br>Archaeology Lab</span>
+          <a href="https://www.smu.ca/anthropology/lab-ceramics-database.html" target="_blank" rel="noopener">smu.ca ↗</a>
+        </div>
+      </div>
+
+      <button id="start-btn" class="btn btn-primary splash-start">Start Recording →</button>
+      <p class="splash-note">All data stays in your browser · Export as CSV any time</p>
+    </div>
+  </div>
+
+  <header id="app-header" class="hidden">
     <span class="app-title">DAACS Ceramic Recorder</span>
     <span class="app-subtitle">Southern Ontario · Late 19th – Mid 20th Century</span>
     <div class="header-actions">
@@ -17,7 +56,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="app-main" class="hidden">
     <div id="wizard">
 
       <!-- Step indicator -->
