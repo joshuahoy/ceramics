@@ -195,36 +195,85 @@ function step1() {
 
 function step2() {
   const isRefined = WHITE_BODIED_WARES.has(currentRecord.ware) || !currentRecord.ware;
+  const ware = currentRecord.ware;
   const div = makePanel('Surfaces & Colour', '3 of 8');
+
+  // Build ware-aware guidance box
+  const chartName = isRefined ? 'Refined Surface Colors (Individual Glossy)' : 'DAACS Detailed Color Groups (MCRS)';
+  const wareNote = surfaceColourNote(ware, isRefined);
   div.innerHTML += `
+    <div class="step-guide">
+      <div class="guide-row">
+        <span class="guide-label">Colour chart for this ware:</span>
+        <strong>${escHtml(chartName)}</strong>
+      </div>
+      ${wareNote ? `<div class="guide-note">${wareNote}</div>` : ''}
+      <div class="guide-cases">
+        <span><strong>Surface absent?</strong> Surface = <em>Missing</em> · Color = <em>Not Applicable</em></span>
+        <span><strong>Burned / stained?</strong> Color = <em>Unidentifiable</em> — do not use &ldquo;No Applied Color&rdquo;</span>
+        <span><strong>Decoration covers whole surface?</strong> Color = <em>Body Color Obscured by Decoration</em></span>
+      </div>
+    </div>
     <div class="field-group">
       <div class="field">
         <label>Exterior Surface</label>
         ${sel('extSurface', SURFACES, currentRecord.extSurface)}
+        <p class="field-hint">Type of glaze or surface treatment. Use <em>Missing</em> if the original surface has completely broken away — then set Exterior Color to <em>Not Applicable</em>.</p>
       </div>
       <div class="field">
         <label>Exterior Color <span class="optional">${isRefined ? 'Refined Surface Colors' : 'DAACS MCRS'}</span></label>
         ${colourField('extColor', currentRecord.extColor, isRefined ? 'refined' : 'mcrs')}
+        <p class="field-hint">${isRefined
+          ? 'Match the glazed exterior surface to the Refined Surface Colors chart. Record the colour of the <em>base glaze</em>, not any painted decoration on top.'
+          : 'Match the exterior surface to the DAACS Detailed Color Groups. If the surface is entirely covered by a slip or wash, select <em>Body Color Obscured by Decoration</em>.'
+        }</p>
       </div>
       <div class="field">
         <label>Interior Surface</label>
         ${sel('intSurface', SURFACES, currentRecord.intSurface)}
+        <p class="field-hint">Same protocols as Exterior Surface. For hollow forms, record the glaze inside the vessel. Enter <em>Not Applicable</em> for flat wares where there is no interior.</p>
       </div>
       <div class="field">
         <label>Interior Color <span class="optional">${isRefined ? 'Refined Surface Colors' : 'DAACS MCRS'}</span></label>
         ${colourField('intColor', currentRecord.intColor, isRefined ? 'refined' : 'mcrs')}
+        <p class="field-hint">Same protocols as Exterior Color. For Albany-slipped stoneware interiors, use the DAACS MCRS Neutrals or Yellow-Red families. Do not use <em>No Applied Color</em>.</p>
       </div>
       <div class="field">
-        <label>Paste Color <span class="optional">Munsell Soil — match cross-section</span></label>
+        <label>Paste Color <span class="optional">Munsell Soil — broken edge</span></label>
         ${colourField('pasteColor', currentRecord.pasteColor, 'paste')}
+        <p class="field-hint">Examine the <strong>cross-section (broken edge)</strong> of the sherd in consistent light. Match to the Munsell Soil chart. For most refined earthenwares and porcelains, this is optional. Do not record paste colour for batched sherds.</p>
       </div>
       <div class="field">
         <label>Oxidized vs Reduced</label>
         ${sel('oxidized', OXIDIZED, currentRecord.oxidized || 'Not Reduced')}
+        <p class="field-hint">Determine by examining the paste cross-section. <em>Reduced</em> = very dark grey or black core. Not recorded for coarse earthenware types — use the Colonoware tab fields instead.</p>
       </div>
     </div>`;
   setTimeout(() => wireSurfaceColourFields(div), 0);
   return div;
+}
+
+// Returns a ware-specific colour tip for the surfaces step
+function surfaceColourNote(ware, isRefined) {
+  const notes = {
+    'Whiteware':                     'Clear, colourless glaze — <strong>no blue or yellow tint</strong>. Most common colours: <em>N9/</em> or <em>5Y 9/1</em>. Check for crazing.',
+    'Ironstone/White Granite':       'Dense, clear glaze. Heavier than whiteware. Most common: <em>N9/</em> or <em>5Y 9/1</em>. Plain or with printed/moulded decoration.',
+    'Pearlware':                     'Glaze pools <strong>blue in foot rings</strong>. Hold sherd against white paper — should appear faintly bluish. Common: <em>5Y 9/1</em>, <em>5B 9/1</em>.',
+    'Creamware':                     'Glaze pools <strong>yellow in foot rings</strong>. Hold against white paper — appears cream/yellow. Common: <em>5Y 9/1</em>, <em>10Y 9/1</em>. Earlier pieces are deeper yellow.',
+    "'Carolina' Creamware":          'Glaze pools yellow in foot rings. American-made creamware; same colour protocols as standard Creamware.',
+    'Porcelain, English Bone China':  'Very white, highly translucent. Glaze may craze finely. Common: <em>N9/</em> or <em>5Y 9/1</em>. Under UV: glazed surface appears blueish white.',
+    'Porcelain, Chinese':            'Glaze fused to body; foot rings left <strong>unglazed</strong>. Feldspathic glaze — clear, glossy. Common: <em>5Y 9/1</em> or <em>5BG 9/1</em> (slight blue-grey tint).',
+    'Porcelain, English Soft Paste': 'Glaze distinct from body — visible as thin white line in cross-section. Foot rings ARE glazed. Common: <em>5Y 9/1</em>.',
+    'Porcellaneous/English Hard Paste': 'Dead white, very glassy. Feldspathic glaze. Common: <em>N9/</em>.',
+    'Porcelain, French':             'Hard paste; feldspathic glaze fused to body. Common: <em>N9/</em> or <em>5Y 9/1</em>.',
+    'Porcelain, Japanese':           'Feldspathic glaze, often thicker than Chinese — tends to run. Common: <em>5Y 9/1</em>.',
+    'Delftware, Dutch/British':      'Thick, opaque <strong>white tin glaze</strong> that floats on the surface — often flakes easily. Paste beneath is buff/yellow. Use Refined Surface Colors for the tin glaze surface.',
+    'White Salt Glaze':              'Salt glaze produces a <strong>finely pitted &ldquo;orange peel&rdquo; texture</strong>. No separate glaze layer. Common: <em>N9/</em> or <em>5Y 9/1</em>.',
+    'American Stoneware':            'Salt glaze typical: colorless, pitted texture. Albany slip interiors: dark glossy brown — use DAACS MCRS <em>Yellow-Red, Muted Dark</em> or <em>Neutrals, Dark</em>.',
+    'Yellowware':                    'Lead glaze over yellow/buff body. Glaze colour reflects paste. Use DAACS MCRS Yellow-Red or Yellow families for surface colour.',
+    'Bennington/Rockingham':         'Mottled brown tortoiseshell glaze — inherent in the ware. Enter <em>Body Color Obscured by Decoration</em> or record closest MCRS brown range.',
+  };
+  return notes[ware] || '';
 }
 
 function colourField(fieldName, currentVal, mode) {
