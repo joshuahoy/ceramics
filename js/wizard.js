@@ -113,6 +113,10 @@ function step0() {
         <input type="text" data-field="id" value="${escHtml(currentRecord.id)}" placeholder="e.g. ONT-2024-001" autocomplete="off" spellcheck="false">
       </div>
       <div class="field">
+        <label>Count <span class="required">*</span></label>
+        <input type="number" data-field="count" value="${escHtml(currentRecord.count)}" min="1" step="1" placeholder="e.g. 1" inputmode="numeric">
+      </div>
+      <div class="field">
         <label>Material</label>
         ${sel('material', MATERIALS, currentRecord.material || 'Refined Earthenware')}
       </div>
@@ -205,8 +209,30 @@ function step1() {
         <label>Completeness</label>
         ${sel('completeness', COMPLETENESS, currentRecord.completeness)}
       </div>
-    </div>`;
+    </div>
+    <div id="manu-tech-tip-panel"></div>`;
+  setTimeout(() => {
+    const techniqueEl = div.querySelector('[data-field="manuTech"]');
+    if (!techniqueEl) return;
+    renderManuTechTip(techniqueEl.value);
+    techniqueEl.addEventListener('change', event => renderManuTechTip(event.target.value));
+  }, 0);
   return div;
+}
+
+function renderManuTechTip(technique) {
+  const panel = document.getElementById('manu-tech-tip-panel');
+  if (!panel) return;
+  const tip = MANU_TECH_TIPS[technique];
+  if (!tip) { panel.innerHTML = ''; return; }
+  panel.innerHTML = `
+    <div class="ware-tip">
+      <h4>${escHtml(technique)} <a href="https://www.daacs.org/wp-content/uploads/2021/04/CeramicsCatalogingManual.pdf#page=13" target="_blank" rel="noopener">DAACS manual ↗</a></h4>
+      <div class="tip-rows">
+        <div class="tip-row"><strong>Diagnostic evidence</strong>${escHtml(tip.evidence)}</div>
+        <div class="tip-row"><strong>Reference guidance</strong>${escHtml(tip.typical)}</div>
+      </div>
+    </div>`;
 }
 
 function step2() {

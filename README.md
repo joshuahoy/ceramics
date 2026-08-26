@@ -6,8 +6,8 @@ A guided web application for recording historical ceramic sherds using the DAACS
 
 The app walks catalogers through each DAACS ceramic recording field in a step-by-step wizard:
 
-1. **Identify** — Select Material and Ware type. Selecting a ware auto-fills default surface types and shows an identification tip card (date range, paste/glaze characteristics, decoration notes)
-2. **Form** — Manufacturing Technique, Vessel Category, Form, Completeness
+1. **Identify** — Enter Artifact ID and Count, then select Material and Ware type. Selecting a ware auto-fills default surface types and shows an identification tip card (date range, paste/glaze characteristics, decoration notes)
+2. **Form** — Manufacturing Technique, Vessel Category, Form, Completeness. Selecting a manufacturing technique shows DAACS-based diagnostic evidence and reference guidance.
 3. **Surfaces & Colour** — Exterior/Interior surface type and colour, paste colour. Colour pickers automatically show the correct colour chart: *Refined Surface Colors* (Individual Glossy swatches) for white-bodied wares (porcelain, whiteware, bone china, etc.) or *DAACS MCRS* swatches for non-white-bodied wares
 4. **Condition** — Evidence of Burning, Post-Manufacturing Modification, Wear
 5. **Decoration** — Toggle decorated/undecorated; add multiple decoration rows with Technique, Colour, Stylistic Element (all 544 DAACS elements, searchable), Motif, Genre, and Pattern Name

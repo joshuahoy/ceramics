@@ -236,6 +236,42 @@ const MATERIALS = ['Coarse Earthenware', 'Porcelain', 'Refined Earthenware', 'St
 
 const MANU_TECH = ['Handbuild, coil', 'Handbuild, unidentifiable', 'Missing', 'Not Applicable', 'Press Molded', 'Slip Cast', 'Unidentifiable', 'Wheel Thrown'];
 
+// Identification guidance condensed from DAACS Ceramics Cataloging Manual, section 1.4.
+const MANU_TECH_TIPS = {
+  'Wheel Thrown': {
+    evidence: 'Look for horizontal rilling or throw lines.',
+    typical: 'Common for stonewares, many coarse earthenwares, early refined wares such as delft, heavy forms, and some porcelains.',
+  },
+  'Press Molded': {
+    evidence: 'Usually produces thin-bodied vessels and can create complex molded shapes.',
+    typical: 'Common for thin refined-earthenware teawares and tablewares, including creamware baskets; some porcelain is also press molded.',
+  },
+  'Handbuild, coil': {
+    evidence: 'Use only where diagnostic coil evidence, such as a coil break, is present.',
+    typical: 'Coils are joined spirals or series of clay coils smoothed together with fingers, a paddle and anvil, or similar tools.',
+  },
+  'Handbuild, unidentifiable': {
+    evidence: 'Use when pottery is handbuilt but no diagnostic coil evidence survives on the sherd.',
+    typical: 'Handbuilt vessels can be slab-built, coiled, or a combination; these techniques are difficult to distinguish from sherds.',
+  },
+  'Slip Cast': {
+    evidence: 'Look for a negative impression of exterior decoration on the interior surface.',
+    typical: 'A watery slip is poured into a mold and allowed to harden. Fine stonewares such as Black Basalt and White Salt Glaze may be slip cast.',
+  },
+  'Missing': {
+    evidence: 'The original surface or diagnostic manufacturing evidence is missing.',
+    typical: 'Use only when loss or damage prevents the technique from being observed.',
+  },
+  'Not Applicable': {
+    evidence: 'Manufacturing technique is not applicable to the recorded material.',
+    typical: 'Use only where this field does not apply; otherwise select the most supportable technique or Unidentifiable.',
+  },
+  'Unidentifiable': {
+    evidence: 'No diagnostic features support a confident manufacturing-technique identification.',
+    typical: 'Use when the technique cannot be determined from the available sherd evidence.',
+  },
+};
+
 const VESSEL_CATEGORIES = ['Flat', 'Hollow', 'Unidentifiable'];
 
 const FORMS = [

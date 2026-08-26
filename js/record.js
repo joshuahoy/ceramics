@@ -6,7 +6,7 @@ let currentRecord = newRecord();
 
 function newRecord() {
   return {
-    id: '', material: '', ware: '', manuTech: '', vesselCat: '', form: '',
+    id: '', count: '', material: '', ware: '', manuTech: '', vesselCat: '', form: '',
     completeness: '', extSurface: '', extColor: '', intSurface: '', intColor: '',
     pasteColor: '', oxidized: 'Not Reduced', burning: 'Unburned',
     wearLocation: '', wearPattern: '', postMfgMod: 'No',
@@ -64,7 +64,7 @@ function updateLogUI() {
 function exportCSV() {
   if (!sessionLog.length) return;
   const headers = [
-    'ID','Ware','Material','Manu Tech','Category','Form','Completeness',
+    'ID','Count','Ware','Material','Manu Tech','Category','Form','Completeness',
     'Ext Surface','Ext Color','Int Surface','Int Color','Paste Color',
     'Oxidized vs Reduced','Burning','Post-Mfg Mod','Wear Location','Wear Pattern',
     'Decorated','Genre 1','Dec Technique 1','Dec Color 1','Stylistic Element 1','Motif 1',
@@ -78,7 +78,7 @@ function exportCSV() {
     const d1 = r.decorations[0] || {};
     const d2 = r.decorations[1] || {};
     return [
-      r.id, r.ware, r.material, r.manuTech, r.vesselCat, r.form, r.completeness,
+      r.id, r.count, r.ware, r.material, r.manuTech, r.vesselCat, r.form, r.completeness,
       r.extSurface, r.extColor, r.intSurface, r.intColor, r.pasteColor,
       r.oxidized, r.burning, r.postMfgMod, r.wearLocation, r.wearPattern,
       r.decorated, d1.genre||'', d1.technique||'', d1.color||'', d1.stylElement||'', d1.motif||'',
