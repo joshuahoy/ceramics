@@ -135,10 +135,12 @@
       <div class="auth-content">
         <label for="auth-email">Email address</label>
         <input id="auth-email" type="email" autocomplete="email" required placeholder="name@example.org">
-        <p id="auth-message" class="auth-message">We will send a sign-in link to this address.</p>
+        <label for="auth-password">Password</label>
+        <input id="auth-password" type="password" autocomplete="current-password" required>
+        <p id="auth-message" class="auth-message">Use the password assigned to your Supabase account.</p>
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-primary">Email sign-in link</button>
+        <button type="submit" class="btn btn-primary">Sign in</button>
       </div>
     </form>
   </div>

@@ -59,12 +59,13 @@ function closeAuthModal() {
 async function submitAuthForm(event) {
   event.preventDefault();
   const email = document.getElementById('auth-email').value.trim();
+  const password = document.getElementById('auth-password').value;
   const message = document.getElementById('auth-message');
   try {
-    await signInWithMagicLink(email);
-    message.textContent = 'Check your inbox for the sign-in link.';
+    await signInWithPassword(email, password);
+    closeAuthModal();
   } catch (error) {
-    message.textContent = error.message || 'Unable to send a sign-in link.';
+    message.textContent = error.message || 'Unable to sign in.';
   }
 }
 

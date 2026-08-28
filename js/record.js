@@ -32,7 +32,8 @@ function saveRecord() {
   updateLogUI();
   syncRecordToSupabase(r).catch(error => {
     r.syncStatus = 'failed';
-    setSyncStatus('error', 'Record saved locally; sync failed');
+    const detail = error.code || error.message || 'Unknown error';
+    setSyncStatus('error', `Saved locally; sync failed: ${detail}`);
     console.error('Supabase record sync failed:', error);
   });
   currentRecord = newRecord();

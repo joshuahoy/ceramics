@@ -86,7 +86,7 @@ on public.ceramic_records for insert to authenticated
 with check (created_by = auth.uid());
 ```
 
-Use **Sign in** in the application header to request a magic link. After sign-in, the session restores automatically and the shared records load into the session log. A record saved while signed out remains in the browser log and can still be exported as CSV.
+Use **Sign in** in the application header with a Supabase email and password. Create team accounts in **Authentication → Users** and disable public sign-ups in **Authentication → Providers → Email**. After sign-in, the session restores automatically and the shared records load into the session log. A record saved while signed out remains in the browser log and can still be exported as CSV.
 
 ## Scope
 

@@ -98,12 +98,9 @@ async function updateAccountUI(session) {
   if (typeof hydrateRemoteRecords === 'function') await hydrateRemoteRecords();
 }
 
-async function signInWithMagicLink(email) {
+async function signInWithPassword(email, password) {
   if (!supabaseClient) throw new Error('Supabase is not available.');
-  const { error } = await supabaseClient.auth.signInWithOtp({
-    email,
-    options: { emailRedirectTo: window.location.origin + window.location.pathname },
-  });
+  const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
   if (error) throw error;
 }
 
