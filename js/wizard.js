@@ -5,7 +5,6 @@ let currentStep = 0;
 const TOTAL_STEPS = 8;
 let colourModalTarget = null; // which field the colour picker is writing to
 let colourModalPending = null; // pending colour value in modal
-let wareIdObservations = {};
 
 // ── Boot ──────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', async () => {
@@ -195,19 +194,7 @@ function step0() {
         </select>
       </div>
     </div>
-    <div id="ware-tip-panel"></div>
-    <section class="ware-identifier" aria-labelledby="ware-identifier-title">
-      <div class="identifier-heading">
-        <div><h3 id="ware-identifier-title">Ware Identifier</h3><p>Compare paste, glaze, and decoration. Suggestions are not automatic identifications.</p></div>
-        <a href="https://apps.jefpat.maryland.gov/diagnostic/HistoricCeramics/BeginnersGuide.aspx" target="_blank" rel="noopener">MAC Lab guide ↗</a>
-      </div>
-      <div id="ware-id-questions"></div>
-      <div id="ware-id-results"></div>
-    </section>
-    <details class="ware-comparison" id="ware-comparison">
-      <summary>Compare ${escHtml(material)} wares</summary>
-      <div id="ware-comparison-list"></div>
-    </details>`;
+    <div id="ware-tip-panel"></div>`;
   // Wire up ware select
   setTimeout(() => {
     const wareEl = document.getElementById('ware-select');
@@ -224,67 +211,9 @@ function step0() {
       wareEl.innerHTML = `<option value="">— Select ware type —</option>${wareOptions(selectedMaterial)}`;
       currentRecord.ware = '';
       renderWareTip('');
-      renderWareComparison(selectedMaterial);
     });
-    renderWareIdentifier();
-    renderWareComparison(material);
   }, 0);
   return div;
-}
-
-function renderWareIdentifier() {
-  const questions = document.getElementById('ware-id-questions');
-  const results = document.getElementById('ware-id-results');
-  if (!questions || !results) return;
-  questions.innerHTML = WARE_ID_QUESTIONS.map(question => `
-    <div class="identifier-question">
-      <span>${escHtml(question.label)}</span>
-      <div class="identifier-options">${question.options.map(([value, label]) => `<button type="button" class="identifier-option${wareIdObservations[question.field] === value ? ' active' : ''}" data-id-field="${question.field}" data-id-value="${value}">${escHtml(label)}</button>`).join('')}</div>
-    </div>`).join('');
-  questions.querySelectorAll('[data-id-field]').forEach(button => {
-    button.addEventListener('click', () => {
-      wareIdObservations[button.dataset.idField] = button.dataset.idValue;
-      renderWareIdentifier();
-    });
-  });
-  const candidates = identifyWareCandidates(wareIdObservations);
-  if (Object.keys(wareIdObservations).length < 2) {
-    results.innerHTML = '<p class="identifier-empty">Choose at least two observations to see possible wares.</p>';
-    return;
-  }
-  if (!candidates.length) {
-    results.innerHTML = '<p class="identifier-empty">No close match yet. Recheck the broken edge and glaze, or use the appropriate unidentifiable ware.</p>';
-    return;
-  }
-  results.innerHTML = `<p class="identifier-caution">Suggestions use general diagnostic traits. Confirm against a reference or comparison collection before recording a ware.</p>${candidates.map(candidate => `
-    <div class="identifier-result">
-      <div><strong>${escHtml(candidate.ware)}</strong><span>${candidate.score} matching observations</span></div>
-      <p>${escHtml(candidate.check)}</p>
-      <small>${escHtml(candidate.caution)}</small>
-      <div class="identifier-actions"><button type="button" class="btn btn-secondary btn-sm" data-choose-ware="${escHtml(candidate.ware)}">Use this ware</button><a href="${WARE_TIPS[candidate.ware]?.url || 'https://apps.jefpat.maryland.gov/diagnostic/HistoricCeramics/BeginnersGuide.aspx'}" target="_blank" rel="noopener">Reference ↗</a></div>
-    </div>`).join('')}`;
-  results.querySelectorAll('[data-choose-ware]').forEach(button => {
-    button.addEventListener('click', () => {
-      const ware = button.dataset.chooseWare;
-      applyWarePreset(ware);
-      const materialEl = document.querySelector('[data-field="material"]');
-      const wareEl = document.getElementById('ware-select');
-      if (materialEl) materialEl.value = currentRecord.material;
-      if (wareEl) {
-        wareEl.innerHTML = `<option value="">— Select ware type —</option>${wareOptions(currentRecord.material)}`;
-        wareEl.value = ware;
-      }
-      renderWareTip(ware);
-      renderWareComparison(currentRecord.material);
-    });
-  });
-}
-
-function renderWareComparison(material) {
-  const list = document.getElementById('ware-comparison-list');
-  if (!list) return;
-  const rows = Object.entries(WARE_ID_GUIDE).filter(([, guide]) => guide.material === material);
-  list.innerHTML = rows.length ? rows.map(([ware, guide]) => `<div class="comparison-row${currentRecord.ware === ware ? ' selected' : ''}"><strong>${escHtml(ware)}</strong><span>${escHtml(guide.check)}</span></div>`).join('') : '<p class="identifier-empty">Detailed comparison guidance is currently available for the common Ontario wares.</p>';
 }
 
 function wareOptions(material) {

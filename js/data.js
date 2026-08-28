@@ -230,45 +230,6 @@ const WARE_TIPS = {
   },
 };
 
-// Conservative identification aid based on the MAC Lab Beginner's Guide.
-const WARE_ID_GUIDE = {
-  'Whiteware': { material: 'Refined Earthenware', paste: ['white-compact'], surface: ['clear-glaze'], decoration: ['transfer-or-decal'], check: 'Look for a clear glaze with no blue or yellow pooling.', caution: 'Can overlap with later pearlware; assess several attributes together.' },
-  'Ironstone/White Granite': { material: 'Refined Earthenware', paste: ['white-heavy'], surface: ['clear-glaze'], decoration: ['molded-or-plain'], check: 'Compare weight and dense body to ordinary whiteware; relief molding is common.', caution: 'Plain whiteware and ironstone can be difficult to separate from a small sherd.' },
-  'Creamware': { material: 'Refined Earthenware', paste: ['cream-thin'], surface: ['yellow-pooling'], decoration: ['molded-or-painted'], check: 'Check glaze pooling in foot rings and compare against white paper for a cream/yellow cast.', caution: 'Do not identify from body colour alone.' },
-  'Pearlware': { material: 'Refined Earthenware', paste: ['white-thin'], surface: ['blue-pooling'], decoration: ['molded-or-painted', 'transfer-or-decal'], check: 'Check foot-ring glaze pools and compare against white paper for a blue cast.', caution: 'The boundary with whiteware is often uncertain on individual sherds.' },
-  'Yellowware': { material: 'Refined Earthenware', paste: ['yellow-buff'], surface: ['clear-glaze'], decoration: ['plain-or-banded'], check: 'Look for a dense yellow/buff body beneath clear or coloured lead glaze.', caution: 'Rockingham is a yellowware body with a distinctive mottled brown glaze.' },
-  'Bennington/Rockingham': { material: 'Refined Earthenware', paste: ['yellow-buff'], surface: ['mottled-brown'], decoration: ['molded-or-plain'], check: 'Look for uneven honey-to-dark-brown tortoiseshell glaze on a yellow/buff body.', caution: 'The mottled glaze is the strongest diagnostic attribute.' },
-  'Victorian Majolica': { material: 'Refined Earthenware', paste: ['cream-thin', 'yellow-buff'], surface: ['bright-colored'], decoration: ['molded-or-painted'], check: 'Look for glossy, vivid coloured lead glaze pooling in molded relief.', caution: 'Use the ware only for 19th-century majolica-style colored-glaze relief.' },
-  'Delftware, Dutch/British': { material: 'Refined Earthenware', paste: ['porous-buff'], surface: ['opaque-white'], decoration: ['molded-or-painted'], check: 'Look for thick opaque tin glaze that may flake, over a buff, porous body.', caution: 'Confirm the white layer is a tin glaze, not later white stoneware glaze.' },
-  'American Stoneware': { material: 'Stoneware', paste: ['vitrified-gray-tan'], surface: ['orange-peel', 'brown-interior'], decoration: ['cobalt-painted', 'molded-or-plain'], check: 'Look for a dense gray/tan body with salt glaze, Albany-slip interior, or cobalt decoration.', caution: 'Salt-glazed stoneware without diagnostic decoration may remain unidentifiable.' },
-  'White Salt Glaze': { material: 'Stoneware', paste: ['vitrified-white'], surface: ['orange-peel'], decoration: ['molded-or-painted'], check: 'Look for fine orange-peel texture on a nearly white stoneware body, often with molded decoration.', caution: 'Distinguish from later white feldspathic stoneware by its salt-glaze texture.' },
-  'Porcelain, English Bone China': { material: 'Porcelain', paste: ['translucent-white'], surface: ['clear-glaze'], decoration: ['transfer-or-decal', 'molded-or-painted'], check: 'Hold thin sherds to light: bone china is exceptionally translucent with an ivory-white body.', caution: 'Translucency and paste should support, not replace, comparison with known examples.' },
-  'Redware': { material: 'Coarse Earthenware', paste: ['porous-red'], surface: ['clear-glaze', 'brown-interior'], decoration: ['molded-or-plain'], check: 'Look for a porous red to reddish-brown body, often lead-glazed on one or both surfaces.', caution: 'Use Coarse Earthenware, unidentified when no diagnostic attributes survive.' },
-};
-
-const WARE_ID_QUESTIONS = [
-  { field: 'paste', label: 'Broken-edge paste', options: [
-    ['white-compact', 'White, hard, compact'], ['white-heavy', 'Dense, heavy white'], ['cream-thin', 'Thin cream/ivory'], ['white-thin', 'Thin white'], ['yellow-buff', 'Yellow or buff'], ['porous-buff', 'Porous buff/pale yellow'], ['porous-red', 'Porous red/brown'], ['vitrified-gray-tan', 'Hard gray/tan stoneware'], ['vitrified-white', 'Hard nearly white stoneware'], ['translucent-white', 'White and translucent'],
-  ] },
-  { field: 'surface', label: 'Surface or glaze', options: [
-    ['clear-glaze', 'Clear or colourless glaze'], ['yellow-pooling', 'Yellow glaze pooling'], ['blue-pooling', 'Blue glaze pooling'], ['mottled-brown', 'Mottled brown glaze'], ['bright-colored', 'Vivid coloured glaze'], ['opaque-white', 'Thick opaque white glaze'], ['orange-peel', 'Pitted orange-peel texture'], ['brown-interior', 'Glossy brown interior'],
-  ] },
-  { field: 'decoration', label: 'Decoration or form', options: [
-    ['molded-or-plain', 'Molded relief or plain'], ['molded-or-painted', 'Molded relief or hand-painted'], ['transfer-or-decal', 'Transfer print or decal'], ['plain-or-banded', 'Plain, banded, or engine-turned'], ['cobalt-painted', 'Cobalt blue painting or stamping'],
-  ] },
-];
-
-function identifyWareCandidates(observations) {
-  const candidates = Object.entries(WARE_ID_GUIDE).map(([ware, guide]) => {
-    const matches = WARE_ID_QUESTIONS.flatMap(question => {
-      const value = observations[question.field];
-      return value && guide[question.field].includes(value) ? [value] : [];
-    });
-    return { ware, ...guide, matches, score: matches.length };
-  }).filter(candidate => candidate.score >= 2);
-  return candidates.sort((a, b) => b.score - a.score || a.ware.localeCompare(b.ware));
-}
-
 // ── Authority terms ────────────────────────────────────────────────────────────
 
 const MATERIALS = ['Coarse Earthenware', 'Porcelain', 'Refined Earthenware', 'Stoneware', 'Unidentifiable'];

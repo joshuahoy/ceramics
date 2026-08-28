@@ -36,8 +36,6 @@ All field names, authority terms, colour systems, and recording protocols are dr
 
 Ware identification tips (defining attributes, date ranges, paste and glaze descriptions) are drawn from this reference for the following wares: Whiteware, Ironstone/White Granite, Bone China, Creamware, Pearlware, Chinese Hard-Paste Porcelain, Soft-Paste Porcelain, American Stoneware, White Salt Glaze, Delftware, and others.
 
-The Identify step's Ware Identifier follows MAC Lab's recommended order of paste, then surface treatment/glaze, then decoration. It links to the [Ceramic Organization File](https://apps.jefpat.maryland.gov/diagnostic/PDFs/CeramicOrganizationFile.pdf), [Beginner's Guide to Historic Ceramic Identification](https://apps.jefpat.maryland.gov/diagnostic/HistoricCeramics/BeginnersGuide.aspx), and [Evolution of Creamware, Pearlware and Whiteware](https://apps.jefpat.maryland.gov/diagnostic/Earthenware/Evolution.aspx). Suggestions are diagnostic support, not automatic identifications; the sources note that ware characteristics overlap and can vary by maker and period.
-
 **Saint Mary's University — Archaeology Lab Ceramics Database**  
 [smu.ca/anthropology/lab-ceramics-database.html](https://www.smu.ca/anthropology/lab-ceramics-database.html)
 

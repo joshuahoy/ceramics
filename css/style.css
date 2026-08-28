@@ -99,32 +99,6 @@ select.auto-filled, input.auto-filled { border-color: var(--accent-dim); color: 
 .tip-row { font-size: 0.74rem; color: var(--muted); }
 .tip-row strong { color: var(--text); display: block; margin-bottom: 2px; }
 
-/* ── Ware identifier ── */
-.ware-identifier { margin-top: 18px; padding: 14px; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; }
-.identifier-heading { display: flex; gap: 12px; align-items: start; justify-content: space-between; }
-.identifier-heading h3 { margin: 0; font-size: 0.86rem; }
-.identifier-heading p, .identifier-empty, .identifier-caution { margin: 4px 0 0; font-size: 0.74rem; color: var(--muted); line-height: 1.4; }
-.identifier-heading a, .identifier-actions a { color: var(--accent); font-size: 0.72rem; text-decoration: none; white-space: nowrap; }
-.identifier-question { margin-top: 13px; }
-.identifier-question > span { display: block; margin-bottom: 6px; font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
-.identifier-options { display: flex; flex-wrap: wrap; gap: 5px; }
-.identifier-option { min-height: 28px; padding: 4px 8px; border: 1px solid var(--border); border-radius: 5px; color: var(--muted); background: var(--surface); font-size: 0.7rem; cursor: pointer; }
-.identifier-option:hover, .identifier-option.active { color: var(--text); border-color: var(--accent); background: var(--accent-dim); }
-#ware-id-results { margin-top: 14px; }
-.identifier-caution { color: var(--warn); }
-.identifier-result { margin-top: 8px; padding: 10px; border-left: 3px solid var(--success); background: var(--tip-bg); }
-.identifier-result > div:first-child { display: flex; justify-content: space-between; gap: 8px; }
-.identifier-result strong { color: var(--success); font-size: 0.78rem; }
-.identifier-result span, .identifier-result small { color: var(--muted); font-size: 0.68rem; }
-.identifier-result p { margin: 5px 0 3px; font-size: 0.74rem; }
-.identifier-actions { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
-.ware-comparison { margin-top: 10px; font-size: 0.76rem; color: var(--muted); }
-.ware-comparison summary { cursor: pointer; }
-#ware-comparison-list { margin-top: 8px; }
-.comparison-row { display: grid; grid-template-columns: minmax(150px, 0.6fr) 1fr; gap: 10px; padding: 7px 4px; border-top: 1px solid var(--border); }
-.comparison-row strong { color: var(--text); font-size: 0.74rem; }
-.comparison-row.selected { color: var(--success); }
-
 /* ── Decoration rows ── */
 .dec-rows { display: flex; flex-direction: column; gap: 10px; }
 .dec-row { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 12px; position: relative; }
@@ -156,12 +130,6 @@ select.auto-filled, input.auto-filled { border-color: var(--accent-dim); color: 
 #log-table th { padding: 3px 8px; background: var(--bg); color: var(--dim); font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.06em; border-bottom: 1px solid var(--border); text-align: left; position: sticky; top: 0; }
 #log-table td { padding: 3px 8px; border-bottom: 1px solid var(--border); vertical-align: middle; max-width: 160px; overflow: hidden; text-overflow: ellipsis; }
 #log-empty { color: var(--dim); font-style: italic; font-size: 0.74rem; margin: 0; }
-
-@media (max-width: 560px) {
-  .identifier-heading, .comparison-row { display: block; }
-  .identifier-heading a { display: inline-block; margin-top: 7px; }
-  .comparison-row span { display: block; margin-top: 3px; }
-}
 
 /* ── Colour modal ── */
 .modal { position: fixed; inset: 0; background: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; z-index: 100; padding: 16px; }
