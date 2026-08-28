@@ -78,9 +78,13 @@ async function initializeSupabase() {
     setSyncStatus('error', 'Sync unavailable');
     return null;
   }
+  const isRecoveryLink = isPasswordRecoveryLink();
   supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
   const { data: { session } } = await supabaseClient.auth.getSession();
   await updateAccountUI(session);
+  if (isRecoveryLink && typeof openPasswordResetModal === 'function') {
+    openPasswordResetModal();
+  }
   supabaseClient.auth.onAuthStateChange((event, nextSession) => {
     if (event === 'PASSWORD_RECOVERY' && typeof openPasswordResetModal === 'function') {
       openPasswordResetModal();
@@ -88,6 +92,12 @@ async function initializeSupabase() {
     updateAccountUI(nextSession);
   });
   return session;
+}
+
+function isPasswordRecoveryLink() {
+  const query = new URLSearchParams(window.location.search);
+  const fragment = new URLSearchParams(window.location.hash.slice(1));
+  return query.get('type') === 'recovery' || fragment.get('type') === 'recovery';
 }
 
 async function updateAccountUI(session) {

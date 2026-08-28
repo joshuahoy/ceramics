@@ -11,11 +11,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (!window.munsell) console.warn('munsell.js not loaded — swatches will be grey');
 
   // Splash → app transition
-  document.getElementById('start-btn').addEventListener('click', () => {
-    document.getElementById('splash').style.display = 'none';
-    document.getElementById('app-header').classList.remove('hidden');
-    document.getElementById('app-main').classList.remove('hidden');
-  });
+  document.getElementById('start-btn').addEventListener('click', showApp);
 
   document.getElementById('export-btn').addEventListener('click', exportCSV);
   document.getElementById('prev-btn').addEventListener('click', prevStep);
@@ -58,8 +54,15 @@ function closeAuthModal() {
 }
 
 function openPasswordResetModal() {
+  showApp();
   document.getElementById('password-reset-modal').classList.remove('hidden');
   document.getElementById('new-password').focus();
+}
+
+function showApp() {
+  document.getElementById('splash').style.display = 'none';
+  document.getElementById('app-header').classList.remove('hidden');
+  document.getElementById('app-main').classList.remove('hidden');
 }
 
 async function submitAuthForm(event) {
