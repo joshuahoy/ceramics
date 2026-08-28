@@ -7,7 +7,7 @@ let colourModalTarget = null; // which field the colour picker is writing to
 let colourModalPending = null; // pending colour value in modal
 
 // ── Boot ──────────────────────────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   if (!window.munsell) console.warn('munsell.js not loaded — swatches will be grey');
 
   // Splash → app transition
@@ -26,9 +26,47 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('colour-modal').addEventListener('click', e => {
     if (e.target === document.getElementById('colour-modal')) closeColourModal();
   });
+  document.getElementById('account-btn').addEventListener('click', handleAccountClick);
+  document.getElementById('auth-modal-close').addEventListener('click', closeAuthModal);
+  document.getElementById('auth-modal').addEventListener('click', event => {
+    if (event.target === document.getElementById('auth-modal')) closeAuthModal();
+  });
+  document.getElementById('auth-form').addEventListener('submit', submitAuthForm);
   updateLogUI();
   renderStep(0);
+  try {
+    await initializeSupabase();
+  } catch (error) {
+    setSyncStatus('error', 'Sync unavailable');
+    console.error('Supabase initialization failed:', error);
+  }
 });
+
+async function handleAccountClick() {
+  const session = await getSupabaseSession();
+  if (session) {
+    await signOut();
+    return;
+  }
+  document.getElementById('auth-modal').classList.remove('hidden');
+  document.getElementById('auth-email').focus();
+}
+
+function closeAuthModal() {
+  document.getElementById('auth-modal').classList.add('hidden');
+}
+
+async function submitAuthForm(event) {
+  event.preventDefault();
+  const email = document.getElementById('auth-email').value.trim();
+  const message = document.getElementById('auth-message');
+  try {
+    await signInWithMagicLink(email);
+    message.textContent = 'Check your inbox for the sign-in link.';
+  } catch (error) {
+    message.textContent = error.message || 'Unable to send a sign-in link.';
+  }
+}
 
 // ── Navigation ────────────────────────────────────────────────────────────────
 function prevStep() {

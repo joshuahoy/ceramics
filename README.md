@@ -45,8 +45,48 @@ Provides supplementary reference context for ceramic types commonly found on 18t
 
 - Static site — no server required. Hosted on GitHub Pages.
 - Munsell → sRGB conversion uses [munsell.js](https://github.com/privet-kitty/munsell.js) (MPL-2.0) via [esm.sh](https://esm.sh)
-- All session data lives in the browser only; nothing is transmitted
+- Records can be synchronized to the shared Supabase database after team members sign in by email; CSV export remains available.
 - CSV export format matches DAACS field naming conventions
+
+## Supabase Setup
+
+The application uses the Supabase project URL and publishable key configured in [js/supabase.js](js/supabase.js). The publishable key is intentionally browser-visible; Row Level Security (RLS) must remain enabled to protect the database. Never use a `service_role` key in this app.
+
+1. In **Authentication → Providers**, enable Email authentication.
+2. In **Authentication → URL Configuration**, add the deployed GitHub Pages URL and the local development URL as redirect URLs.
+3. In **SQL Editor**, create the table and policies below. These permit signed-in team members to read and add records, while anonymous requests are denied.
+
+```sql
+create table public.ceramic_records (
+	id uuid primary key,
+	created_at timestamptz not null default now(),
+	updated_at timestamptz not null default now(),
+	created_by uuid not null default auth.uid(),
+	artifact_id text not null,
+	count integer not null default 1,
+	material text, ware text, manu_tech text, vessel_cat text, form text,
+	completeness text, ext_surface text, ext_color text, int_surface text,
+	int_color text, paste_color text, oxidized text, burning text,
+	wear_location text, wear_pattern text, post_mfg_mod text, decorated text,
+	decorations jsonb not null default '[]'::jsonb,
+	base_mark text, base_mark_color text, base_mark_ref text,
+	thickness numeric, max_size numeric, weight numeric, mended_weight numeric,
+	rim_length numeric, rim_diam numeric, mended_rim_diam numeric,
+	base_length numeric, base_diam numeric, mended_base_diam numeric,
+	notes text
+);
+
+alter table public.ceramic_records enable row level security;
+
+create policy "Authenticated users can read ceramic records"
+on public.ceramic_records for select to authenticated using (true);
+
+create policy "Authenticated users can add ceramic records"
+on public.ceramic_records for insert to authenticated
+with check (created_by = auth.uid());
+```
+
+Use **Sign in** in the application header to request a magic link. After sign-in, the session restores automatically and the shared records load into the session log. A record saved while signed out remains in the browser log and can still be exported as CSV.
 
 ## Scope
 

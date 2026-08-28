@@ -52,6 +52,8 @@
     <span class="app-subtitle">Southern Ontario · Late 19th – Mid 20th Century</span>
     <div class="header-actions">
       <button id="export-btn" class="btn btn-secondary" disabled>Export CSV</button>
+      <span id="sync-status" class="sync-status" data-status="offline">Local only</span>
+      <button id="account-btn" class="btn btn-secondary">Sign in</button>
       <span id="log-count" class="log-badge hidden">0</span>
     </div>
   </header>
@@ -124,12 +126,31 @@
     </div>
   </div>
 
+  <div id="auth-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="auth-modal-title">
+    <form id="auth-form" class="modal-box auth-box">
+      <div class="modal-header">
+        <span id="auth-modal-title">Sign in to sync</span>
+        <button id="auth-modal-close" type="button" class="btn-icon" aria-label="Close">✕</button>
+      </div>
+      <div class="auth-content">
+        <label for="auth-email">Email address</label>
+        <input id="auth-email" type="email" autocomplete="email" required placeholder="name@example.org">
+        <p id="auth-message" class="auth-message">We will send a sign-in link to this address.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Email sign-in link</button>
+      </div>
+    </form>
+  </div>
+
   <!-- esm.sh builds the CJS-only munsell package as browser ESM; DOMContentLoaded waits for module scripts -->
   <script type="module">
     import * as m from 'https://esm.sh/munsell@1.1.6';
     window.munsell = m;
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/data.js"></script>
+  <script src="js/supabase.js"></script>
   <script src="js/record.js"></script>
   <script src="js/wizard.js"></script>
 </body>

@@ -6,6 +6,7 @@ let currentRecord = newRecord();
 
 function newRecord() {
   return {
+    remoteId: crypto.randomUUID(), syncStatus: 'local',
     id: '', count: '1', material: '', ware: '', manuTech: '', vesselCat: '', form: '',
     completeness: '', extSurface: '', extColor: '', intSurface: '', intColor: '',
     pasteColor: '', oxidized: 'Not Reduced', burning: 'Unburned',
@@ -29,7 +30,24 @@ function saveRecord() {
   sessionLog.push(r);
   appendLogRow(r);
   updateLogUI();
+  syncRecordToSupabase(r).catch(error => {
+    r.syncStatus = 'failed';
+    setSyncStatus('error', 'Record saved locally; sync failed');
+    console.error('Supabase record sync failed:', error);
+  });
   currentRecord = newRecord();
+}
+
+async function hydrateRemoteRecords() {
+  const remoteRecords = await loadRecords();
+  const knownIds = new Set(sessionLog.map(record => record.remoteId));
+  const newRecords = remoteRecords.filter(record => !knownIds.has(record.remoteId));
+  newRecords.forEach(record => {
+    sessionLog.push(record);
+    appendLogRow(record);
+  });
+  updateLogUI();
+  setSyncStatus('synced', 'All records synced');
 }
 
 function appendLogRow(r) {
