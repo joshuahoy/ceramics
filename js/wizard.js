@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('prev-btn').addEventListener('click', prevStep);
   document.getElementById('next-btn').addEventListener('click', nextStep);
   document.getElementById('skip-btn').addEventListener('click', skipStep);
+  document.getElementById('cancel-edit-btn').addEventListener('click', cancelRemoteEdit);
   document.getElementById('colour-modal-close').addEventListener('click', closeColourModal);
   document.getElementById('colour-confirm').addEventListener('click', confirmColour);
   document.getElementById('colour-modal').addEventListener('click', e => {
@@ -101,9 +102,12 @@ function prevStep() {
   if (currentStep > 0) { currentStep--; renderStep(currentStep); }
 }
 
-function nextStep() {
+async function nextStep() {
   collectStep(currentStep);
-  if (currentStep === 7) { saveRecord(); currentStep = 0; }
+  if (currentStep === 7) {
+    const saved = await saveRecord();
+    if (saved) currentStep = 0;
+  }
   else currentStep++;
   renderStep(currentStep);
 }
@@ -121,7 +125,8 @@ function renderStep(n) {
     el.classList.toggle('done', i < n);
   });
   document.getElementById('prev-btn').disabled = (n === 0);
-  document.getElementById('next-btn').textContent = n === 7 ? '✓ Save Record' : 'Next →';
+  document.getElementById('next-btn').textContent = n === 7 ? (editingRecordId ? '✓ Save Changes' : '✓ Save Record') : 'Next →';
+  document.getElementById('cancel-edit-btn').classList.toggle('hidden', !editingRecordId);
   const skip = document.getElementById('skip-btn');
   skip.classList.toggle('hidden', !(n === 4 || n === 6)); // Measures (4) and Base Mark (6) are skippable
   const panel = document.getElementById('step-content');

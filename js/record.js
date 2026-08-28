@@ -1,7 +1,10 @@
 'use strict';
 
 // ── Data model ────────────────────────────────────────────────────────────────
-const sessionLog = [];
+const localSessionLog = [];
+let sessionLog = localSessionLog;
+let showingSharedRecords = false;
+let editingRecordId = null;
 let currentRecord = newRecord();
 
 function newRecord() {
@@ -26,9 +29,27 @@ function newDecRow() {
 }
 
 // ── Session log ───────────────────────────────────────────────────────────────
-function saveRecord() {
+async function saveRecord() {
   const r = { ...currentRecord, decorations: currentRecord.decorations.map(d => ({ ...d }) ) };
+  if (editingRecordId) {
+    try {
+      const updatedRecord = await updateRecordInSupabase(r);
+      const index = sessionLog.findIndex(record => record.remoteId === editingRecordId);
+      if (index !== -1) sessionLog[index] = updatedRecord;
+      editingRecordId = null;
+      currentRecord = newRecord();
+      rebuildLog();
+      setSyncStatus('synced', 'Changes saved');
+      return true;
+    } catch (error) {
+      const detail = error.code || error.message || 'Unknown error';
+      setSyncStatus('error', `Changes not saved: ${detail}`);
+      console.error('Supabase record update failed:', error);
+      return false;
+    }
+  }
   sessionLog.push(r);
+  if (!showingSharedRecords && sessionLog !== localSessionLog) localSessionLog.push(r);
   appendLogRow(r);
   updateLogUI();
   syncRecordToSupabase(r).catch(error => {
@@ -38,18 +59,30 @@ function saveRecord() {
     console.error('Supabase record sync failed:', error);
   });
   currentRecord = newRecord();
+  return true;
 }
 
 async function hydrateRemoteRecords() {
   const remoteRecords = await loadRecords();
-  const knownIds = new Set(sessionLog.map(record => record.remoteId));
-  const newRecords = remoteRecords.filter(record => !knownIds.has(record.remoteId));
-  newRecords.forEach(record => {
-    sessionLog.push(record);
-    appendLogRow(record);
-  });
-  updateLogUI();
+  sessionLog = remoteRecords;
+  showingSharedRecords = true;
+  rebuildLog();
   setSyncStatus('synced', 'All records synced');
+}
+
+function showLocalRecords() {
+  sessionLog = localSessionLog;
+  showingSharedRecords = false;
+  rebuildLog();
+}
+
+function rebuildLog() {
+  const tbody = document.getElementById('log-body');
+  if (tbody) tbody.innerHTML = '';
+  sessionLog.forEach(appendLogRow);
+  const source = document.getElementById('log-source');
+  if (source) source.textContent = showingSharedRecords ? 'Shared records' : 'Local session';
+  updateLogUI();
 }
 
 function appendLogRow(r) {
@@ -63,8 +96,28 @@ function appendLogRow(r) {
     td(r.id), td(r.ware), td(r.form), td(r.extSurface),
     td(r.extColor), td(r.intColor), td(r.pasteColor),
     td(r.burning), td(decSummary), td(r.notes),
+    showingSharedRecords ? `<td><button class="btn btn-secondary btn-sm" data-edit-record="${escHtml(r.remoteId)}">Edit</button></td>` : '<td>—</td>',
   ].join('');
   tbody.appendChild(tr);
+  tr.querySelector('[data-edit-record]')?.addEventListener('click', () => startRemoteEdit(r.remoteId));
+}
+
+function startRemoteEdit(remoteId) {
+  const record = sessionLog.find(item => item.remoteId === remoteId);
+  if (!record) return;
+  editingRecordId = remoteId;
+  currentRecord = { ...record, decorations: record.decorations.map(decoration => ({ ...decoration })) };
+  currentStep = 0;
+  renderStep(0);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function cancelRemoteEdit() {
+  if (!editingRecordId) return;
+  editingRecordId = null;
+  currentRecord = newRecord();
+  currentStep = 0;
+  renderStep(0);
 }
 
 function updateLogUI() {

@@ -81,6 +81,7 @@
         <button id="prev-btn" class="btn btn-secondary" disabled>← Back</button>
         <div class="nav-center">
           <button id="skip-btn" class="btn btn-ghost hidden">Skip</button>
+          <button id="cancel-edit-btn" class="btn btn-ghost hidden">Cancel Edit</button>
         </div>
         <button id="next-btn" class="btn btn-primary">Next →</button>
       </div>
@@ -89,7 +90,7 @@
     <!-- Session log -->
     <section id="log-section">
       <div class="log-header">
-        <h2>Session Log <span id="log-count-inline">0 records</span></h2>
+        <h2><span id="log-source">Local session</span> <span id="log-count-inline">0 records</span></h2>
       </div>
       <div id="log-wrap">
         <p id="log-empty">No records yet.</p>
@@ -99,7 +100,7 @@
               <tr>
                 <th>ID</th><th>Ware</th><th>Form</th><th>Ext Surface</th>
                 <th>Ext Color</th><th>Int Color</th><th>Paste Color</th>
-                <th>Burning</th><th>Decorated</th><th>Notes</th>
+                <th>Burning</th><th>Decorated</th><th>Notes</th><th>Action</th>
               </tr>
             </thead>
             <tbody id="log-body"></tbody>

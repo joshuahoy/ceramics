@@ -90,6 +90,11 @@ on public.ceramic_records for select to authenticated using (true);
 create policy "Authenticated users can add ceramic records"
 on public.ceramic_records for insert to authenticated
 with check (created_by = auth.uid());
+
+create policy "Authenticated users can edit ceramic records"
+on public.ceramic_records for update to authenticated
+using (true)
+with check (true);
 ```
 
 ### Audit Fields Migration
@@ -126,6 +131,8 @@ for each row execute function public.set_ceramic_record_audit_fields();
 The app displays these audit values in Review & Save once they have been returned by Supabase, and includes them in CSV exports. `created_by` and `modified_by` are Supabase user IDs; use **Authentication → Users** to match an ID to an account email.
 
 Use **Sign in** in the application header with a Supabase email and password. Create team accounts in **Authentication → Users** and disable public sign-ups in **Authentication → Providers → Email**. After sign-in, the session restores automatically and the shared records load into the session log. A record saved while signed out remains in the browser log and can still be exported as CSV.
+
+Signed-out users see only their current local browser-session records. Signed-in users see the shared Supabase records and can select **Edit** to reopen a record in the full wizard. Saving edits updates the existing record instead of creating a duplicate; **Cancel Edit** discards the working copy. The update policy above permits all authenticated users to edit shared records. If using the `ceramic_access` allowlist, replace each `true` in that policy with `public.can_access_ceramics('edit')`.
 
 When a user follows a Supabase password-recovery email link, the app detects the recovery session and opens a **Set a new password** form. The password is sent only to Supabase's authentication service; it is not stored in the app.
 

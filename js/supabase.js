@@ -107,6 +107,7 @@ async function updateAccountUI(session) {
     accountButton.textContent = 'Sign in';
     accountButton.title = 'Sign in to sync shared records';
     setSyncStatus('offline', 'Local only');
+    if (typeof showLocalRecords === 'function') showLocalRecords();
     return;
   }
   accountButton.textContent = 'Sign out';
@@ -165,4 +166,18 @@ async function syncRecordToSupabase(record) {
   record.syncStatus = 'synced';
   setSyncStatus('synced', 'All records synced');
   return true;
+}
+
+async function updateRecordInSupabase(record) {
+  if (!supabaseClient) throw new Error('Supabase is not available.');
+  setSyncStatus('sending', 'Saving changes');
+  const row = mapRecordToDatabase(record);
+  delete row.id;
+  const { data, error } = await supabaseClient.from('ceramic_records')
+    .update(row)
+    .eq('id', record.remoteId)
+    .select('*')
+    .single();
+  if (error) throw error;
+  return mapDatabaseToRecord(data);
 }
