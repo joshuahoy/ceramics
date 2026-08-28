@@ -60,7 +60,7 @@ Provides supplementary visual and descriptive guidance for the dynamic surface-t
 The application uses the Supabase project URL and publishable key configured in [js/supabase.js](js/supabase.js). The publishable key is intentionally browser-visible; Row Level Security (RLS) must remain enabled to protect the database. Never use a `service_role` key in this app.
 
 1. In **Authentication → Providers**, enable Email authentication.
-2. In **Authentication → URL Configuration**, add the deployed GitHub Pages URL and the local development URL as redirect URLs.
+2. In **Authentication → URL Configuration**, set the deployed GitHub Pages URL as the Site URL and add both the deployed URL and local development URL as redirect URLs. Password-recovery links return to this app, which displays the new-password form.
 3. In **SQL Editor**, create the table and policies below. These permit signed-in team members to read and add records, while anonymous requests are denied.
 
 ```sql
@@ -128,6 +128,8 @@ for each row execute function public.set_ceramic_record_audit_fields();
 The app displays these audit values in Review & Save once they have been returned by Supabase, and includes them in CSV exports. `created_by` and `modified_by` are Supabase user IDs; use **Authentication → Users** to match an ID to an account email.
 
 Use **Sign in** in the application header with a Supabase email and password. Create team accounts in **Authentication → Users** and disable public sign-ups in **Authentication → Providers → Email**. After sign-in, the session restores automatically and the shared records load into the session log. A record saved while signed out remains in the browser log and can still be exported as CSV.
+
+When a user follows a Supabase password-recovery email link, the app detects the recovery session and opens a **Set a new password** form. The password is sent only to Supabase's authentication service; it is not stored in the app.
 
 ## Scope
 

@@ -145,6 +145,24 @@
     </form>
   </div>
 
+  <div id="password-reset-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="password-reset-title">
+    <form id="password-reset-form" class="modal-box auth-box">
+      <div class="modal-header">
+        <span id="password-reset-title">Set a new password</span>
+      </div>
+      <div class="auth-content">
+        <label for="new-password">New password</label>
+        <input id="new-password" type="password" autocomplete="new-password" required minlength="8">
+        <label for="confirm-password">Confirm new password</label>
+        <input id="confirm-password" type="password" autocomplete="new-password" required minlength="8">
+        <p id="password-reset-message" class="auth-message">Choose a password with at least 8 characters.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Update password</button>
+      </div>
+    </form>
+  </div>
+
   <!-- esm.sh builds the CJS-only munsell package as browser ESM; DOMContentLoaded waits for module scripts -->
   <script type="module">
     import * as m from 'https://esm.sh/munsell@1.1.6';

@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (event.target === document.getElementById('auth-modal')) closeAuthModal();
   });
   document.getElementById('auth-form').addEventListener('submit', submitAuthForm);
+  document.getElementById('password-reset-form').addEventListener('submit', submitPasswordResetForm);
   updateLogUI();
   renderStep(0);
   try {
@@ -57,6 +58,11 @@ function closeAuthModal() {
   document.getElementById('auth-modal').classList.add('hidden');
 }
 
+function openPasswordResetModal() {
+  document.getElementById('password-reset-modal').classList.remove('hidden');
+  document.getElementById('new-password').focus();
+}
+
 async function submitAuthForm(event) {
   event.preventDefault();
   const email = document.getElementById('auth-email').value.trim();
@@ -67,6 +73,24 @@ async function submitAuthForm(event) {
     closeAuthModal();
   } catch (error) {
     message.textContent = error.message || 'Unable to sign in.';
+  }
+}
+
+async function submitPasswordResetForm(event) {
+  event.preventDefault();
+  const password = document.getElementById('new-password').value;
+  const confirmation = document.getElementById('confirm-password').value;
+  const message = document.getElementById('password-reset-message');
+  if (password !== confirmation) {
+    message.textContent = 'Passwords do not match.';
+    return;
+  }
+  try {
+    await updatePassword(password);
+    message.textContent = 'Password updated. You can now continue using the app.';
+    document.getElementById('password-reset-form').querySelector('button[type="submit"]').disabled = true;
+  } catch (error) {
+    message.textContent = error.message || 'Unable to update the password.';
   }
 }
 

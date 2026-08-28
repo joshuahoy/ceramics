@@ -81,7 +81,12 @@ async function initializeSupabase() {
   supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
   const { data: { session } } = await supabaseClient.auth.getSession();
   await updateAccountUI(session);
-  supabaseClient.auth.onAuthStateChange((_event, nextSession) => updateAccountUI(nextSession));
+  supabaseClient.auth.onAuthStateChange((event, nextSession) => {
+    if (event === 'PASSWORD_RECOVERY' && typeof openPasswordResetModal === 'function') {
+      openPasswordResetModal();
+    }
+    updateAccountUI(nextSession);
+  });
   return session;
 }
 
@@ -103,6 +108,12 @@ async function updateAccountUI(session) {
 async function signInWithPassword(email, password) {
   if (!supabaseClient) throw new Error('Supabase is not available.');
   const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
+  if (error) throw error;
+}
+
+async function updatePassword(password) {
+  if (!supabaseClient) throw new Error('Supabase is not available.');
+  const { error } = await supabaseClient.auth.updateUser({ password });
   if (error) throw error;
 }
 
