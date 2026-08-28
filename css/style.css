@@ -65,6 +65,7 @@ main { display: flex; flex-direction: column; min-height: calc(100vh - 52px); }
 .field-group { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
 .field { display: flex; flex-direction: column; gap: 5px; }
 .field.full { grid-column: 1 / -1; }
+.notes-field { margin-top: 16px; }
 .field label { font-size: 0.75rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
 .field label .required { color: #ff453a; margin-left: 2px; }
 .field label .optional { color: var(--dim); font-weight: 400; text-transform: none; letter-spacing: 0; font-size: 0.7rem; }

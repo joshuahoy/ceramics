@@ -102,6 +102,7 @@ function renderStep(n) {
   // Measures moved to index 4; Decoration → 5; Base Mark → 6
   const steps = [step0, step1, step2, step3, step6, step4, step5, step7];
   const stepEl = steps[n]();
+  const notesField = makeNotesField(currentRecord.notes);
   // Inject right-side help panel
   const helpContent = typeof STEP_HELP[n] === 'function' ? STEP_HELP[n]() : (STEP_HELP[n] || '');
   if (helpContent) {
@@ -111,13 +112,14 @@ function renderStep(n) {
     const formSide = document.createElement('div');
     formSide.className = 'form-side';
     Array.from(stepEl.children).filter(c => c !== titleEl).forEach(c => formSide.appendChild(c));
+    formSide.appendChild(notesField);
     const helpSide = document.createElement('aside');
     helpSide.className = 'help-panel';
     helpSide.innerHTML = helpContent;
     layout.appendChild(formSide);
     layout.appendChild(helpSide);
     stepEl.appendChild(layout);
-  }
+  } else stepEl.appendChild(notesField);
   panel.appendChild(stepEl);
 }
 
@@ -716,10 +718,6 @@ function step7() {
   const div = makePanel('Review & Save', '8 of 8');
   const f = currentRecord;
   div.innerHTML += `
-    <div class="field full" style="margin-bottom:14px">
-      <label>Notes <span class="optional">optional</span></label>
-      <textarea data-field="notes" rows="3">${escHtml(f.notes)}</textarea>
-    </div>
     <div style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:14px;font-size:0.8rem;line-height:1.9">
       <strong style="display:block;margin-bottom:8px;color:var(--muted);text-transform:uppercase;font-size:0.7rem;letter-spacing:.06em">Summary</strong>
       ${summaryRow('ID', f.id)}
@@ -731,6 +729,10 @@ function step7() {
       ${summaryRow('Burning', f.burning)}
       ${summaryRow('Decorated', f.decorated === 'Yes' ? `Yes — ${f.decorations.length} row(s)` : 'No')}
       ${summaryRow('Base Mark', f.baseMark !== 'Not Applicable' ? f.baseMark : '')}
+      ${summaryRow('Created On', formatAuditDate(f.createdOn))}
+      ${summaryRow('Created By', f.createdBy)}
+      ${summaryRow('Modified On', formatAuditDate(f.modifiedOn))}
+      ${summaryRow('Modified By', f.modifiedBy)}
     </div>`;
   return div;
 }
@@ -896,6 +898,13 @@ function makePanel(title, badge) {
   return div;
 }
 
+function makeNotesField(notes) {
+  const field = document.createElement('div');
+  field.className = 'field notes-field';
+  field.innerHTML = `<label>Notes <span class="optional">optional</span></label><textarea data-field="notes" rows="3">${escHtml(notes)}</textarea>`;
+  return field;
+}
+
 function sel(field, opts, current) {
   return `<select data-field="${field}"><option value="">— Select —</option>${opts.map(o => `<option value="${escHtml(o)}"${o===current?' selected':''}>${escHtml(o)}</option>`).join('')}</select>`;
 }
@@ -917,6 +926,12 @@ function mField(label, field, val) {
 function summaryRow(label, val) {
   if (!val) return '';
   return `<div><span style="color:var(--muted);min-width:120px;display:inline-block">${escHtml(label)}:</span> ${escHtml(val)}</div>`;
+}
+
+function formatAuditDate(value) {
+  if (!value) return '';
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? value : date.toLocaleString();
 }
 
 function escHtml(s) {

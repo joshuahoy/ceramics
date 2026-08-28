@@ -7,6 +7,7 @@ let currentRecord = newRecord();
 function newRecord() {
   return {
     remoteId: crypto.randomUUID(), syncStatus: 'local',
+    createdOn: '', createdBy: '', modifiedOn: '', modifiedBy: '',
     id: '', count: '1', material: '', ware: '', manuTech: '', vesselCat: '', form: '',
     completeness: '', extSurface: '', extColor: '', intSurface: '', intColor: '',
     pasteColor: '', oxidized: 'Not Reduced', burning: 'Unburned',
@@ -83,6 +84,7 @@ function updateLogUI() {
 function exportCSV() {
   if (!sessionLog.length) return;
   const headers = [
+    'Created On','Created By','Modified On','Modified By',
     'ID','Count','Ware','Material','Manu Tech','Category','Form','Completeness',
     'Ext Surface','Ext Color','Int Surface','Int Color','Paste Color',
     'Oxidized vs Reduced','Burning','Post-Mfg Mod','Wear Location','Wear Pattern',
@@ -97,6 +99,7 @@ function exportCSV() {
     const d1 = r.decorations[0] || {};
     const d2 = r.decorations[1] || {};
     return [
+      r.createdOn, r.createdBy, r.modifiedOn, r.modifiedBy,
       r.id, r.count, r.ware, r.material, r.manuTech, r.vesselCat, r.form, r.completeness,
       r.extSurface, r.extColor, r.intSurface, r.intColor, r.pasteColor,
       r.oxidized, r.burning, r.postMfgMod, r.wearLocation, r.wearPattern,

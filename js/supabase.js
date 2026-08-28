@@ -54,6 +54,8 @@ function mapDatabaseToRecord(row) {
   return {
     remoteId: row.id,
     syncStatus: 'synced',
+    createdOn: row.created_at || '', createdBy: row.created_by || '',
+    modifiedOn: row.updated_at || '', modifiedBy: row.modified_by || row.created_by || '',
     id: row.artifact_id || '', count: String(row.count || 1), material: row.material || '',
     ware: row.ware || '', manuTech: row.manu_tech || '', vesselCat: row.vessel_cat || '',
     form: row.form || '', completeness: row.completeness || '', extSurface: row.ext_surface || '',
@@ -130,8 +132,15 @@ async function syncRecordToSupabase(record) {
   const { data: { session } } = await supabaseClient.auth.getSession();
   if (!session) return false;
   setSyncStatus('sending', 'Saving record');
-  const { error } = await supabaseClient.from('ceramic_records').insert(mapRecordToDatabase(record));
+  const { data, error } = await supabaseClient.from('ceramic_records')
+    .insert(mapRecordToDatabase(record))
+    .select('created_at, created_by, updated_at, modified_by')
+    .single();
   if (error) throw error;
+  record.createdOn = data.created_at || '';
+  record.createdBy = data.created_by || '';
+  record.modifiedOn = data.updated_at || '';
+  record.modifiedBy = data.modified_by || data.created_by || '';
   record.syncStatus = 'synced';
   setSyncStatus('synced', 'All records synced');
   return true;

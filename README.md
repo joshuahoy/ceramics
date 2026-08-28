@@ -62,6 +62,7 @@ create table public.ceramic_records (
 	created_at timestamptz not null default now(),
 	updated_at timestamptz not null default now(),
 	created_by uuid not null default auth.uid(),
+	modified_by uuid,
 	artifact_id text not null,
 	count integer not null default 1,
 	material text, ware text, manu_tech text, vessel_cat text, form text,
@@ -85,6 +86,39 @@ create policy "Authenticated users can add ceramic records"
 on public.ceramic_records for insert to authenticated
 with check (created_by = auth.uid());
 ```
+
+### Audit Fields Migration
+
+For an existing table, run this migration in **SQL Editor**. It adds `modified_by` and makes Supabase, rather than the browser, record the authenticated user and timestamp whenever a record is created or changed.
+
+```sql
+alter table public.ceramic_records
+	add column if not exists modified_by uuid;
+
+create or replace function public.set_ceramic_record_audit_fields()
+returns trigger
+language plpgsql
+security invoker
+set search_path = public
+as $$
+begin
+	if tg_op = 'INSERT' then
+		new.created_at := coalesce(new.created_at, now());
+		new.created_by := coalesce(new.created_by, auth.uid());
+	end if;
+	new.updated_at := now();
+	new.modified_by := auth.uid();
+	return new;
+end;
+$$;
+
+drop trigger if exists ceramic_record_audit_fields on public.ceramic_records;
+create trigger ceramic_record_audit_fields
+before insert or update on public.ceramic_records
+for each row execute function public.set_ceramic_record_audit_fields();
+```
+
+The app displays these audit values in Review & Save once they have been returned by Supabase, and includes them in CSV exports. `created_by` and `modified_by` are Supabase user IDs; use **Authentication → Users** to match an ID to an account email.
 
 Use **Sign in** in the application header with a Supabase email and password. Create team accounts in **Authentication → Users** and disable public sign-ups in **Authentication → Providers → Email**. After sign-in, the session restores automatically and the shared records load into the session log. A record saved while signed out remains in the browser log and can still be exported as CSV.
 
