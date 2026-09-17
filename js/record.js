@@ -33,6 +33,12 @@ async function saveRecord() {
   const r = { ...currentRecord, decorations: currentRecord.decorations.map(d => ({ ...d }) ) };
   const pendingPhotos = currentRecord.pendingPhotos || [];
   delete r.pendingPhotos;
+  if (!getFirebaseUser()) {
+    saveLocalRecord(r, editingRecordId ? 'Saved locally as a new record' : 'Saved locally');
+    editingRecordId = null;
+    currentRecord = newRecord();
+    return true;
+  }
   if (editingRecordId) {
     try {
       const updatedRecord = await updateRecord(r, pendingPhotos);
@@ -64,6 +70,21 @@ async function saveRecord() {
   return true;
 }
 
+function saveLocalRecord(record, message) {
+  const localRecord = {
+    ...record,
+    remoteId: crypto.randomUUID(),
+    syncStatus: 'local',
+    photos: [],
+    decorations: record.decorations.map(decoration => ({ ...decoration })),
+  };
+  localSessionLog.push(localRecord);
+  sessionLog = localSessionLog;
+  showingSharedRecords = false;
+  rebuildLog();
+  setSyncStatus('offline', message);
+}
+
 async function hydrateRemoteRecords() {
   const remoteRecords = await loadRecords();
   sessionLog = remoteRecords;
@@ -81,6 +102,7 @@ function replaceRemoteRecords(records) {
 function showLocalRecords() {
   sessionLog = localSessionLog;
   showingSharedRecords = false;
+  editingRecordId = null;
   rebuildLog();
 }
 

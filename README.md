@@ -67,6 +67,10 @@ The initial allowlist permits `hoy.joshua@gmail.com` and `s.payne1191@gmail.com`
 
 Record photos are compressed in the browser to a maximum dimension of 1600px before upload. Each record supports up to five newly selected photos at a time; uploaded photo metadata is stored with the Firestore record and image files are stored under `ceramic-records/{recordId}/` in Firebase Storage.
 
+### Importing Legacy CSV Records
+
+After signing in as `hoy.joshua@gmail.com`, use **Import CSV** in the header to select a CSV export from the prior app. The importer preserves available audit fields and maps the previous export's two decoration columns into decoration rows. It skips records that already have the same Artifact ID and Created On value, so retain the original CSV as a backup and use the importer only for migration.
+
 ## Scope
 
 Ware types and identification tips are prioritized for assemblages from **Southern Ontario, late 1800s – mid 1900s**:

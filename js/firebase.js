@@ -22,6 +22,10 @@ function isAllowedUser(user) {
   return Boolean(user?.email && FIREBASE_ALLOWED_EMAILS.has(user.email.toLowerCase()));
 }
 
+function isFirebaseAdmin(user = getFirebaseUser()) {
+  return user?.email?.toLowerCase() === 'hoy.joshua@gmail.com';
+}
+
 async function initializeFirebase() {
   const config = window.FIREBASE_CONFIG;
   if (!config?.apiKey || !config?.projectId) {
@@ -64,9 +68,11 @@ async function handleAuthStateChange(user) {
 
 function updateAccountUI(user) {
   const accountButton = document.getElementById('account-btn');
+  const importButton = document.getElementById('import-btn');
   if (!accountButton) return;
   accountButton.textContent = user ? 'Sign out' : 'Sign in with Google';
   accountButton.title = user?.email || 'Sign in with Google';
+  if (importButton) importButton.classList.toggle('hidden', !isFirebaseAdmin(user));
 }
 
 async function signInWithGoogle() {
@@ -155,6 +161,89 @@ async function updateRecord(record, photoFiles = []) {
   }
   setSyncStatus('synced', 'Changes saved');
   return row;
+}
+
+async function importLegacyCsv(file) {
+  const user = getFirebaseUser();
+  if (!isFirebaseAdmin(user)) throw new Error('Only the Firebase admin can import records.');
+  if (!file?.name.toLowerCase().endsWith('.csv')) throw new Error('Select a CSV export file.');
+  const rows = parseCsv(await file.text());
+  if (rows.length < 2) throw new Error('The CSV file has no records.');
+  const headers = rows[0];
+  const requiredHeaders = ['ID', 'Ware', 'Material'];
+  const missing = requiredHeaders.filter(header => !headers.includes(header));
+  if (missing.length) throw new Error(`CSV is missing required columns: ${missing.join(', ')}.`);
+
+  const records = rows.slice(1)
+    .filter(row => row.some(value => value.trim()))
+    .map(row => legacyRowToRecord(headers, row, user.email));
+  if (!records.length) throw new Error('The CSV file has no importable records.');
+
+  const existing = await firebaseApi.getDocs(firebaseApi.collection(firebaseDb, 'ceramicRecords'));
+  const existingKeys = new Set(existing.docs.map(snapshot => {
+    const record = snapshot.data();
+    return `${record.id || ''}\u0000${record.createdOn || ''}`;
+  }));
+  const uniqueRecords = records.filter(record => !existingKeys.has(`${record.id}\u0000${record.createdOn}`));
+  const skipped = records.length - uniqueRecords.length;
+
+  for (let index = 0; index < uniqueRecords.length; index += 400) {
+    const batch = firebaseApi.writeBatch(firebaseDb);
+    uniqueRecords.slice(index, index + 400).forEach(record => {
+      batch.set(firebaseApi.doc(firebaseDb, 'ceramicRecords', record.remoteId), record);
+    });
+    await batch.commit();
+  }
+  return { imported: uniqueRecords.length, skipped, total: records.length };
+}
+
+function legacyRowToRecord(headers, row, userEmail) {
+  const values = Object.fromEntries(headers.map((header, index) => [header, row[index] || '']));
+  const decoration = index => ({
+    intExt: '', location: '', technique: values[`Dec Technique ${index}`] || '', color: values[`Dec Color ${index}`] || '',
+    stylElement: values[`Stylistic Element ${index}`] || '', motif: values[`Motif ${index}`] || '',
+    genre: values[`Genre ${index}`] || '', patternName: index === 1 ? values['Pattern Name'] || '' : '', patternNotes: '',
+  });
+  const decorations = [decoration(1), decoration(2)].filter(item => Object.values(item).some(Boolean));
+  const now = new Date().toISOString();
+  return normalizeRecord({
+    remoteId: crypto.randomUUID(),
+    createdOn: values['Created On'] || now,
+    createdBy: values['Created By'] || userEmail,
+    modifiedOn: values['Modified On'] || values['Created On'] || now,
+    modifiedBy: values['Modified By'] || values['Created By'] || userEmail,
+    id: values.ID || '', count: values.Count || '1', ware: values.Ware || '', material: values.Material || '',
+    manuTech: values['Manu Tech'] || '', vesselCat: values.Category || '', form: values.Form || '', completeness: values.Completeness || '',
+    extSurface: values['Ext Surface'] || '', extColor: values['Ext Color'] || '', intSurface: values['Int Surface'] || '', intColor: values['Int Color'] || '',
+    pasteColor: values['Paste Color'] || '', oxidized: values['Oxidized vs Reduced'] || 'Not Reduced', burning: values.Burning || 'Unburned',
+    postMfgMod: values['Post-Mfg Mod'] || 'No', wearLocation: values['Wear Location'] || '', wearPattern: values['Wear Pattern'] || '',
+    decorated: values.Decorated || (decorations.length ? 'Yes' : 'No'), decorations,
+    baseMark: values['Base Mark'] || 'Not Applicable', baseMarkColor: values['Base Mark Color'] || '', baseMarkRef: values['Base Mark Ref'] || '',
+    thickness: values['Thickness (mm)'] || '', maxSize: values['Max Size (mm)'] || '', weight: values['Weight (g)'] || '',
+    rimLength: values['Rim Length (mm)'] || '', rimDiam: values['Rim Diam (mm)'] || '',
+    baseLength: values['Base Length (mm)'] || '', baseDiam: values['Base Diam (mm)'] || '', notes: values.Notes || '', photos: [],
+  });
+}
+
+function parseCsv(text) {
+  const rows = [];
+  let row = [];
+  let value = '';
+  let quoted = false;
+  for (let index = 0; index < text.length; index++) {
+    const character = text[index];
+    if (character === '"') {
+      if (quoted && text[index + 1] === '"') { value += '"'; index++; }
+      else quoted = !quoted;
+    } else if (character === ',' && !quoted) {
+      row.push(value); value = '';
+    } else if ((character === '\n' || character === '\r') && !quoted) {
+      if (character === '\r' && text[index + 1] === '\n') index++;
+      row.push(value); rows.push(row); row = []; value = '';
+    } else value += character;
+  }
+  if (value || row.length) { row.push(value); rows.push(row); }
+  return rows;
 }
 
 async function uploadRecordPhotos(recordId, photoFiles, userEmail) {

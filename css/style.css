@@ -166,6 +166,7 @@ select.auto-filled, input.auto-filled { border-color: var(--accent-dim); color: 
 .auth-content { display: flex; flex-direction: column; gap: 8px; padding: 16px; }
 .auth-content label { font-size: 0.75rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
 .auth-message { margin: 2px 0 0; color: var(--muted); font-size: 0.76rem; line-height: 1.4; }
+#import-file { width: 100%; }
 
 /* ── Record photos ── */
 .photo-upload { margin-top: 16px; }

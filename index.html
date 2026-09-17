@@ -52,6 +52,7 @@
     <span class="app-subtitle">Southern Ontario · Late 19th – Mid 20th Century</span>
     <div class="header-actions">
       <button id="export-btn" class="btn btn-secondary" disabled>Export CSV</button>
+      <button id="import-btn" class="btn btn-secondary hidden">Import CSV</button>
       <span id="sync-status" class="sync-status" data-status="offline">Local only</span>
       <button id="account-btn" class="btn btn-secondary">Sign in</button>
       <span id="log-count" class="log-badge hidden">0</span>
@@ -138,6 +139,22 @@
       </div>
       <div class="modal-footer">
         <button id="google-signin-btn" type="button" class="btn btn-primary">Continue with Google</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="import-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="import-modal-title">
+    <div class="modal-box auth-box">
+      <div class="modal-header">
+        <span id="import-modal-title">Import Legacy CSV</span>
+        <button id="import-modal-close" type="button" class="btn-icon" aria-label="Close">✕</button>
+      </div>
+      <div class="auth-content">
+        <input id="import-file" type="file" accept=".csv,text/csv">
+        <p id="import-message" class="auth-message">Imports records from the previous CSV export. Existing matching records will be skipped.</p>
+      </div>
+      <div class="modal-footer">
+        <button id="import-confirm-btn" type="button" class="btn btn-primary" disabled>Import Records</button>
       </div>
     </div>
   </div>

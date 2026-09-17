@@ -15,6 +15,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('start-btn').addEventListener('click', showApp);
 
   document.getElementById('export-btn').addEventListener('click', exportCSV);
+  document.getElementById('import-btn').addEventListener('click', openImportModal);
+  document.getElementById('import-modal-close').addEventListener('click', closeImportModal);
+  document.getElementById('import-file').addEventListener('change', updateImportSelection);
+  document.getElementById('import-confirm-btn').addEventListener('click', importLegacyRecords);
   document.getElementById('prev-btn').addEventListener('click', prevStep);
   document.getElementById('next-btn').addEventListener('click', nextStep);
   document.getElementById('skip-btn').addEventListener('click', skipStep);
@@ -31,6 +35,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('auth-modal-close').addEventListener('click', closeAuthModal);
   document.getElementById('auth-modal').addEventListener('click', event => {
     if (event.target === document.getElementById('auth-modal')) closeAuthModal();
+  });
+  document.getElementById('import-modal').addEventListener('click', event => {
+    if (event.target === document.getElementById('import-modal')) closeImportModal();
   });
   document.getElementById('google-signin-btn').addEventListener('click', submitGoogleSignIn);
   updateLogUI();
@@ -53,6 +60,42 @@ async function handleAccountClick() {
 
 function closeAuthModal() {
   document.getElementById('auth-modal').classList.add('hidden');
+}
+
+function openImportModal() {
+  const modal = document.getElementById('import-modal');
+  const fileInput = document.getElementById('import-file');
+  fileInput.value = '';
+  document.getElementById('import-confirm-btn').disabled = true;
+  document.getElementById('import-message').textContent = 'Imports records from the previous CSV export. Existing matching records will be skipped.';
+  modal.classList.remove('hidden');
+}
+
+function closeImportModal() {
+  document.getElementById('import-modal').classList.add('hidden');
+}
+
+function updateImportSelection() {
+  const file = document.getElementById('import-file').files[0];
+  document.getElementById('import-confirm-btn').disabled = !file;
+  if (file) document.getElementById('import-message').textContent = `${file.name} is ready to import.`;
+}
+
+async function importLegacyRecords() {
+  const file = document.getElementById('import-file').files[0];
+  const message = document.getElementById('import-message');
+  const button = document.getElementById('import-confirm-btn');
+  if (!file) return;
+  button.disabled = true;
+  message.textContent = 'Importing records...';
+  try {
+    const result = await importLegacyCsv(file);
+    message.textContent = `Imported ${result.imported} record(s); skipped ${result.skipped} existing record(s).`;
+    setSyncStatus('synced', `${result.imported} legacy records imported`);
+  } catch (error) {
+    message.textContent = error.message || 'Unable to import CSV.';
+    button.disabled = false;
+  }
 }
 
 function showApp() {
