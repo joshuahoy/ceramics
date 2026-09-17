@@ -5,6 +5,7 @@ let currentStep = 0;
 const TOTAL_STEPS = 8;
 let colourModalTarget = null; // which field the colour picker is writing to
 let colourModalPending = null; // pending colour value in modal
+let pendingPhotoFiles = [];
 
 // ── Boot ──────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', async () => {
@@ -17,6 +18,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('prev-btn').addEventListener('click', prevStep);
   document.getElementById('next-btn').addEventListener('click', nextStep);
   document.getElementById('skip-btn').addEventListener('click', skipStep);
+  document.querySelectorAll('.step-item').forEach(step => {
+    step.addEventListener('click', () => jumpToStep(Number(step.dataset.step)));
+  });
   document.getElementById('cancel-edit-btn').addEventListener('click', cancelRemoteEdit);
   document.getElementById('colour-modal-close').addEventListener('click', closeColourModal);
   document.getElementById('colour-confirm').addEventListener('click', confirmColour);
@@ -75,8 +79,12 @@ function prevStep() {
 async function nextStep() {
   collectStep(currentStep);
   if (currentStep === 7) {
+    currentRecord.pendingPhotos = pendingPhotoFiles;
     const saved = await saveRecord();
-    if (saved) currentStep = 0;
+    if (saved) {
+      pendingPhotoFiles = [];
+      currentStep = 0;
+    }
   }
   else currentStep++;
   renderStep(currentStep);
@@ -88,11 +96,19 @@ function skipStep() {
   renderStep(currentStep);
 }
 
+function jumpToStep(targetStep) {
+  if (targetStep === currentStep || targetStep < 0 || targetStep >= TOTAL_STEPS) return;
+  collectStep(currentStep);
+  closeColourModal();
+  renderStep(targetStep);
+}
+
 function renderStep(n) {
   currentStep = n;
   document.querySelectorAll('.step-item').forEach((el, i) => {
     el.classList.toggle('active', i === n);
     el.classList.toggle('done', i < n);
+    el.toggleAttribute('aria-current', i === n);
   });
   document.getElementById('prev-btn').disabled = (n === 0);
   document.getElementById('next-btn').textContent = n === 7 ? (editingRecordId ? '✓ Save Changes' : '✓ Save Record') : 'Next →';
@@ -753,8 +769,64 @@ function step7() {
       ${summaryRow('Created By', f.createdBy)}
       ${summaryRow('Modified On', formatAuditDate(f.modifiedOn))}
       ${summaryRow('Modified By', f.modifiedBy)}
+    </div>
+    <div class="photo-upload field">
+      <label for="record-photos">Photos <span class="optional">optional, up to 5 images</span></label>
+      <input id="record-photos" type="file" accept="image/*" capture="environment" multiple>
+      <div id="photo-preview-list" class="photo-preview-list"></div>
     </div>`;
+  setTimeout(() => wirePhotoUpload(div), 0);
   return div;
+}
+
+function wirePhotoUpload(container) {
+  const input = container.querySelector('#record-photos');
+  input?.addEventListener('change', () => {
+    const files = Array.from(input.files || []);
+    const remainingSlots = Math.max(0, 5 - (currentRecord.photos || []).length - pendingPhotoFiles.length);
+    pendingPhotoFiles.push(...files.filter(file => file.type.startsWith('image/')).slice(0, remainingSlots));
+    input.value = '';
+    renderPhotoPreviews(container);
+  });
+  renderPhotoPreviews(container);
+}
+
+function renderPhotoPreviews(container) {
+  const previewList = container.querySelector('#photo-preview-list');
+  if (!previewList) return;
+  previewList.innerHTML = '';
+  (currentRecord.photos || []).forEach(photo => {
+    const link = document.createElement('a');
+    link.className = 'photo-preview';
+    link.href = photo.url;
+    link.target = '_blank';
+    link.rel = 'noopener';
+    const image = document.createElement('img');
+    image.src = photo.url;
+    image.alt = photo.name || 'Record photo';
+    link.appendChild(image);
+    previewList.appendChild(link);
+  });
+  pendingPhotoFiles.forEach((file, index) => {
+    const item = document.createElement('div');
+    item.className = 'photo-preview photo-pending';
+    const image = document.createElement('img');
+    const objectUrl = URL.createObjectURL(file);
+    image.src = objectUrl;
+    image.alt = file.name;
+    image.onload = () => URL.revokeObjectURL(objectUrl);
+    const remove = document.createElement('button');
+    remove.type = 'button';
+    remove.className = 'photo-remove';
+    remove.title = `Remove ${file.name}`;
+    remove.textContent = 'x';
+    remove.addEventListener('click', () => {
+      pendingPhotoFiles.splice(index, 1);
+      renderPhotoPreviews(container);
+    });
+    item.append(image, remove);
+    previewList.appendChild(item);
+  });
 }
 
 // ── Colour modal ──────────────────────────────────────────────────────────────

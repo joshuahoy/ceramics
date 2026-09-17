@@ -20,7 +20,7 @@ function newRecord() {
     thickness: '', maxSize: '', weight: '', mendedWeight: '',
     rimLength: '', rimDiam: '', mendedRimDiam: '',
     baseLength: '', baseDiam: '', mendedBaseDiam: '',
-    notes: '',
+    notes: '', photos: [],
   };
 }
 
@@ -31,9 +31,11 @@ function newDecRow() {
 // ── Session log ───────────────────────────────────────────────────────────────
 async function saveRecord() {
   const r = { ...currentRecord, decorations: currentRecord.decorations.map(d => ({ ...d }) ) };
+  const pendingPhotos = currentRecord.pendingPhotos || [];
+  delete r.pendingPhotos;
   if (editingRecordId) {
     try {
-      const updatedRecord = await updateRecord(r);
+      const updatedRecord = await updateRecord(r, pendingPhotos);
       const index = sessionLog.findIndex(record => record.remoteId === editingRecordId);
       if (index !== -1) sessionLog[index] = updatedRecord;
       editingRecordId = null;
@@ -52,7 +54,7 @@ async function saveRecord() {
   if (!showingSharedRecords && sessionLog !== localSessionLog) localSessionLog.push(r);
   appendLogRow(r);
   updateLogUI();
-  createRecord(r).catch(error => {
+  createRecord(r, pendingPhotos).catch(error => {
     r.syncStatus = 'failed';
     const detail = error.code || error.message || 'Unknown error';
     setSyncStatus('error', `Saved locally; sync failed: ${detail}`);
@@ -112,7 +114,7 @@ function startRemoteEdit(remoteId) {
   const record = sessionLog.find(item => item.remoteId === remoteId);
   if (!record) return;
   editingRecordId = remoteId;
-  currentRecord = { ...record, decorations: record.decorations.map(decoration => ({ ...decoration })) };
+  currentRecord = { ...record, photos: [...(record.photos || [])], decorations: record.decorations.map(decoration => ({ ...decoration })) };
   currentStep = 0;
   renderStep(0);
   window.scrollTo({ top: 0, behavior: 'smooth' });

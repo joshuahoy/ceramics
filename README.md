@@ -61,8 +61,11 @@ The app uses Firebase project `artifacts-58d37`, Firebase Authentication with Go
 2. Under **Authentication → Settings → Authorized domains**, add `localhost` for local testing and `joshuahoy.github.io` for GitHub Pages.
 3. Create a **Cloud Firestore** database in production mode.
 4. In **Firestore Database → Rules**, publish the contents of [firebase.rules](firebase.rules).
+5. Under **Storage**, create the default Firebase Storage bucket. In **Storage → Rules**, publish the contents of [storage.rules](storage.rules).
 
 The initial allowlist permits `hoy.joshua@gmail.com` and `s.payne1191@gmail.com` to read, create, and edit shared ceramic records. Only `hoy.joshua@gmail.com` can delete records or manage lookup documents. Sign out returns the session log to browser-only records.
+
+Record photos are compressed in the browser to a maximum dimension of 1600px before upload. Each record supports up to five newly selected photos at a time; uploaded photo metadata is stored with the Firestore record and image files are stored under `ceramic-records/{recordId}/` in Firebase Storage.
 
 ## Scope
 

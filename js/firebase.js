@@ -7,6 +7,7 @@ const FIREBASE_ALLOWED_EMAILS = new Set([
 
 let firebaseAuth = null;
 let firebaseDb = null;
+let firebaseStorage = null;
 let firebaseApi = null;
 let unsubscribeRecords = null;
 
@@ -28,15 +29,17 @@ async function initializeFirebase() {
     return null;
   }
 
-  const [appModule, authModule, firestoreModule] = await Promise.all([
+  const [appModule, authModule, firestoreModule, storageModule] = await Promise.all([
     import('https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js'),
     import('https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js'),
     import('https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js'),
+    import('https://www.gstatic.com/firebasejs/11.0.2/firebase-storage.js'),
   ]);
-  firebaseApi = { ...authModule, ...firestoreModule };
+  firebaseApi = { ...authModule, ...firestoreModule, ...storageModule };
   const app = appModule.initializeApp(config);
   firebaseAuth = authModule.getAuth(app);
   firebaseDb = firestoreModule.getFirestore(app);
+  firebaseStorage = storageModule.getStorage(app);
   authModule.onAuthStateChanged(firebaseAuth, handleAuthStateChange);
   return firebaseAuth.currentUser;
 }
@@ -92,6 +95,7 @@ function normalizeRecord(record) {
     remoteId: record.remoteId || crypto.randomUUID(),
     syncStatus: 'synced',
     decorations: Array.isArray(record.decorations) ? record.decorations : [],
+    photos: Array.isArray(record.photos) ? record.photos : [],
     createdOn: record.createdOn || '',
     createdBy: record.createdBy || '',
     modifiedOn: record.modifiedOn || '',
@@ -117,7 +121,7 @@ function stopRecordSubscription() {
   unsubscribeRecords = null;
 }
 
-async function createRecord(record) {
+async function createRecord(record, photoFiles = []) {
   const user = getFirebaseUser();
   if (!user) return false;
   setSyncStatus('sending', 'Saving record');
@@ -130,17 +134,61 @@ async function createRecord(record) {
     modifiedBy: user.email,
   });
   await firebaseApi.setDoc(firebaseApi.doc(firebaseDb, 'ceramicRecords', row.remoteId), row);
+  row.photos = [...row.photos, ...await uploadRecordPhotos(row.remoteId, photoFiles, user.email)];
+  if (photoFiles.length) {
+    await firebaseApi.updateDoc(firebaseApi.doc(firebaseDb, 'ceramicRecords', row.remoteId), { photos: row.photos });
+  }
   Object.assign(record, row);
   setSyncStatus('synced', 'All records synced');
   return true;
 }
 
-async function updateRecord(record) {
+async function updateRecord(record, photoFiles = []) {
   const user = getFirebaseUser();
   if (!user) throw new Error('Sign in to save changes.');
   setSyncStatus('sending', 'Saving changes');
   const row = normalizeRecord({ ...record, modifiedOn: new Date().toISOString(), modifiedBy: user.email });
   await firebaseApi.setDoc(firebaseApi.doc(firebaseDb, 'ceramicRecords', row.remoteId), row, { merge: true });
+  row.photos = [...row.photos, ...await uploadRecordPhotos(row.remoteId, photoFiles, user.email)];
+  if (photoFiles.length) {
+    await firebaseApi.updateDoc(firebaseApi.doc(firebaseDb, 'ceramicRecords', row.remoteId), { photos: row.photos });
+  }
   setSyncStatus('synced', 'Changes saved');
   return row;
+}
+
+async function uploadRecordPhotos(recordId, photoFiles, userEmail) {
+  if (!photoFiles.length) return [];
+  if (!firebaseStorage) throw new Error('Firebase Storage is not available.');
+  const uploads = await Promise.all(photoFiles.map(async file => {
+    const image = await compressImage(file);
+    const photoId = crypto.randomUUID();
+    const path = `ceramic-records/${recordId}/${photoId}.jpg`;
+    const storageRef = firebaseApi.ref(firebaseStorage, path);
+    await firebaseApi.uploadBytes(storageRef, image, { contentType: 'image/jpeg' });
+    return {
+      id: photoId,
+      path,
+      url: await firebaseApi.getDownloadURL(storageRef),
+      name: file.name,
+      uploadedAt: new Date().toISOString(),
+      uploadedBy: userEmail,
+    };
+  }));
+  return uploads;
+}
+
+async function compressImage(file) {
+  if (!file.type.startsWith('image/')) throw new Error(`${file.name} is not an image.`);
+  if (file.size > 10 * 1024 * 1024) throw new Error(`${file.name} is larger than 10 MB.`);
+  const image = await createImageBitmap(file);
+  const scale = Math.min(1, 1600 / Math.max(image.width, image.height));
+  const canvas = document.createElement('canvas');
+  canvas.width = Math.max(1, Math.round(image.width * scale));
+  canvas.height = Math.max(1, Math.round(image.height * scale));
+  canvas.getContext('2d').drawImage(image, 0, 0, canvas.width, canvas.height);
+  image.close();
+  return new Promise((resolve, reject) => {
+    canvas.toBlob(blob => blob ? resolve(blob) : reject(new Error(`Unable to process ${file.name}.`)), 'image/jpeg', 0.82);
+  });
 }

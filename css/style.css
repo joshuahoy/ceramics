@@ -48,7 +48,8 @@ main { display: flex; flex-direction: column; min-height: calc(100vh - 52px); }
 #wizard { flex-shrink: 0; padding: 16px 20px; max-width: 960px; width: 100%; margin: 0 auto; }
 
 .step-bar { display: flex; gap: 4px; margin-bottom: 20px; overflow-x: auto; padding-bottom: 4px; }
-.step-item { display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 6px 10px; border-radius: 8px; cursor: default; opacity: 0.4; min-width: 72px; }
+.step-item { display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 6px 10px; border: 0; border-radius: 8px; background: transparent; color: inherit; cursor: pointer; font: inherit; opacity: 0.4; min-width: 72px; }
+.step-item:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .step-item.active { opacity: 1; background: var(--accent-dim); }
 .step-item.done { opacity: 0.7; }
 .step-num { width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; background: var(--surface2); border: 1px solid var(--border); }
@@ -165,6 +166,14 @@ select.auto-filled, input.auto-filled { border-color: var(--accent-dim); color: 
 .auth-content { display: flex; flex-direction: column; gap: 8px; padding: 16px; }
 .auth-content label { font-size: 0.75rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
 .auth-message { margin: 2px 0 0; color: var(--muted); font-size: 0.76rem; line-height: 1.4; }
+
+/* ── Record photos ── */
+.photo-upload { margin-top: 16px; }
+.photo-preview-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.photo-preview { width: 88px; height: 88px; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; position: relative; background: var(--surface2); }
+.photo-preview img { width: 100%; height: 100%; display: block; object-fit: cover; }
+.photo-pending { border-color: var(--accent); }
+.photo-remove { position: absolute; top: 3px; right: 3px; width: 20px; height: 20px; border: 1px solid var(--border); border-radius: 50%; background: var(--bg); color: var(--text); cursor: pointer; line-height: 1; padding: 0; }
 
 /* ── Scrollbar ── */
 ::-webkit-scrollbar { width: 5px; height: 5px; }
