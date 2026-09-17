@@ -50,91 +50,19 @@ Provides supplementary visual and descriptive guidance for the dynamic surface-t
 
 - Static site — no server required. Hosted on GitHub Pages.
 - Munsell → sRGB conversion uses [munsell.js](https://github.com/privet-kitty/munsell.js) (MPL-2.0) via [esm.sh](https://esm.sh)
-- Records can be synchronized to the shared Supabase database after team members sign in by email; CSV export remains available.
+- Records can be synchronized to Cloud Firestore after team members sign in with Google; CSV export remains available.
 - CSV export format matches DAACS field naming conventions
 
-## Supabase Setup
+## Firebase Setup
 
-The application uses the Supabase project URL and publishable key configured in [js/supabase.js](js/supabase.js). The publishable key is intentionally browser-visible; Row Level Security (RLS) must remain enabled to protect the database. Never use a `service_role` key in this app.
+The app uses Firebase project `artifacts-58d37`, Firebase Authentication with Google sign-in, and Cloud Firestore. Firebase Web configuration in [js/firebase-config.js](js/firebase-config.js) is public client configuration; Firestore Security Rules enforce access.
 
-1. In **Authentication → Providers**, enable Email authentication.
-2. In **Authentication → URL Configuration**, set the deployed GitHub Pages URL as the Site URL and add both the deployed URL and local development URL as redirect URLs. Password-recovery links return to this app, which displays the new-password form.
-3. In **SQL Editor**, create the table and policies below. These permit signed-in team members to read and add records, while anonymous requests are denied.
+1. In Firebase Console, enable **Authentication → Sign-in method → Google** and set a project support email.
+2. Under **Authentication → Settings → Authorized domains**, add `localhost` for local testing and `joshuahoy.github.io` for GitHub Pages.
+3. Create a **Cloud Firestore** database in production mode.
+4. In **Firestore Database → Rules**, publish the contents of [firebase.rules](firebase.rules).
 
-```sql
-create table public.ceramic_records (
-	id uuid primary key,
-	created_at timestamptz not null default now(),
-	updated_at timestamptz not null default now(),
-	created_by uuid not null default auth.uid(),
-	modified_by uuid,
-	artifact_id text not null,
-	count integer not null default 1,
-	material text, ware text, manu_tech text, vessel_cat text, form text,
-	completeness text, ext_surface text, ext_color text, int_surface text,
-	int_color text, paste_color text, oxidized text, burning text,
-	wear_location text, wear_pattern text, post_mfg_mod text, decorated text,
-	decorations jsonb not null default '[]'::jsonb,
-	base_mark text, base_mark_color text, base_mark_ref text,
-	thickness numeric, max_size numeric, weight numeric, mended_weight numeric,
-	rim_length numeric, rim_diam numeric, mended_rim_diam numeric,
-	base_length numeric, base_diam numeric, mended_base_diam numeric,
-	notes text
-);
-
-alter table public.ceramic_records enable row level security;
-
-create policy "Authenticated users can read ceramic records"
-on public.ceramic_records for select to authenticated using (true);
-
-create policy "Authenticated users can add ceramic records"
-on public.ceramic_records for insert to authenticated
-with check (created_by = auth.uid());
-
-create policy "Authenticated users can edit ceramic records"
-on public.ceramic_records for update to authenticated
-using (true)
-with check (true);
-```
-
-### Audit Fields Migration
-
-For an existing table, run this migration in **SQL Editor**. It adds `modified_by` and makes Supabase, rather than the browser, record the authenticated user and timestamp whenever a record is created or changed.
-
-```sql
-alter table public.ceramic_records
-	add column if not exists modified_by uuid;
-
-create or replace function public.set_ceramic_record_audit_fields()
-returns trigger
-language plpgsql
-security invoker
-set search_path = public
-as $$
-begin
-	if tg_op = 'INSERT' then
-		new.created_at := coalesce(new.created_at, now());
-		new.created_by := coalesce(new.created_by, auth.uid());
-	end if;
-	new.updated_at := now();
-	new.modified_by := auth.uid();
-	return new;
-end;
-$$;
-
-drop trigger if exists ceramic_record_audit_fields on public.ceramic_records;
-create trigger ceramic_record_audit_fields
-before insert or update on public.ceramic_records
-for each row execute function public.set_ceramic_record_audit_fields();
-```
-
-The app displays these audit values in Review & Save once they have been returned by Supabase, and includes them in CSV exports. `created_by` and `modified_by` are Supabase user IDs; use **Authentication → Users** to match an ID to an account email.
-
-Use **Sign in** in the application header with a Supabase email and password. Create team accounts in **Authentication → Users** and disable public sign-ups in **Authentication → Providers → Email**. After sign-in, the session restores automatically and the shared records load into the session log. A record saved while signed out remains in the browser log and can still be exported as CSV.
-
-Signed-out users see only their current local browser-session records. Signed-in users see the shared Supabase records and can select **Edit** to reopen a record in the full wizard. Saving edits updates the existing record instead of creating a duplicate; **Cancel Edit** discards the working copy. The update policy above permits all authenticated users to edit shared records. If using the `ceramic_access` allowlist, replace each `true` in that policy with `public.can_access_ceramics('edit')`.
-
-When a user follows a Supabase password-recovery email link, the app detects the recovery session and opens a **Set a new password** form. The password is sent only to Supabase's authentication service; it is not stored in the app.
+The initial allowlist permits `hoy.joshua@gmail.com` and `s.payne1191@gmail.com` to read, create, and edit shared ceramic records. Only `hoy.joshua@gmail.com` can delete records or manage lookup documents. Sign out returns the session log to browser-only records.
 
 ## Scope
 

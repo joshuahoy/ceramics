@@ -33,7 +33,7 @@ async function saveRecord() {
   const r = { ...currentRecord, decorations: currentRecord.decorations.map(d => ({ ...d }) ) };
   if (editingRecordId) {
     try {
-      const updatedRecord = await updateRecordInSupabase(r);
+      const updatedRecord = await updateRecord(r);
       const index = sessionLog.findIndex(record => record.remoteId === editingRecordId);
       if (index !== -1) sessionLog[index] = updatedRecord;
       editingRecordId = null;
@@ -44,7 +44,7 @@ async function saveRecord() {
     } catch (error) {
       const detail = error.code || error.message || 'Unknown error';
       setSyncStatus('error', `Changes not saved: ${detail}`);
-      console.error('Supabase record update failed:', error);
+      console.error('Firebase record update failed:', error);
       return false;
     }
   }
@@ -52,11 +52,11 @@ async function saveRecord() {
   if (!showingSharedRecords && sessionLog !== localSessionLog) localSessionLog.push(r);
   appendLogRow(r);
   updateLogUI();
-  syncRecordToSupabase(r).catch(error => {
+  createRecord(r).catch(error => {
     r.syncStatus = 'failed';
     const detail = error.code || error.message || 'Unknown error';
     setSyncStatus('error', `Saved locally; sync failed: ${detail}`);
-    console.error('Supabase record sync failed:', error);
+    console.error('Firebase record sync failed:', error);
   });
   currentRecord = newRecord();
   return true;
@@ -68,6 +68,12 @@ async function hydrateRemoteRecords() {
   showingSharedRecords = true;
   rebuildLog();
   setSyncStatus('synced', 'All records synced');
+}
+
+function replaceRemoteRecords(records) {
+  sessionLog = records;
+  showingSharedRecords = true;
+  rebuildLog();
 }
 
 function showLocalRecords() {

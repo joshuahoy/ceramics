@@ -28,36 +28,27 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('auth-modal').addEventListener('click', event => {
     if (event.target === document.getElementById('auth-modal')) closeAuthModal();
   });
-  document.getElementById('auth-form').addEventListener('submit', submitAuthForm);
-  document.getElementById('password-reset-form').addEventListener('submit', submitPasswordResetForm);
+  document.getElementById('google-signin-btn').addEventListener('click', submitGoogleSignIn);
   updateLogUI();
   renderStep(0);
   try {
-    await initializeSupabase();
+    await initializeFirebase();
   } catch (error) {
     setSyncStatus('error', 'Sync unavailable');
-    console.error('Supabase initialization failed:', error);
+    console.error('Firebase initialization failed:', error);
   }
 });
 
 async function handleAccountClick() {
-  const session = await getSupabaseSession();
-  if (session) {
+  if (getFirebaseUser()) {
     await signOut();
     return;
   }
   document.getElementById('auth-modal').classList.remove('hidden');
-  document.getElementById('auth-email').focus();
 }
 
 function closeAuthModal() {
   document.getElementById('auth-modal').classList.add('hidden');
-}
-
-function openPasswordResetModal() {
-  showApp();
-  document.getElementById('password-reset-modal').classList.remove('hidden');
-  document.getElementById('new-password').focus();
 }
 
 function showApp() {
@@ -66,34 +57,13 @@ function showApp() {
   document.getElementById('app-main').classList.remove('hidden');
 }
 
-async function submitAuthForm(event) {
-  event.preventDefault();
-  const email = document.getElementById('auth-email').value.trim();
-  const password = document.getElementById('auth-password').value;
+async function submitGoogleSignIn() {
   const message = document.getElementById('auth-message');
   try {
-    await signInWithPassword(email, password);
+    await signInWithGoogle();
     closeAuthModal();
   } catch (error) {
     message.textContent = error.message || 'Unable to sign in.';
-  }
-}
-
-async function submitPasswordResetForm(event) {
-  event.preventDefault();
-  const password = document.getElementById('new-password').value;
-  const confirmation = document.getElementById('confirm-password').value;
-  const message = document.getElementById('password-reset-message');
-  if (password !== confirmation) {
-    message.textContent = 'Passwords do not match.';
-    return;
-  }
-  try {
-    await updatePassword(password);
-    message.textContent = 'Password updated. You can now continue using the app.';
-    document.getElementById('password-reset-form').querySelector('button[type="submit"]').disabled = true;
-  } catch (error) {
-    message.textContent = error.message || 'Unable to update the password.';
   }
 }
 

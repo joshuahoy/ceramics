@@ -1,0 +1,85 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null && request.auth.token.email != null;
+    }
+
+    function allowedUser() {
+      return signedIn() && request.auth.token.email in [
+        'hoy.joshua@gmail.com',
+        's.payne1191@gmail.com'
+      ];
+    }
+
+    function adminUser() {
+      return signedIn() && request.auth.token.email == 'hoy.joshua@gmail.com';
+    }
+
+    match /ceramicRecords/{recordId} {
+      allow read, create, update: if allowedUser();
+      allow delete: if adminUser();
+    }
+
+    match /lookups/{lookupKey} {
+      allow read: if allowedUser();
+      allow write: if adminUser();
+    }
+
+    match /lookups/{lookupKey}/items/{itemId} {
+      allow read: if allowedUser();
+      allow write: if adminUser();
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null && request.auth.token.email != null;
+    }
+
+    function allowedUser() {
+      return signedIn() && request.auth.token.email in [
+        's.payne1191@gmail.com',
+        'hoy.joshua@gmail.com'
+      ];
+    }
+
+    function adminUser() {
+      return signedIn() && request.auth.token.email in [
+        'hoy.joshua@gmail.com'
+      ];
+    }
+
+    match /ceramicRecords/{recordId} {
+      allow read, create, update: if allowedUser();
+      allow delete: if adminUser();
+    }
+
+    match /lookups/{lookupKey} {
+      allow read: if allowedUser();
+      allow write: if adminUser();
+
+      match /items/{itemId} {
+        allow read: if allowedUser();
+        allow write: if adminUser();
+      }
+    }
+
+    match /auditEvents/{eventId} {
+      allow read: if adminUser();
+      allow create: if allowedUser();
+      allow update, delete: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

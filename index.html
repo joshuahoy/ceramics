@@ -128,40 +128,18 @@
   </div>
 
   <div id="auth-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="auth-modal-title">
-    <form id="auth-form" class="modal-box auth-box">
+    <div class="modal-box auth-box">
       <div class="modal-header">
         <span id="auth-modal-title">Sign in to sync</span>
         <button id="auth-modal-close" type="button" class="btn-icon" aria-label="Close">✕</button>
       </div>
       <div class="auth-content">
-        <label for="auth-email">Email address</label>
-        <input id="auth-email" type="email" autocomplete="email" required placeholder="name@example.org">
-        <label for="auth-password">Password</label>
-        <input id="auth-password" type="password" autocomplete="current-password" required>
-        <p id="auth-message" class="auth-message">Use the password assigned to your Supabase account.</p>
+        <p id="auth-message" class="auth-message">Sign in with an authorized Google account to work with shared records.</p>
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-primary">Sign in</button>
+        <button id="google-signin-btn" type="button" class="btn btn-primary">Continue with Google</button>
       </div>
-    </form>
-  </div>
-
-  <div id="password-reset-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="password-reset-title">
-    <form id="password-reset-form" class="modal-box auth-box">
-      <div class="modal-header">
-        <span id="password-reset-title">Set a new password</span>
-      </div>
-      <div class="auth-content">
-        <label for="new-password">New password</label>
-        <input id="new-password" type="password" autocomplete="new-password" required minlength="8">
-        <label for="confirm-password">Confirm new password</label>
-        <input id="confirm-password" type="password" autocomplete="new-password" required minlength="8">
-        <p id="password-reset-message" class="auth-message">Choose a password with at least 8 characters.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-primary">Update password</button>
-      </div>
-    </form>
+    </div>
   </div>
 
   <!-- esm.sh builds the CJS-only munsell package as browser ESM; DOMContentLoaded waits for module scripts -->
@@ -169,9 +147,9 @@
     import * as m from 'https://esm.sh/munsell@1.1.6';
     window.munsell = m;
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/data.js"></script>
-  <script src="js/supabase.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/firebase.js"></script>
   <script src="js/record.js"></script>
   <script src="js/wizard.js"></script>
 </body>
