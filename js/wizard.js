@@ -6,6 +6,7 @@ const TOTAL_STEPS = 8;
 let colourModalTarget = null; // which field the colour picker is writing to
 let colourModalPending = null; // pending colour value in modal
 let pendingPhotoFiles = [];
+let pendingPhotoDeletes = [];
 
 // ── Boot ──────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', async () => {
@@ -123,9 +124,11 @@ async function nextStep() {
   collectStep(currentStep);
   if (currentStep === 7) {
     currentRecord.pendingPhotos = pendingPhotoFiles;
+    currentRecord.pendingPhotoDeletes = pendingPhotoDeletes;
     const saved = await saveRecord();
     if (saved) {
       pendingPhotoFiles = [];
+      pendingPhotoDeletes = [];
       currentStep = 0;
     }
   }
@@ -839,8 +842,9 @@ function renderPhotoPreviews(container) {
   if (!previewList) return;
   previewList.innerHTML = '';
   (currentRecord.photos || []).forEach(photo => {
+    const item = document.createElement('div');
+    item.className = 'photo-preview photo-uploaded';
     const link = document.createElement('a');
-    link.className = 'photo-preview';
     link.href = photo.url;
     link.target = '_blank';
     link.rel = 'noopener';
@@ -848,7 +852,24 @@ function renderPhotoPreviews(container) {
     image.src = photo.url;
     image.alt = photo.name || 'Record photo';
     link.appendChild(image);
-    previewList.appendChild(link);
+    item.appendChild(link);
+    if (editingRecordId) {
+      const remove = document.createElement('button');
+      remove.type = 'button';
+      remove.className = 'photo-remove';
+      remove.title = `Remove ${photo.name || 'uploaded photo'} from this record`;
+      remove.setAttribute('aria-label', remove.title);
+      remove.textContent = 'x';
+      remove.addEventListener('click', () => {
+        currentRecord.photos = currentRecord.photos.filter(existing => existing.id !== photo.id);
+        if (photo.path && !pendingPhotoDeletes.some(pending => pending.path === photo.path)) {
+          pendingPhotoDeletes.push(photo);
+        }
+        renderPhotoPreviews(container);
+      });
+      item.appendChild(remove);
+    }
+    previewList.appendChild(item);
   });
   pendingPhotoFiles.forEach((file, index) => {
     const item = document.createElement('div');

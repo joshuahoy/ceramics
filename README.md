@@ -2,6 +2,8 @@
 
 A guided web application for recording historical ceramic sherds using the DAACS (Digital Archaeological Archive of Comparative Slavery) cataloging standard. Designed for fieldwork and lab analysis in Southern Ontario, with assemblages primarily dating from the **late 19th to mid 20th century**.
 
+**[Open the DAACS Ceramic Recorder](https://joshuahoy.github.io/ceramics/)**
+
 ## What It Does
 
 The app walks catalogers through each DAACS ceramic recording field in a step-by-step wizard:
@@ -65,7 +67,7 @@ The app uses Firebase project `artifacts-58d37`, Firebase Authentication with Go
 
 The initial allowlist permits `hoy.joshua@gmail.com` and `s.payne1191@gmail.com` to read, create, and edit shared ceramic records. Only `hoy.joshua@gmail.com` can delete records or manage lookup documents. Sign out returns the session log to browser-only records.
 
-Record photos are compressed in the browser to a maximum dimension of 1600px before upload. Each record supports up to five newly selected photos at a time; uploaded photo metadata is stored with the Firestore record and image files are stored under `ceramic-records/{recordId}/` in Firebase Storage.
+Record photos are compressed in the browser to a maximum dimension of 1600px before upload. Each record supports up to five newly selected photos at a time; uploaded photo metadata is stored with the Firestore record and image files are stored under `ceramic-records/{recordId}/` in Firebase Storage. When editing a record, use the `x` on an uploaded photo to stage its removal; the file and Firestore reference are deleted when the edit is saved. Canceling the edit leaves the photo unchanged. Publish the current [storage.rules](storage.rules) to allow authorized users to delete photos.
 
 ### Importing Legacy CSV Records
 

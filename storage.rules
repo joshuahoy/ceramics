@@ -11,9 +11,10 @@ service firebase.storage {
 
     match /ceramic-records/{recordId}/{photoId} {
       allow read: if allowedUser();
-      allow write: if allowedUser()
+      allow create, update: if allowedUser()
         && request.resource.size < 10 * 1024 * 1024
         && request.resource.contentType.matches('image/.*');
+      allow delete: if allowedUser();
     }
   }
 }

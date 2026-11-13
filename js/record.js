@@ -32,7 +32,9 @@ function newDecRow() {
 async function saveRecord() {
   const r = { ...currentRecord, decorations: currentRecord.decorations.map(d => ({ ...d }) ) };
   const pendingPhotos = currentRecord.pendingPhotos || [];
+  const photosToDelete = currentRecord.pendingPhotoDeletes || [];
   delete r.pendingPhotos;
+  delete r.pendingPhotoDeletes;
   if (!getFirebaseUser()) {
     saveLocalRecord(r, editingRecordId ? 'Saved locally as a new record' : 'Saved locally');
     editingRecordId = null;
@@ -41,13 +43,13 @@ async function saveRecord() {
   }
   if (editingRecordId) {
     try {
-      const updatedRecord = await updateRecord(r, pendingPhotos);
+      const { record: updatedRecord, photoCleanupFailed } = await updateRecord(r, pendingPhotos, photosToDelete);
       const index = sessionLog.findIndex(record => record.remoteId === editingRecordId);
       if (index !== -1) sessionLog[index] = updatedRecord;
       editingRecordId = null;
       currentRecord = newRecord();
       rebuildLog();
-      setSyncStatus('synced', 'Changes saved');
+      setSyncStatus(photoCleanupFailed ? 'error' : 'synced', photoCleanupFailed ? 'Changes saved; photo cleanup failed' : 'Changes saved');
       return true;
     } catch (error) {
       const detail = error.code || error.message || 'Unknown error';
@@ -145,6 +147,8 @@ function startRemoteEdit(remoteId) {
 function cancelRemoteEdit() {
   if (!editingRecordId) return;
   editingRecordId = null;
+  if (typeof pendingPhotoDeletes !== 'undefined') pendingPhotoDeletes = [];
+  if (typeof pendingPhotoFiles !== 'undefined') pendingPhotoFiles = [];
   currentRecord = newRecord();
   currentStep = 0;
   renderStep(0);

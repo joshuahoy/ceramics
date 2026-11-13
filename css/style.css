@@ -173,6 +173,7 @@ select.auto-filled, input.auto-filled { border-color: var(--accent-dim); color: 
 .photo-preview-list { display: flex; flex-wrap: wrap; gap: 8px; }
 .photo-preview { width: 88px; height: 88px; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; position: relative; background: var(--surface2); }
 .photo-preview img { width: 100%; height: 100%; display: block; object-fit: cover; }
+.photo-uploaded a { display: block; width: 100%; height: 100%; }
 .photo-pending { border-color: var(--accent); }
 .photo-remove { position: absolute; top: 3px; right: 3px; width: 20px; height: 20px; border: 1px solid var(--border); border-radius: 50%; background: var(--bg); color: var(--text); cursor: pointer; line-height: 1; padding: 0; }
 

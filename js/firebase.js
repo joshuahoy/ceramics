@@ -149,7 +149,7 @@ async function createRecord(record, photoFiles = []) {
   return true;
 }
 
-async function updateRecord(record, photoFiles = []) {
+async function updateRecord(record, photoFiles = [], photosToDelete = []) {
   const user = getFirebaseUser();
   if (!user) throw new Error('Sign in to save changes.');
   setSyncStatus('sending', 'Saving changes');
@@ -159,8 +159,18 @@ async function updateRecord(record, photoFiles = []) {
   if (photoFiles.length) {
     await firebaseApi.updateDoc(firebaseApi.doc(firebaseDb, 'ceramicRecords', row.remoteId), { photos: row.photos });
   }
-  setSyncStatus('synced', 'Changes saved');
-  return row;
+  const deletions = await Promise.allSettled(photosToDelete.map(photo => {
+    if (!photo.path) throw new Error('Photo is missing its Storage path.');
+    return firebaseApi.deleteObject(firebaseApi.ref(firebaseStorage, photo.path));
+  }));
+  const photoCleanupFailed = deletions.some(result => result.status === 'rejected');
+  if (photoCleanupFailed) {
+    console.error('Record saved, but some photo files could not be deleted.', deletions);
+    setSyncStatus('error', 'Changes saved; photo cleanup failed');
+  } else {
+    setSyncStatus('synced', 'Changes saved');
+  }
+  return { record: row, photoCleanupFailed };
 }
 
 async function importLegacyCsv(file) {
