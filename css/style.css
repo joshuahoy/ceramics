@@ -22,6 +22,10 @@ html, body { margin: 0; height: 100%; font-family: -apple-system, BlinkMacSystem
 header { display: flex; align-items: center; gap: 14px; padding: 0 20px; height: 52px; background: var(--surface); border-bottom: 1px solid var(--border); flex-shrink: 0; }
 .app-title { font-weight: 700; font-size: 0.95rem; letter-spacing: 0.04em; }
 .app-subtitle { font-size: 0.75rem; color: var(--muted); }
+.app-views { display: flex; align-items: center; gap: 4px; margin-left: 12px; }
+.view-tab { padding: 6px 10px; border: 0; border-bottom: 2px solid transparent; background: transparent; color: var(--muted); font: inherit; font-size: 0.78rem; cursor: pointer; white-space: nowrap; }
+.view-tab.active { color: var(--text); border-bottom-color: var(--accent); }
+.view-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .header-actions { margin-left: auto; display: flex; align-items: center; gap: 8px; }
 .log-badge { background: var(--accent); color: #fff; border-radius: 12px; padding: 2px 8px; font-size: 0.72rem; font-weight: 700; }
 .log-badge.hidden, .hidden { display: none !important; }
@@ -132,6 +136,36 @@ select.auto-filled, input.auto-filled { border-color: var(--accent-dim); color: 
 #log-table td { padding: 3px 8px; border-bottom: 1px solid var(--border); vertical-align: middle; max-width: 160px; overflow: hidden; text-overflow: ellipsis; }
 #log-empty { color: var(--dim); font-style: italic; font-size: 0.74rem; margin: 0; }
 
+/* ── Shared records browser ── */
+.records-view { width: min(1440px, 100%); margin: 0 auto; padding: 20px; }
+.records-view-header { display: block; height: auto; padding: 0 0 14px; background: transparent; border: 0; }
+.records-view-header h1 { margin: 0; font-size: 1.15rem; }
+.records-view-header p { margin: 4px 0 0; color: var(--muted); font-size: 0.78rem; }
+.records-controls { display: flex; flex-wrap: wrap; align-items: end; gap: 10px; padding: 12px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.records-controls label, .record-filter label { display: flex; flex-direction: column; gap: 4px; color: var(--muted); font-size: 0.68rem; }
+.records-controls .records-search { flex: 1 1 280px; }
+.records-controls input, .records-controls select, .record-filter select, .record-filter input { min-width: 130px; }
+.records-controls .records-search input { width: 100%; }
+.records-filters { display: flex; flex-direction: column; gap: 6px; padding: 8px 0; }
+.record-filter { display: flex; flex-wrap: wrap; align-items: end; gap: 8px; }
+.record-filter .filter-value { flex: 1 1 180px; }
+.record-filter .filter-value input { width: 100%; }
+.records-results-header, .records-pagination, .record-details-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 0; color: var(--muted); font-size: 0.72rem; }
+.records-table-wrap { overflow: auto; max-height: min(58vh, 680px); border-top: 1px solid var(--border); }
+.records-table { width: 100%; border-collapse: collapse; font-size: 0.76rem; white-space: nowrap; }
+.records-table th { position: sticky; top: 0; z-index: 1; background: var(--bg); color: var(--dim); text-align: left; text-transform: uppercase; font-size: 0.62rem; }
+.records-table th, .records-table td { padding: 8px 10px; border-bottom: 1px solid var(--border); }
+.records-table tbody tr:hover { background: var(--surface2); }
+.records-empty { padding: 18px 0; color: var(--muted); font-size: 0.82rem; }
+.records-pagination { justify-content: center; }
+.record-details { margin-top: 14px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 10px 0 14px; }
+.record-details-header h2 { margin: 0; color: var(--text); font-size: 0.95rem; }
+.record-details-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 6px 18px; padding: 10px 0; }
+.record-detail-field { min-width: 0; font-size: 0.74rem; overflow-wrap: anywhere; }
+.record-detail-label { display: block; color: var(--dim); font-size: 0.62rem; text-transform: uppercase; }
+.record-detail-photos { display: flex; flex-wrap: wrap; gap: 8px; grid-column: 1 / -1; }
+.record-detail-photos img { width: 92px; height: 92px; object-fit: cover; border-radius: 5px; }
+
 /* ── Colour modal ── */
 .modal { position: fixed; inset: 0; background: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; z-index: 100; padding: 16px; }
 .modal-box { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; width: min(700px, 100%); max-height: 85vh; display: flex; flex-direction: column; }
@@ -235,4 +269,8 @@ select.auto-filled, input.auto-filled { border-color: var(--accent-dim); color: 
   .field-group { grid-template-columns: 1fr; }
   .step-label { display: none; }
   .step-item { min-width: 40px; }
+  .app-subtitle { display: none; }
+  .app-views { margin-left: auto; }
+  .records-view { padding: 12px; }
+  .records-controls > label { flex: 1 1 140px; }
 }

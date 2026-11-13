@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('start-btn').addEventListener('click', showApp);
 
   document.getElementById('export-btn').addEventListener('click', exportCSV);
+  document.getElementById('record-view-btn').addEventListener('click', showRecordEntryView);
+  document.getElementById('records-view-btn').addEventListener('click', showRecordsView);
   document.getElementById('import-btn').addEventListener('click', openImportModal);
   document.getElementById('import-modal-close').addEventListener('click', closeImportModal);
   document.getElementById('import-file').addEventListener('change', updateImportSelection);
@@ -42,6 +44,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
   document.getElementById('google-signin-btn').addEventListener('click', submitGoogleSignIn);
   updateLogUI();
+  initializeRecordsBrowser();
   renderStep(0);
   try {
     await initializeFirebase();
@@ -105,6 +108,32 @@ function showApp() {
   document.getElementById('app-main').classList.remove('hidden');
 }
 
+function showRecordsView() {
+  if (!showingRecordsView()) collectStep(currentStep);
+  closeColourModal();
+  document.getElementById('recording-view').classList.add('hidden');
+  document.getElementById('records-view').classList.remove('hidden');
+  document.getElementById('record-view-btn').classList.remove('active');
+  document.getElementById('record-view-btn').setAttribute('aria-pressed', 'false');
+  document.getElementById('records-view-btn').classList.add('active');
+  document.getElementById('records-view-btn').setAttribute('aria-pressed', 'true');
+  renderRecordsBrowser();
+}
+
+function showRecordEntryView() {
+  document.getElementById('records-view').classList.add('hidden');
+  document.getElementById('recording-view').classList.remove('hidden');
+  document.getElementById('records-view-btn').classList.remove('active');
+  document.getElementById('records-view-btn').setAttribute('aria-pressed', 'false');
+  document.getElementById('record-view-btn').classList.add('active');
+  document.getElementById('record-view-btn').setAttribute('aria-pressed', 'true');
+  renderStep(currentStep);
+}
+
+function showingRecordsView() {
+  return !document.getElementById('records-view').classList.contains('hidden');
+}
+
 async function submitGoogleSignIn() {
   const message = document.getElementById('auth-message');
   try {
@@ -123,13 +152,16 @@ function prevStep() {
 async function nextStep() {
   collectStep(currentStep);
   if (currentStep === 7) {
+    const wasEditing = Boolean(editingRecordId);
     currentRecord.pendingPhotos = pendingPhotoFiles;
     currentRecord.pendingPhotoDeletes = pendingPhotoDeletes;
     const saved = await saveRecord();
     if (saved) {
-      pendingPhotoFiles = [];
-      pendingPhotoDeletes = [];
-      currentStep = 0;
+      if (!wasEditing) {
+        pendingPhotoFiles = [];
+        pendingPhotoDeletes = [];
+        currentStep = 0;
+      }
     }
   }
   else currentStep++;

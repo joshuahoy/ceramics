@@ -50,6 +50,10 @@
   <header id="app-header" class="hidden">
     <span class="app-title">DAACS Ceramic Recorder</span>
     <span class="app-subtitle">Southern Ontario · Late 19th – Mid 20th Century</span>
+    <nav class="app-views" aria-label="Application views">
+      <button id="record-view-btn" class="view-tab active" type="button" aria-pressed="true">Record New</button>
+      <button id="records-view-btn" class="view-tab hidden" type="button" aria-pressed="false">Records</button>
+    </nav>
     <div class="header-actions">
       <button id="export-btn" class="btn btn-secondary" disabled>Export CSV</button>
       <button id="import-btn" class="btn btn-secondary hidden">Import CSV</button>
@@ -60,7 +64,8 @@
   </header>
 
   <main id="app-main" class="hidden">
-    <div id="wizard">
+    <div id="recording-view">
+      <div id="wizard">
 
       <!-- Step indicator -->
       <div class="step-bar">
@@ -86,10 +91,10 @@
         </div>
         <button id="next-btn" class="btn btn-primary">Next →</button>
       </div>
-    </div>
+      </div>
 
-    <!-- Session log -->
-    <section id="log-section">
+      <!-- Session log -->
+      <section id="log-section">
       <div class="log-header">
         <h2><span id="log-source">Local session</span> <span id="log-count-inline">0 records</span></h2>
       </div>
@@ -108,6 +113,64 @@
           </table>
         </div>
       </div>
+      </section>
+    </div>
+
+    <section id="records-view" class="records-view hidden" aria-labelledby="records-heading">
+      <header class="records-view-header">
+        <div>
+          <h1 id="records-heading">Shared Records</h1>
+          <p>Search, filter, and sort records across every field.</p>
+        </div>
+      </header>
+      <div class="records-controls">
+        <label class="records-search">
+          <span>Search all fields</span>
+          <input id="records-search" type="search" placeholder="Artifact ID, ware, notes, decoration...">
+        </label>
+        <label>
+          <span>Sort by</span>
+          <select id="records-sort-field"></select>
+        </label>
+        <button id="records-sort-direction" class="btn btn-secondary" type="button" aria-label="Toggle sort direction">Newest first</button>
+        <label>
+          <span>Rows</span>
+          <select id="records-page-size">
+            <option value="25">25</option>
+            <option value="50" selected>50</option>
+            <option value="100">100</option>
+          </select>
+        </label>
+        <button id="records-add-filter" class="btn btn-secondary" type="button">Add filter</button>
+      </div>
+      <div id="records-filters" class="records-filters" aria-live="polite"></div>
+      <div class="records-results-header">
+        <span id="records-result-count">0 records</span>
+        <span id="records-page-label"></span>
+      </div>
+      <div class="records-table-wrap">
+        <table class="records-table">
+          <thead>
+            <tr>
+              <th>Artifact ID</th><th>Ware</th><th>Material</th><th>Form</th><th>Ext Color</th><th>Modified</th><th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="records-table-body"></tbody>
+        </table>
+        <p id="records-empty" class="records-empty hidden">No records match these filters.</p>
+      </div>
+      <div class="records-pagination">
+        <button id="records-prev-page" class="btn btn-secondary" type="button">Previous</button>
+        <button id="records-next-page" class="btn btn-secondary" type="button">Next</button>
+      </div>
+      <section id="record-details" class="record-details hidden" aria-labelledby="record-details-title">
+        <div class="record-details-header">
+          <h2 id="record-details-title">Record details</h2>
+          <button id="record-details-close" class="btn btn-secondary" type="button">Close</button>
+        </div>
+        <div id="record-details-content" class="record-details-content"></div>
+        <button id="record-details-edit" class="btn btn-primary" type="button">Edit record</button>
+      </section>
     </section>
   </main>
 

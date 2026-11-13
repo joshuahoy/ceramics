@@ -54,6 +54,7 @@ async function handleAuthStateChange(user) {
     updateAccountUI(null);
     setSyncStatus('offline', 'Local only');
     if (typeof showLocalRecords === 'function') showLocalRecords();
+    if (typeof showRecordEntryView === 'function') showRecordEntryView();
     return;
   }
   if (!isAllowedUser(user)) {
@@ -69,10 +70,12 @@ async function handleAuthStateChange(user) {
 function updateAccountUI(user) {
   const accountButton = document.getElementById('account-btn');
   const importButton = document.getElementById('import-btn');
+  const recordsTab = document.getElementById('records-view-btn');
   if (!accountButton) return;
   accountButton.textContent = user ? 'Sign out' : 'Sign in with Google';
   accountButton.title = user?.email || 'Sign in with Google';
   if (importButton) importButton.classList.toggle('hidden', !isFirebaseAdmin(user));
+  if (recordsTab) recordsTab.classList.toggle('hidden', !user);
 }
 
 async function signInWithGoogle() {
