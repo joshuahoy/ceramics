@@ -23,6 +23,7 @@ const RECORD_BROWSER_FIELDS = [
   ['intSurface', 'Interior Surface'], ['intColor', 'Interior Color'], ['pasteColor', 'Paste Color'],
   ['oxidized', 'Oxidized / Reduced'], ['burning', 'Burning'], ['wearLocation', 'Wear Location'],
   ['wearPattern', 'Wear Pattern'], ['postMfgMod', 'Post-Manufacturing Modification'], ['decorated', 'Decorated'],
+  ['genre', 'Genre'], ['patternName', 'Pattern Name'],
   ['decorations', 'Decorations'], ['baseMark', 'Base Mark'], ['baseMarkColor', 'Base Mark Color'],
   ['baseMarkRef', 'Base Mark Reference'], ['thickness', 'Thickness'], ['maxSize', 'Maximum Size'],
   ['weight', 'Weight'], ['mendedWeight', 'Mended Weight'], ['rimLength', 'Rim Length'], ['rimDiam', 'Rim Diameter'],
@@ -37,8 +38,7 @@ const RECORD_BROWSER_NUMERIC_FIELDS = new Set([
 const RECORD_BROWSER_DATE_FIELDS = new Set(['createdOn', 'modifiedOn']);
 const DECORATION_DETAIL_FIELDS = [
   ['intExt', 'Interior / Exterior'], ['location', 'Location'], ['technique', 'Technique'],
-  ['color', 'Color'], ['stylElement', 'Stylistic Element'], ['motif', 'Motif'], ['genre', 'Genre'],
-  ['patternName', 'Pattern Name'], ['patternNotes', 'Pattern Notes'],
+  ['color', 'Color'], ['stylElement', 'Stylistic Element'], ['motif', 'Motif'], ['patternNotes', 'Pattern Notes'],
 ];
 
 function newRecord() {
@@ -49,7 +49,7 @@ function newRecord() {
     completeness: '', extSurface: '', extColor: '', intSurface: '', intColor: '',
     pasteColor: '', oxidized: 'Not Reduced', burning: 'Unburned',
     wearLocation: '', wearPattern: '', postMfgMod: 'No',
-    decorated: 'No', decorations: [],
+    decorated: 'No', genre: '', patternName: '', decorations: [],
     baseMark: 'Not Applicable', baseMarkColor: '', baseMarkRef: '',
     thickness: '', maxSize: '', weight: '', mendedWeight: '',
     rimLength: '', rimDiam: '', mendedRimDiam: '',
@@ -59,7 +59,7 @@ function newRecord() {
 }
 
 function newDecRow() {
-  return { intExt: '', location: '', technique: '', color: '', stylElement: '', motif: '', genre: '', patternName: '', patternNotes: '' };
+  return { intExt: '', location: '', technique: '', color: '', stylElement: '', motif: '', patternNotes: '' };
 }
 
 // ── Session log ───────────────────────────────────────────────────────────────
@@ -293,11 +293,12 @@ function renderRecordCollectionCells(record) {
   const previewLimit = 2;
   const previews = decorations.slice(0, previewLimit).map(decoration => {
     const location = [decoration.intExt, decoration.location].filter(Boolean).join(' ');
-    const description = [decoration.technique || decoration.genre, decoration.patternName || decoration.motif, decoration.color].filter(Boolean).join(' / ');
+    const description = [decoration.technique, decoration.motif, decoration.color].filter(Boolean).join(' / ');
     return [location, description].filter(Boolean).join(': ') || 'Decoration';
   });
   if (decorations.length > previewLimit) previews.push(`+${decorations.length - previewLimit} more`);
-  const summary = previews.join(' | ') || (record.decorated === 'Yes' ? 'Decorated (no details)' : '\u2014');
+  const overall = [record.genre, record.patternName].filter(Boolean).join(' / ');
+  const summary = [overall, ...previews].filter(Boolean).join(' | ') || (record.decorated === 'Yes' ? 'Decorated (no details)' : '\u2014');
   return `<td class="decoration-preview">${escHtml(summary)}</td><td>${recordBrowserValue(record, 'photos')}</td>`;
 }
 
@@ -439,8 +440,8 @@ function exportCSV() {
     'ID','Count','Ware','Material','Manu Tech','Category','Form','Completeness',
     'Ext Surface','Ext Color','Int Surface','Int Color','Paste Color',
     'Oxidized vs Reduced','Burning','Post-Mfg Mod','Wear Location','Wear Pattern',
-    'Decorated','Genre 1','Dec Technique 1','Dec Color 1','Stylistic Element 1','Motif 1',
-    'Genre 2','Dec Technique 2','Dec Color 2','Stylistic Element 2','Motif 2',
+    'Decorated','Genre','Dec Technique 1','Dec Color 1','Stylistic Element 1','Motif 1',
+    'Dec Technique 2','Dec Color 2','Stylistic Element 2','Motif 2',
     'Pattern Name','Base Mark','Base Mark Color','Base Mark Ref',
     'Thickness (mm)','Max Size (mm)','Weight (g)',
     'Rim Length (mm)','Rim Diam (mm)','Base Length (mm)','Base Diam (mm)',
@@ -454,9 +455,9 @@ function exportCSV() {
       r.id, r.count, r.ware, r.material, r.manuTech, r.vesselCat, r.form, r.completeness,
       r.extSurface, r.extColor, r.intSurface, r.intColor, r.pasteColor,
       r.oxidized, r.burning, r.postMfgMod, r.wearLocation, r.wearPattern,
-      r.decorated, d1.genre||'', d1.technique||'', d1.color||'', d1.stylElement||'', d1.motif||'',
-      d2.genre||'', d2.technique||'', d2.color||'', d2.stylElement||'', d2.motif||'',
-      r.decorations.length ? r.decorations[0].patternName||'' : '',
+      r.decorated, r.genre, d1.technique||'', d1.color||'', d1.stylElement||'', d1.motif||'',
+      d2.technique||'', d2.color||'', d2.stylElement||'', d2.motif||'',
+      r.patternName,
       r.baseMark, r.baseMarkColor, r.baseMarkRef,
       r.thickness, r.maxSize, r.weight, r.rimLength, r.rimDiam, r.baseLength, r.baseDiam,
       r.notes,

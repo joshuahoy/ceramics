@@ -146,6 +146,7 @@ async function submitGoogleSignIn() {
 
 // ── Navigation ────────────────────────────────────────────────────────────────
 function prevStep() {
+  if (currentStep === 5) collectStep(currentStep);
   if (currentStep > 0) { currentStep--; renderStep(currentStep); }
 }
 
@@ -228,14 +229,17 @@ function collectStep(n) {
   });
   // Collect decoration rows (Decoration is now at index 5)
   if (n === 5) {
-    currentRecord.decorations = [];
-    panel.querySelectorAll('.dec-row').forEach((row, i) => {
-      const d = newDecRow();
-      row.querySelectorAll('[data-dec-field]').forEach(el => { d[el.dataset.decField] = el.value || ''; });
-      // Colour fields in dec rows stored as data-colour-value
-      row.querySelectorAll('[data-colour-value]').forEach(el => { d[el.dataset.colourFor] = el.dataset.colourValue || ''; });
-      currentRecord.decorations.push(d);
+    const decorations = Array.from(panel.querySelectorAll('.dec-row'), (row, index) => {
+      const decoration = { ...newDecRow(), ...currentRecord.decorations[index] };
+      row.querySelectorAll('[data-dec-field]').forEach(el => { decoration[el.dataset.decField] = el.value || ''; });
+      row.querySelectorAll('[data-colour-value]').forEach(el => { decoration[el.dataset.colourFor] = el.dataset.colourValue || ''; });
+      return decoration;
     });
+    if (currentRecord.decorated === 'Yes') {
+      currentRecord.genre = panel.querySelector('#dec-genre-overall').value;
+      currentRecord.patternName = panel.querySelector('#dec-pattern-overall').value;
+    }
+    currentRecord.decorations = decorations;
   }
 }
 
@@ -676,11 +680,11 @@ function step4() {
       <button class="btn btn-secondary btn-sm add-row-btn" id="add-dec-row" style="margin-top:8px">+ Add Decoration Row</button>
       <div class="field" style="margin-top:12px">
         <label>Genre <span class="optional">overall decorative genre</span></label>
-        ${sel2('dec-genre-overall', GENRES, currentRecord.decorations[0]?.genre || '')}
+        ${sel2('dec-genre-overall', GENRES, currentRecord.genre || '')}
       </div>
       <div class="field" style="margin-top:8px">
         <label>Pattern Name <span class="optional">if identifiable</span></label>
-        ${sel2('dec-pattern-overall', PATTERN_NAMES, currentRecord.decorations[0]?.patternName || '')}
+        ${sel2('dec-pattern-overall', PATTERN_NAMES, currentRecord.patternName || '')}
       </div>
     </div>`;
   setTimeout(() => {
@@ -763,7 +767,8 @@ function wireDecRows() {
     if (removeBtn && !removeBtn._wired) {
       removeBtn._wired = true;
       removeBtn.addEventListener('click', () => {
-        currentRecord.decorations.splice(i, 1);
+        const index = Array.from(row.parentElement.children).indexOf(row);
+        currentRecord.decorations.splice(index, 1);
         row.remove();
       });
     }

@@ -103,6 +103,8 @@ function normalizeRecord(record) {
     ...record,
     remoteId: record.remoteId || crypto.randomUUID(),
     syncStatus: 'synced',
+    genre: record.genre ?? '',
+    patternName: record.patternName ?? '',
     decorations: Array.isArray(record.decorations) ? record.decorations : [],
     photos: Array.isArray(record.photos) ? record.photos : [],
     createdOn: record.createdOn || '',
@@ -215,9 +217,11 @@ function legacyRowToRecord(headers, row, userEmail) {
   const decoration = index => ({
     intExt: '', location: '', technique: values[`Dec Technique ${index}`] || '', color: values[`Dec Color ${index}`] || '',
     stylElement: values[`Stylistic Element ${index}`] || '', motif: values[`Motif ${index}`] || '',
-    genre: values[`Genre ${index}`] || '', patternName: index === 1 ? values['Pattern Name'] || '' : '', patternNotes: '',
+    patternNotes: '',
   });
   const decorations = [decoration(1), decoration(2)].filter(item => Object.values(item).some(Boolean));
+  const genre = values.Genre || '';
+  const patternName = values['Pattern Name'] || '';
   const now = new Date().toISOString();
   return normalizeRecord({
     remoteId: crypto.randomUUID(),
@@ -230,7 +234,8 @@ function legacyRowToRecord(headers, row, userEmail) {
     extSurface: values['Ext Surface'] || '', extColor: values['Ext Color'] || '', intSurface: values['Int Surface'] || '', intColor: values['Int Color'] || '',
     pasteColor: values['Paste Color'] || '', oxidized: values['Oxidized vs Reduced'] || 'Not Reduced', burning: values.Burning || 'Unburned',
     postMfgMod: values['Post-Mfg Mod'] || 'No', wearLocation: values['Wear Location'] || '', wearPattern: values['Wear Pattern'] || '',
-    decorated: values.Decorated || (decorations.length ? 'Yes' : 'No'), decorations,
+    decorated: values.Decorated || (decorations.length || genre || patternName ? 'Yes' : 'No'),
+    genre, patternName, decorations,
     baseMark: values['Base Mark'] || 'Not Applicable', baseMarkColor: values['Base Mark Color'] || '', baseMarkRef: values['Base Mark Ref'] || '',
     thickness: values['Thickness (mm)'] || '', maxSize: values['Max Size (mm)'] || '', weight: values['Weight (g)'] || '',
     rimLength: values['Rim Length (mm)'] || '', rimDiam: values['Rim Diam (mm)'] || '',
