@@ -216,6 +216,12 @@ function initializeRecordsBrowser() {
     const button = event.target.closest('[data-view-record]');
     if (button) showRecordDetails(button.dataset.viewRecord);
   });
+  for (const tableId of ['log-body', 'records-table-body']) {
+    document.getElementById(tableId)?.addEventListener('click', event => {
+      const trigger = event.target.closest('[data-record-collections]');
+      if (trigger) showRecordCollections(trigger);
+    });
+  }
   document.getElementById('record-details-close')?.addEventListener('click', closeRecordDetails);
   document.getElementById('record-details-edit')?.addEventListener('click', () => {
     if (selectedRecordDetailsId) startRemoteEdit(selectedRecordDetailsId);
@@ -299,7 +305,9 @@ function renderRecordCollectionCells(record) {
   if (decorations.length > previewLimit) previews.push(`+${decorations.length - previewLimit} more`);
   const overall = [record.genre, record.patternName].filter(Boolean).join(' / ');
   const summary = [overall, ...previews].filter(Boolean).join(' | ') || (record.decorated === 'Yes' ? 'Decorated (no details)' : '\u2014');
-  return `<td class="decoration-preview">${escHtml(summary)}</td><td>${recordBrowserValue(record, 'photos')}</td>`;
+  const photoCount = recordBrowserValue(record, 'photos');
+  const trigger = (value, label) => `<button type="button" class="record-collections-trigger" aria-haspopup="dialog" aria-label="${escHtml(`${value}: ${label} for ${record.id || 'this record'}`)}" data-record-collections="${escHtml(record.remoteId)}">${escHtml(value)}</button>`;
+  return `<td class="decoration-preview">${trigger(summary, 'view decorations and photos')}</td><td>${trigger(photoCount, 'photos; view decorations and photos')}</td>`;
 }
 
 function renderRecordsBrowser() {
@@ -341,6 +349,33 @@ function renderDecorationDetails(decorations) {
   return `<div class="record-detail-decorations"><h3>Decorations</h3><ol>${entries}</ol></div>`;
 }
 
+function renderRecordPhotos(photos) {
+  if (!photos?.length) return '';
+  return `<div class="record-detail-photos">${photos.map(photo => {
+    const url = escHtml(photo.url);
+    return `<a href="${url}" target="_blank" rel="noopener"><img src="${url}" alt="${escHtml(photo.name || 'Record photo')}"></a>`;
+  }).join('')}</div>`;
+}
+
+function showRecordCollections(trigger) {
+  const record = sessionLog.find(item => item.remoteId === trigger.dataset.recordCollections);
+  const dialog = document.getElementById('record-collections-dialog');
+  if (!record || dialog.open) return;
+  document.getElementById('record-collections-title').textContent = record.id ? `Decorations and Photos: ${record.id}` : 'Decorations and Photos';
+  const fields = [['Decorated', record.decorated], ['Genre', record.genre], ['Pattern Name', record.patternName]];
+  const content = document.getElementById('record-collections-content');
+  content.innerHTML = `<dl class="record-details-content record-collections-summary">${fields.map(([label, value]) =>
+    `<div class="record-detail-field"><dt class="record-detail-label">${label}</dt><dd>${escHtml(value || '\u2014')}</dd></div>`
+  ).join('')}</dl>` + (renderDecorationDetails(record.decorations) || '<h3>Decorations</h3><p>No decoration entries.</p>') +
+    '<h3>Photos</h3>' + (renderRecordPhotos(record.photos) || '<p>No saved photos.</p>');
+  dialog.addEventListener('close', () => {
+    const focusTarget = trigger.isConnected && trigger.getClientRects().length ? trigger : document.querySelector('.view-tab[aria-pressed="true"]');
+    focusTarget?.focus();
+  }, { once: true });
+  dialog.showModal();
+  content.scrollTop = 0;
+}
+
 function showRecordDetails(remoteId) {
   const record = sessionLog.find(item => item.remoteId === remoteId);
   if (!record) return;
@@ -351,7 +386,7 @@ function showRecordDetails(remoteId) {
     const value = recordBrowserValue(record, key);
     if (!value) return '';
     return `<div class="record-detail-field"><span class="record-detail-label">${escHtml(label)}</span>${escHtml(value)}</div>`;
-  }).join('') + renderDecorationDetails(record.decorations) + ((record.photos || []).length ? `<div class="record-detail-photos">${record.photos.map(photo => `<a href="${escHtml(photo.url)}" target="_blank" rel="noopener"><img src="${escHtml(photo.url)}" alt="${escHtml(photo.name || 'Record photo')}"></a>`).join('')}</div>` : '');
+  }).join('') + renderDecorationDetails(record.decorations) + renderRecordPhotos(record.photos);
   details.classList.remove('hidden');
   details.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
