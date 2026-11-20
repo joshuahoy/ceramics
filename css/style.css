@@ -155,6 +155,7 @@ select.auto-filled, input.auto-filled { border-color: var(--accent-dim); color: 
 .records-table { width: 100%; border-collapse: collapse; font-size: 0.76rem; white-space: nowrap; }
 .records-table th { position: sticky; top: 0; z-index: 1; background: var(--bg); color: var(--dim); text-align: left; text-transform: uppercase; font-size: 0.62rem; }
 .records-table th, .records-table td { padding: 8px 10px; border-bottom: 1px solid var(--border); }
+#log-table .decoration-preview, .records-table .decoration-preview { min-width: 12rem; max-width: 18rem; white-space: normal; overflow-wrap: anywhere; }
 .records-table tbody tr:hover { background: var(--surface2); }
 .records-empty { padding: 18px 0; color: var(--muted); font-size: 0.82rem; }
 .records-pagination { justify-content: center; }
@@ -163,6 +164,12 @@ select.auto-filled, input.auto-filled { border-color: var(--accent-dim); color: 
 .record-details-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 6px 18px; padding: 10px 0; }
 .record-detail-field { min-width: 0; font-size: 0.74rem; overflow-wrap: anywhere; }
 .record-detail-label { display: block; color: var(--dim); font-size: 0.62rem; text-transform: uppercase; }
+.record-detail-decorations { grid-column: 1 / -1; }
+.record-detail-decorations h3 { margin: 8px 0 4px; font-size: 0.8rem; }
+.record-detail-decorations ol { margin: 0; padding-inline-start: 1.5rem; }
+.record-detail-decorations li { padding: 6px 0; border-top: 1px solid var(--border); font-size: 0.74rem; }
+.record-detail-decorations dl { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr)); gap: 6px 18px; margin: 0; }
+.record-detail-decorations dd { margin: 0; }
 .record-detail-photos { display: flex; flex-wrap: wrap; gap: 8px; grid-column: 1 / -1; }
 .record-detail-photos img { width: 92px; height: 92px; object-fit: cover; border-radius: 5px; }
 

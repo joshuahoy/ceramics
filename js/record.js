@@ -35,6 +35,11 @@ const RECORD_BROWSER_NUMERIC_FIELDS = new Set([
   'mendedRimDiam', 'baseLength', 'baseDiam', 'mendedBaseDiam', 'photos',
 ]);
 const RECORD_BROWSER_DATE_FIELDS = new Set(['createdOn', 'modifiedOn']);
+const DECORATION_DETAIL_FIELDS = [
+  ['intExt', 'Interior / Exterior'], ['location', 'Location'], ['technique', 'Technique'],
+  ['color', 'Color'], ['stylElement', 'Stylistic Element'], ['motif', 'Motif'], ['genre', 'Genre'],
+  ['patternName', 'Pattern Name'], ['patternNotes', 'Pattern Notes'],
+];
 
 function newRecord() {
   return {
@@ -283,6 +288,19 @@ function compareRecordValues(first, second, field) {
   return a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' });
 }
 
+function renderRecordCollectionCells(record) {
+  const decorations = record.decorations || [];
+  const previewLimit = 2;
+  const previews = decorations.slice(0, previewLimit).map(decoration => {
+    const location = [decoration.intExt, decoration.location].filter(Boolean).join(' ');
+    const description = [decoration.technique || decoration.genre, decoration.patternName || decoration.motif, decoration.color].filter(Boolean).join(' / ');
+    return [location, description].filter(Boolean).join(': ') || 'Decoration';
+  });
+  if (decorations.length > previewLimit) previews.push(`+${decorations.length - previewLimit} more`);
+  const summary = previews.join(' | ') || (record.decorated === 'Yes' ? 'Decorated (no details)' : '\u2014');
+  return `<td class="decoration-preview">${escHtml(summary)}</td><td>${recordBrowserValue(record, 'photos')}</td>`;
+}
+
 function renderRecordsBrowser() {
   const tableBody = document.getElementById('records-table-body');
   if (!tableBody) return;
@@ -299,7 +317,8 @@ function renderRecordsBrowser() {
   tableBody.innerHTML = pageRecords.map(record => `
     <tr>
       <td>${escHtml(record.id)}</td><td>${escHtml(record.ware)}</td><td>${escHtml(record.material)}</td>
-      <td>${escHtml(record.form)}</td><td>${escHtml(record.extColor)}</td><td>${escHtml(record.modifiedOn)}</td>
+      <td>${escHtml(record.form)}</td><td>${escHtml(record.extColor)}</td>
+      ${renderRecordCollectionCells(record)}<td>${escHtml(record.modifiedOn)}</td>
       <td><button class="btn btn-secondary btn-sm" type="button" data-view-record="${escHtml(record.remoteId)}">Details</button></td>
     </tr>`).join('');
   document.getElementById('records-result-count').textContent = `${matches.length} record${matches.length === 1 ? '' : 's'}`;
@@ -310,17 +329,28 @@ function renderRecordsBrowser() {
   if (selectedRecordDetailsId && !sessionLog.some(record => record.remoteId === selectedRecordDetailsId)) closeRecordDetails();
 }
 
+function renderDecorationDetails(decorations) {
+  if (!decorations?.length) return '';
+  const entries = decorations.map(decoration => {
+    const fields = DECORATION_DETAIL_FIELDS.filter(([key]) => decoration[key]).map(([key, label]) =>
+      `<div class="record-detail-field"><dt class="record-detail-label">${escHtml(label)}</dt><dd>${escHtml(decoration[key])}</dd></div>`
+    ).join('');
+    return `<li>${fields ? `<dl>${fields}</dl>` : 'No details recorded'}</li>`;
+  }).join('');
+  return `<div class="record-detail-decorations"><h3>Decorations</h3><ol>${entries}</ol></div>`;
+}
+
 function showRecordDetails(remoteId) {
   const record = sessionLog.find(item => item.remoteId === remoteId);
   if (!record) return;
   selectedRecordDetailsId = remoteId;
   const details = document.getElementById('record-details');
-  const fields = RECORD_BROWSER_FIELDS.filter(([key]) => key !== 'photos');
+  const fields = RECORD_BROWSER_FIELDS.filter(([key]) => key !== 'photos' && key !== 'decorations');
   document.getElementById('record-details-content').innerHTML = fields.map(([key, label]) => {
     const value = recordBrowserValue(record, key);
     if (!value) return '';
     return `<div class="record-detail-field"><span class="record-detail-label">${escHtml(label)}</span>${escHtml(value)}</div>`;
-  }).join('') + ((record.photos || []).length ? `<div class="record-detail-photos">${record.photos.map(photo => `<a href="${escHtml(photo.url)}" target="_blank" rel="noopener"><img src="${escHtml(photo.url)}" alt="${escHtml(photo.name || 'Record photo')}"></a>`).join('')}</div>` : '');
+  }).join('') + renderDecorationDetails(record.decorations) + ((record.photos || []).length ? `<div class="record-detail-photos">${record.photos.map(photo => `<a href="${escHtml(photo.url)}" target="_blank" rel="noopener"><img src="${escHtml(photo.url)}" alt="${escHtml(photo.name || 'Record photo')}"></a>`).join('')}</div>` : '');
   details.classList.remove('hidden');
   details.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
@@ -333,14 +363,11 @@ function closeRecordDetails() {
 function appendLogRow(r) {
   const tbody = document.getElementById('log-body');
   const td = v => `<td>${escHtml(v || '')}</td>`;
-  const decSummary = r.decorations.length
-    ? r.decorations.map(d => [d.genre, d.technique, d.color].filter(Boolean).join(' / ')).join(' | ')
-    : (r.decorated === 'Yes' ? '(decorated)' : '—');
   const tr = document.createElement('tr');
   tr.innerHTML = [
     td(r.id), td(r.ware), td(r.form), td(r.extSurface),
     td(r.extColor), td(r.intColor), td(r.pasteColor),
-    td(r.burning), td(decSummary), td(r.notes),
+    td(r.burning), renderRecordCollectionCells(r), td(r.notes),
     showingSharedRecords ? `<td><button class="btn btn-secondary btn-sm" data-edit-record="${escHtml(r.remoteId)}">Edit</button></td>` : '<td>—</td>',
   ].join('');
   tbody.appendChild(tr);
